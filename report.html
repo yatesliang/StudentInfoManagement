@@ -30,7 +30,7 @@
     <link href='bower_components/chosen/chosen.min.css' rel='stylesheet'>
     <link href='bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
 
-    <link href='bower_components/datatables/media/css/jquery.dataTables.css' rel='stylesheet'>
+    <link href='  bower_components/datatables/media/css/jquery.dataTables.css' rel='stylesheet'>
 
     <link href='bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
 
@@ -43,7 +43,9 @@
     <link href='css/animate.min.css' rel='stylesheet'>
     <link href='css/app.css' rel='stylesheet'>
 
-        <style media="screen">
+        <link href="css/bootstrap-datepicker.css" rel="stylesheet">
+
+    <style media="screen">
    body {
        color: #154d88;
        background: rgba(233, 237, 241, 0.27);
@@ -344,50 +346,73 @@
             <!-- content starts -->
                         
 
-                    <div class="row">
+                    
+    <div class="row">
         <div class="box col-md-12">
             <div class="box-inner">
                 <div data-original-title="" class="box-header well">
-                    <h2><i class="glyphicon glyphicon-home"></i> Class Create</h2>
+                    <h2><i class="glyphicon glyphicon-book"></i> Accounting Report</h2>
 
                 </div>
-                <div class="box-content" id="smsRadioCheckBox">
-                    <form role="form" action="/class/create" method="post">
+                <div class="box-content">
+                    
+
                         <input type="hidden" name="_token" value="84WDdhwpXfs6qfS0p3s1CRDb4dLlLvkHggoyPbtH">
+                        <div class="row">
+                            <div class="col-md-12">
 
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                <input type="text" class="form-control" autofocus required name="name" placeholder="Class Name">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="type">Type</label>
+
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                            <select name="type" id="type" required="true" class="form-control" >
+                                                <option value="Income">Income</option>
+                                                <option value="Expence">Expence</option>
+                                            </select>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group ">
+                                        <label for="dob">From Date</label>
+                                        <div class="input-group">
+
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                            <input type="text" id="fdate" value=""  class="form-control datepicker" name="fromDate"   data-date-format="yyyy-mm-dd">
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group ">
+                                        <label for="dob">To Date</label>
+                                        <div class="input-group">
+
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                            <input type="text" id="tdate" value=""  class="form-control datepicker" name="toDate"   data-date-format="yyyy-mm-dd">
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+
+
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="name">Numeric Value</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                <input type="text" class="form-control" required name="code" placeholder="1,2,3 etc">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-primary pull-right" id="btnPrint"><i class="glyphicon glyphicon-print"></i> Print</button>
+
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="name">Description</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                <textarea type="text" class="form-control" required name="description" placeholder="Class Description"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Bangla/Egnlish subject combine pass? <input type="checkbox"  name="combinePass" ></label>
-                        </div>
-
-                        <div class="clearfix"></div>
-                                                <div class="form-group">
-                            <button class="btn btn-primary pull-right" type="submit"><i class="glyphicon glyphicon-plus"></i>Add</button>
-                            <br>
-                        </div>
-                    </form>
-
-
 
 
 
@@ -459,5 +484,37 @@
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
 
+    <script src="js/bootstrap-datepicker.js"></script>
+
+
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $(".datepicker").datepicker( {
+
+                autoclose:true
+
+            });
+
+            $( "#btnPrint" ).click(function() {
+                var fdate = $('#fdate').val();
+                var tdate =  $('#tdate').val();
+                var rtype  = $('#type').val();
+                if(fdate!="" && tdate !="") {
+                    var getUrl = window.location;
+                    var baseUrl = getUrl .protocol + "//" + getUrl.host;
+                    var url =baseUrl+"/accounting/reportprint/"+rtype+"/"+fdate+"/"+tdate;
+
+                    var win = window.open(url, '_blank');
+                   win.focus();
+                }
+                else
+                {
+                    alert('Fill up inputs feilds correclty!!!');
+                }
+            });
+
+        });
+
+    </script>
 </body>
 </html>
