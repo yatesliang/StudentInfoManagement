@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        ===
+        This comment should NOT be removed.
+
+        Charisma v2.0.0
+
+        Copyright 2012-2014 Muhammad Usman
+        Licensed under the Apache License v2.0
+        http://www.apache.org/licenses/LICENSE-2.0
+
+        http://usman.it
+        http://twitter.com/halalit_usman
+        ===
+    -->
+    <meta charset="utf-8">
+    <title>HMHS | School Manage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- The styles -->
+    <link id="bs-css" href="http://school.hrshadhin.me/css/bootstrap-cerulean.min.css" rel="stylesheet">
+
+    <link href="http://school.hrshadhin.me/css/charisma-app.css" rel="stylesheet">
+    <link href='http://school.hrshadhin.me/bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
+    <link href='http://school.hrshadhin.me/bower_components/chosen/chosen.min.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
+
+    <link href='  http://school.hrshadhin.me/bower_components/datatables/media/css/jquery.dataTables.css' rel='stylesheet'>
+
+    <link href='http://school.hrshadhin.me/bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
+
+    <link href='http://school.hrshadhin.me/css/jquery.noty.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/noty_theme_default.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/elfinder.min.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/elfinder.theme.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/uploadify.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/animate.min.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/app.css' rel='stylesheet'>
+
+    
+    <style media="screen">
+   body {
+       color: #154d88;
+       background: rgba(233, 237, 241, 0.27);
+       font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+       font-size: 13px;
+       font-weight: 400;
+       line-height: 1.471;
+   }
+   </style>
+    <!-- jQuery -->
+    <script src="http://school.hrshadhin.me/bower_components/jquery/jquery.min.js"></script>
+
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- The fav icon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <script>
+      var hash = 'a291233';
+    </script>
+
+</head>
+
+<body>
+<!-- topbar starts -->
+<div class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-inner">
+        <button type="button" class="navbar-toggle pull-left animated flip">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <span class="iname">HR Model High School</span>
+
+        <!-- user dropdown starts -->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> Mr. Admin</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+                <li class="divider"></li>
+                <li><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+            </ul>
+        </div>
+        <!-- Addmission dropdown starts -->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                <i class="glyphicon glyphicon-th-large"></i><span class=""> Admission</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> Applicant List</a></li>
+                <li class="divider"></li>
+                <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> Online Registration</a></li>
+                <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> Print  Admitcard</a></li>
+
+
+
+
+
+            </ul>
+        </div>
+        <!-- admission dropdown ends -->
+
+
+
+        <!-- Library dropdown starts -->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                <i class="glyphicon glyphicon-book"></i><span class=""> Library</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+
+                <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> Book Search</a></li>
+                <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> Borrow Book</a></li>
+                <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> Borrowd Book List</a></li>
+                <li class="divider"></li>
+                    <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> Book List</a></li>
+                    <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> Book Entry</a></li>
+                    <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> Reports</a></li>
+                    <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> Monthly Fine Reports</a></li>
+
+
+            </ul>
+        </div>
+        <!-- Library dropdown ends -->
+        <!-- Dormitory dropdown starts -->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                <i class="glyphicon glyphicon-home"></i><span class=""> Dormitory</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+
+                <li><a href="/dormitory"><i class="glyphicon glyphicon-home"></i> Dormitory</a></li>
+                <li><a href="/dormitory/assignstd"><i class="glyphicon glyphicon-plus"></i> Assign Student</a></li>
+                <li><a href="/dormitory/assignstd/list"><i class="glyphicon glyphicon-user"></i> Student List</a></li>
+                <li class="divider"></li>
+                    <li><a href="/dormitory/fee"><i class="glyphicon glyphicon-list"></i> Fee Collection</a></li>
+                    <li><a href="/dormitory/report/std"><i class="glyphicon glyphicon-print"></i> Dormitory Report</a></li>
+                    <li><a href="/dormitory/report/fee"><i class="glyphicon glyphicon-print"></i> Fee Reports</a></li>
+
+            </ul>
+        </div>
+        <!-- Dormitory dropdown ends -->
+        <!-- fees dropdown starts-->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                <i class="glyphicon glyphicon-list-alt"></i><span class=""> Fees</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> Student Fees</a></li>
+                <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> Fees Collection</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> Fees List</a></li>
+                <li><a href="/fees/setup"><i class="glyphicon glyphicon-cog"></i> Fees Setup</a></li>
+                <li class="divider"></li>
+                <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> Fee Collection Report</a></li>
+
+            </ul>
+        </div>
+        <!-- fees dropdown ends -->
+      <!-- teacher dropdown starts-->
+       <!-- <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                <i class="glyphicon glyphicon-user"></i><span class=""> Employee</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/teacher/create"><i class="glyphicon glyphicon-plus"></i> Add New</a></li>
+                <li><a href="/teacher/list"><i class="glyphicon glyphicon-list-alt"></i> List</a></li>
+                <li class="divider"></li>
+                <li><a href="/leaves/create"><i class="glyphicon glyphicon-plus"></i> Add New Leave</a></li>
+                <li><a href="/leaves"><i class="glyphicon glyphicon-list-alt"></i> Leave List</a></li>
+                <li class="divider"></li>
+                <li><a href="/workoutside/create"><i class="glyphicon glyphicon-plus"></i> Add New Work Outside</a></li>
+                <li><a href="/workoutside"><i class="glyphicon glyphicon-list-alt"></i> Work Outside List</a></li>
+                <li class="divider"></li>
+                                <li><a href="/teacher-attendance/list"><i class="glyphicon glyphicon-list-alt"></i> Attendance List</a></li>
+                <li><a href="/teacher-attendance/absenteeism-report"><i class="glyphicon glyphicon-print"></i> Absenteeism Report</a></li>
+                <li><a href="/teacher-attendance/monthly-report"><i class="glyphicon glyphicon-print"></i> Monthly Attendance Report</a></li>
+                <li><a href="/teacher-attendance/monthly-report-2"><i class="glyphicon glyphicon-print"></i> Monthly Attendance Report Two</a></li>
+
+            </ul>
+        </div> -->
+        <!-- teacher dropdown ends -->
+
+    </div>
+</div>
+<!-- topbar ends -->
+<div class="ch-container">
+    <div class="row">
+
+        <!-- left menu starts -->
+        <div class="col-sm-2 col-lg-2">
+            <div class="sidebar-nav">
+                <div class="nav-canvas">
+                    <div class="nav-sm nav nav-stacked">
+
+                    </div>
+                    <ul class="nav nav-pills nav-stacked main-menu">
+                        <li class="nav-header">Main</li>
+                        <li><a class="ajax-link" href="/dashboard"><i class="glyphicon glyphicon-th-large"></i><span> Dashboard</span></a>
+                        </li>
+
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-home"></i><span> Class</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/class/create">Add New</a></li>
+                                <li><a href="/class/list">Class List</a></li>
+                            </ul>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-book"></i><span> Subject</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/subject/create">Add New</a></li>
+                                <li><a href="/subject/list">Subject List</a></li>
+                            </ul>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> Student</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/student/create">Add New</a></li>
+                                <li><a href="/student/list">Student List</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> Attendance</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/attendance/create-file">Add from file</a></li>
+                                <li><a href="/attendance/create">Add</a></li>
+                                <li><a href="/attendance/list">View</a></li>
+
+
+                            </ul>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> Mark Manage</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/mark/create">Add New</a></li>
+                                <li><a href="/mark/list">Marks List</a></li>
+                            </ul>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> Result</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/result/generate">Generate</a></li>
+                                <li><a href="/result/search">Search</a></li>
+                                <li><a href="/results">Search Public</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="/promotion"><i class="glyphicon glyphicon-arrow-up"></i><span> Promotion</span></a>
+
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list-alt"></i><span> Accounting</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/accounting/sectors">Sectors</a></li>
+                                <li><a href="/accounting/income">Add Income</a></li>
+                                <li><a href="/accounting/incomelist">View Income</a></li>
+                                <li><a href="/accounting/expence">Add Expence</a></li>
+                                <li><a href="/accounting/expencelist">View Expence</a></li>
+
+                            </ul>
+                        </li>
+                       <li class="accordion">
+
+                          <a href="#"><i class="glyphicon glyphicon-envelope"></i><span> SMS</span></a>
+                          <ul class="nav nav-pills nav-stacked">
+                              <li><a href="/sms">SMS Formats</a></li>
+                              <li><a href="/sms-bulk">Send Bulk SMS</a></li>
+                              <li><a href="/smslog">SMS Log</a></li>
+
+                          </ul>
+                      </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-print"></i><span> Reports</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/gradesheet">Marksheet</a></li>
+                                <li><a href="/attendance/report">Attendance</a></li>
+                                <li><a href="/attendance/monthly-report">Monthly Attendance</a></li>
+                                <li><a href="/tabulation">Tabulationsheet</a></li>
+                                <li><a href="/accounting/report">Account By Type</a></li>
+                                <li><a href="/accounting/reportsum">Account Balance</a></li>
+                                 <li><a href="/barcode">Barcode Generate</a></li>
+
+
+                            </ul>
+                        </li>
+                                                <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-cog"></i><span> Settings</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/gpa">GPA Ruels</a></li>
+
+                                <li><a href="/users">Users</a></li>
+                                <li><a href="/holidays">Holidays</a></li>
+                                <li><a href="/class-off">Class Off Days</a></li>
+                                <li><a href="/institute">Institute</a></li>
+
+                            </ul>
+                        </li>
+                                              </ul>
+
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!-- left menu ends -->
+
+        <noscript>
+            <div class="alert alert-block col-md-12">
+                <h4 class="alert-heading">Warning!</h4>
+
+                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                    enabled to use this site.</p>
+            </div>
+        </noscript>
+
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+                        
+
+                    <div class="row">
+        <div class="box col-md-12">
+            <div class="box-inner">
+                <div data-original-title="" class="box-header well">
+                    <h2><i class="glyphicon glyphicon-user"></i> Accounting Sector</h2>
+
+                </div>
+                <div class="box-content">
+                                                                <form role="form" action="/accounting/sectorcreate" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="46EXQP4v4uCDFIzoSrAZVutOwdVjCa01tqbFE1fp">
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-8">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name"  placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Type</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <select name="type" id="type" required="true" class="form-control" >
+                                                    <option value="Income">Income</option>
+                                                    <option value="Expence">Expence</option>
+                                                </select>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <button class="btn btn-primary pull-right" type="submit"><i class="glyphicon glyphicon-plus"></i>Add</button>
+                            <br>
+                        </form>
+                                        <br>
+                </div>
+
+
+                                    <div class="row">
+                        <div class="col-md-12">
+                            <table id="sectorList" class="table table-striped table-bordered table-hover">
+                                <thead>
+                                <tr>
+                                    <th>Sector Name</th>
+                                    <th>Type</th>
+
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                
+                                    <tr>
+                                        <td>Library Fee</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/7'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/7'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>শিক্ষক কর্মচারী কল্যাণ ফান্ড</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/8'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/8'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>টিউশন ফি (সরকারী প্রদত্ত)</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/9'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/9'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>Admission Fee</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/10'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/10'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ভর্তি ফরম</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/11'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/11'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বোর্ড/বিশ্ববিদ্যালয় পরীক্ষা</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/14'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/14'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বোর্ড/বিশ্ববিদ্যালয় ভর্তি</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/15'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/15'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ভর্তি/পুনঃভর্তি</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/16'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/16'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>পরীক্ষা (আভ্যন্তরীন)</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/17'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/17'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বিদ্যুৎ</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/18'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/18'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>লাইব্রেরী/বই বিতরণ</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/19'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/19'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বিজ্ঞানাগার</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/20'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/20'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>মিলনায়তন</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/21'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/21'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বার্ষিক অনুষ্ঠান ও ক্রীড়া সাংস্কৃতি</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/22'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/22'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ধর্মীয় অনুষ্ঠান</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/24'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/24'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ডাক/টেলি</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/25'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/25'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>নিয়োগ</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/27'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/27'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বিল্ডিং</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/30'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/30'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>পৌর কর</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/31'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/31'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>দরিদ্র তহবিল</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/34'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/34'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>সনদ, বেইজ ও পরিচয় পত্র, ক্যালেন্ডার</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/35'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/35'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>জমি ক্রয়/ভূমি কর আইন বিষয়ে</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/36'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/36'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>পরিদর্শন ও নিরীক্ষা</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/38'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/38'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>শিক্ষা সফর</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/39'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/39'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>যাতায়াত</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/41'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/41'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>সংরক্ষণ/মেরামত</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/42'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/42'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ব্যাংক সুদ</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/43'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/43'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>মডেল টেস্ট পরীক্ষা</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/44'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/44'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>টিউটোরিয়াল পরীক্ষা</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/45'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/45'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বিবিধ</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/46'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/46'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বেতন ভাতা (প্রাতিষ্ঠানিক) </td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/48'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/48'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ভবিষ্যৎ তহবিল</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/49'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/49'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বাড়ি ভাতা ও ইনক্রিমেন্ট</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/51'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/51'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>Tuition Fee</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/52'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/52'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ছাত্রী ভর্তি ব্যবস্থাপনা</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/53'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/53'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বোর্ড/বিশ্ববিদ্যালয় পরীক্ষা</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/56'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/56'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বোর্ড/বিশ্ববিদ্যালয় ভর্তি</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/57'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/57'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বোর্ড/বিশ্ববিদ্যালয় নবায়ন</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/58'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/58'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>পরীক্ষা (আভ্যন্তরীন)</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/59'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/59'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বিদ্যুৎ</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/60'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/60'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>লাইব্রেরী</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/61'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/61'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বিজ্ঞানাগার</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/62'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/62'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>মিলনায়তন</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/63'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/63'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বার্ষিক অনুষ্ঠান ও ক্রীড়া সাংস্কৃতি</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/64'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/64'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ধর্মীয় অনুষ্ঠান</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/66'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/66'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ডাক/টেলি</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/67'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/67'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>নিয়োগ</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/69'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/69'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বিল্ডিং</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/72'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/72'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>পৌর কর</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/73'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/73'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>দরিদ্র তহবিল</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/76'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/76'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>প্রিন্টিং ও ষ্টেশনারী</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/77'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/77'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>জমি ক্রয়/ভূমি কর আইন বিষয়ে</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/78'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/78'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>পরিদর্শন ও নিরীক্ষা</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/80'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/80'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>শিক্ষা সফর</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/81'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/81'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>যাতায়াত</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/83'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/83'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>সংরক্ষণ/মেরামত</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/84'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/84'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ব্যাংক চার্জ</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/85'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/85'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>মডেল টেস্ট পরীক্ষা</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/86'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/86'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>টিউটোরিয়াল পরীক্ষা</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/87'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/87'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>বিবিধ</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/88'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/88'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>সংরক্ষিত এফডিআর</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/89'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/89'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>হল ভাড়া</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/90'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/90'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>পুরাতন লোহা বিক্রি</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/91'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/91'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>Examination Fee</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/92'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/92'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>Board Related Expenses</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/93'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/93'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>সাময়িক ঋণ আদায়</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/94'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/94'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>সাময়িক ঋণ প্রদান</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/95'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/95'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>সাধারণ তহবিল (NBL)</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/96'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/96'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>সাধারণ তহবিল (NBL)</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/97'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/97'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>সাময়িক ঋণ তহবিল (NBL)</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/98'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/98'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>সাময়িক ঋণ তহবিল (NBL)</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/99'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/99'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ভর্তি হিসাব (NBL)</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/100'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/100'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ভর্তি হিসাব (NBL)</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/101'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/101'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ভর্তুকি তহবিল (AB)</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/102'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/102'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ভর্তুকি তহবিল (AB)</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/103'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/103'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>সংরক্ষিত তহবিল (FSIB)</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/108'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/108'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>সংরক্ষিত তহবিল (FSIB)</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/109'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/109'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>নগদ</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/112'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/112'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>নগদ</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/113'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/113'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>স্কাউট হিসাব (MBL)</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/114'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/114'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>স্কাউট হিসাব (MBL)</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/115'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/115'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ল্যাপটপ ঋণ আদায় </td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/116'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/116'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>ল্যাপটপ ঋণ প্রদান</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/117'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/117'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>School Fees</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/121'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/121'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>Play Material</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/122'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/122'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>hamro </td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/127'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/127'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>student fee</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/129'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/129'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>Trending Ghost</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/130'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/130'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>E-MEJA INVESTMENT COOPERATION</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/131'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/131'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>sher</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/132'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/132'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>Examination Fee</td>
+                                        <td>Expence</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/133'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/133'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                
+                                    <tr>
+                                        <td>BARD</td>
+                                        <td>Income</td>
+
+
+                                        <td>
+                                            <a title='Edit' class='btn btn-info' href='http://school.hrshadhin.me/accounting/sectoredit/135'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='http://school.hrshadhin.me/accounting/sectordelete/135'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
+                                        </td>
+                                                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+            <!-- content ends -->
+        </div><!--/#content.col-md-0-->
+    </div><!--/fluid-row-->
+    <div class="row">
+        <div class="col-md-9 col-lg-9 col-xs-9 hidden-xs">
+
+
+
+        </div>
+
+    </div>
+
+<!-- footer content -->
+  <footer class="footer">
+         <hr>
+        <p class="col-md-3 col-sm-3 col-xs-12 copyright"> <a href="#" target="_blank">HR Model High School</a> &copy;2018</p>
+        <p class="col-md-9 col-sm-9 col-xs-12 powered-by">
+         <!-- Don't remove below text. Its againts copy right laws. -->
+         <strong>School Management System Version 1.0 - a291233</strong> || Developed by <a class="cplink" href="http://shanixlab.com">ShanixLab</a>
+        </p> 
+  </footer>
+  <!-- /footer content -->
+</div>
+</div>
+</div><!--/.fluid-container-->
+
+<!-- external javascript -->
+
+<script src="http://school.hrshadhin.me/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- library for cookie management -->
+<script src="http://school.hrshadhin.me/js/jquery.cookie.js"></script>
+<!-- calender plugin -->
+<script src='http://school.hrshadhin.me/bower_components/moment/min/moment.min.js'></script>
+<script src='http://school.hrshadhin.me/bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+<!-- data table plugin -->
+<script src='http://school.hrshadhin.me/bower_components/datatables/media/js/jquery.dataTables.js'></script>
+
+<!-- select or dropdown enhancer -->
+<script src="http://school.hrshadhin.me/bower_components/chosen/chosen.jquery.min.js"></script>
+<!-- plugin for gallery image view -->
+<script src="http://school.hrshadhin.me/bower_components/colorbox/jquery.colorbox-min.js"></script>
+<!-- notification plugin -->
+<script src="http://school.hrshadhin.me/js/jquery.noty.js"></script>
+<!-- library for making tables responsive -->
+<script src="http://school.hrshadhin.me/bower_components/responsive-tables/responsive-tables.js"></script>
+
+<!-- star rating plugin -->
+<script src="http://school.hrshadhin.me/js/jquery.raty.min.js"></script>
+<!-- for iOS style toggle switch -->
+<script src="http://school.hrshadhin.me/js/jquery.iphone.toggle.js"></script>
+<!-- autogrowing textarea plugin -->
+<script src="http://school.hrshadhin.me/js/jquery.autogrow-textarea.js"></script>
+<!-- multiple file upload plugin -->
+
+<script src="http://school.hrshadhin.me/js/jquery.history.js"></script>
+<!-- application script for Charisma demo -->
+<script src="http://school.hrshadhin.me/js/charisma.js"></script>
+
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $('#sectorList').dataTable();
+        });
+    </script>
+
+</body>
+</html>

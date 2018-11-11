@@ -1,0 +1,2746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+        ===
+        This comment should NOT be removed.
+
+        Charisma v2.0.0
+
+        Copyright 2012-2014 Muhammad Usman
+        Licensed under the Apache License v2.0
+        http://www.apache.org/licenses/LICENSE-2.0
+
+        http://usman.it
+        http://twitter.com/halalit_usman
+        ===
+    -->
+    <meta charset="utf-8">
+    <title>HMHS | School Manage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- The styles -->
+    <link id="bs-css" href="http://school.hrshadhin.me/css/bootstrap-cerulean.min.css" rel="stylesheet">
+
+    <link href="http://school.hrshadhin.me/css/charisma-app.css" rel="stylesheet">
+    <link href='http://school.hrshadhin.me/bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
+    <link href='http://school.hrshadhin.me/bower_components/chosen/chosen.min.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
+
+    <link href='  http://school.hrshadhin.me/bower_components/datatables/media/css/jquery.dataTables.css' rel='stylesheet'>
+
+    <link href='http://school.hrshadhin.me/bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
+
+    <link href='http://school.hrshadhin.me/css/jquery.noty.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/noty_theme_default.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/elfinder.min.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/elfinder.theme.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/uploadify.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/animate.min.css' rel='stylesheet'>
+    <link href='http://school.hrshadhin.me/css/app.css' rel='stylesheet'>
+
+        <link href="http://school.hrshadhin.me/css/bootstrap-datepicker.css" rel="stylesheet">
+    <style media="screen">
+   body {
+       color: #154d88;
+       background: rgba(233, 237, 241, 0.27);
+       font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+       font-size: 13px;
+       font-weight: 400;
+       line-height: 1.471;
+   }
+   </style>
+    <!-- jQuery -->
+    <script src="http://school.hrshadhin.me/bower_components/jquery/jquery.min.js"></script>
+
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- The fav icon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <script>
+      var hash = 'a291233';
+    </script>
+
+</head>
+
+<body>
+<!-- topbar starts -->
+<div class="navbar navbar-default" role="navigation">
+
+    <div class="navbar-inner">
+        <button type="button" class="navbar-toggle pull-left animated flip">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <span class="iname">HR Model High School</span>
+
+        <!-- user dropdown starts -->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> Mr. Admin</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+                <li class="divider"></li>
+                <li><a href="/users/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+            </ul>
+        </div>
+        <!-- Addmission dropdown starts -->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                <i class="glyphicon glyphicon-th-large"></i><span class=""> Admission</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> Applicant List</a></li>
+                <li class="divider"></li>
+                <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> Online Registration</a></li>
+                <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> Print  Admitcard</a></li>
+
+
+
+
+
+            </ul>
+        </div>
+        <!-- admission dropdown ends -->
+
+
+
+        <!-- Library dropdown starts -->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                <i class="glyphicon glyphicon-book"></i><span class=""> Library</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+
+                <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> Book Search</a></li>
+                <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> Borrow Book</a></li>
+                <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> Borrowd Book List</a></li>
+                <li class="divider"></li>
+                    <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> Book List</a></li>
+                    <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> Book Entry</a></li>
+                    <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> Reports</a></li>
+                    <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> Monthly Fine Reports</a></li>
+
+
+            </ul>
+        </div>
+        <!-- Library dropdown ends -->
+        <!-- Dormitory dropdown starts -->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                <i class="glyphicon glyphicon-home"></i><span class=""> Dormitory</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+
+                <li><a href="/dormitory"><i class="glyphicon glyphicon-home"></i> Dormitory</a></li>
+                <li><a href="/dormitory/assignstd"><i class="glyphicon glyphicon-plus"></i> Assign Student</a></li>
+                <li><a href="/dormitory/assignstd/list"><i class="glyphicon glyphicon-user"></i> Student List</a></li>
+                <li class="divider"></li>
+                    <li><a href="/dormitory/fee"><i class="glyphicon glyphicon-list"></i> Fee Collection</a></li>
+                    <li><a href="/dormitory/report/std"><i class="glyphicon glyphicon-print"></i> Dormitory Report</a></li>
+                    <li><a href="/dormitory/report/fee"><i class="glyphicon glyphicon-print"></i> Fee Reports</a></li>
+
+            </ul>
+        </div>
+        <!-- Dormitory dropdown ends -->
+        <!-- fees dropdown starts-->
+        <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                <i class="glyphicon glyphicon-list-alt"></i><span class=""> Fees</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> Student Fees</a></li>
+                <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> Fees Collection</a></li>
+
+                <li class="divider"></li>
+                <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> Fees List</a></li>
+                <li><a href="/fees/setup"><i class="glyphicon glyphicon-cog"></i> Fees Setup</a></li>
+                <li class="divider"></li>
+                <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> Fee Collection Report</a></li>
+
+            </ul>
+        </div>
+        <!-- fees dropdown ends -->
+      <!-- teacher dropdown starts-->
+       <!-- <div class="btn-group pull-right">
+            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                <i class="glyphicon glyphicon-user"></i><span class=""> Employee</span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="/teacher/create"><i class="glyphicon glyphicon-plus"></i> Add New</a></li>
+                <li><a href="/teacher/list"><i class="glyphicon glyphicon-list-alt"></i> List</a></li>
+                <li class="divider"></li>
+                <li><a href="/leaves/create"><i class="glyphicon glyphicon-plus"></i> Add New Leave</a></li>
+                <li><a href="/leaves"><i class="glyphicon glyphicon-list-alt"></i> Leave List</a></li>
+                <li class="divider"></li>
+                <li><a href="/workoutside/create"><i class="glyphicon glyphicon-plus"></i> Add New Work Outside</a></li>
+                <li><a href="/workoutside"><i class="glyphicon glyphicon-list-alt"></i> Work Outside List</a></li>
+                <li class="divider"></li>
+                                <li><a href="/teacher-attendance/list"><i class="glyphicon glyphicon-list-alt"></i> Attendance List</a></li>
+                <li><a href="/teacher-attendance/absenteeism-report"><i class="glyphicon glyphicon-print"></i> Absenteeism Report</a></li>
+                <li><a href="/teacher-attendance/monthly-report"><i class="glyphicon glyphicon-print"></i> Monthly Attendance Report</a></li>
+                <li><a href="/teacher-attendance/monthly-report-2"><i class="glyphicon glyphicon-print"></i> Monthly Attendance Report Two</a></li>
+
+            </ul>
+        </div> -->
+        <!-- teacher dropdown ends -->
+
+    </div>
+</div>
+<!-- topbar ends -->
+<div class="ch-container">
+    <div class="row">
+
+        <!-- left menu starts -->
+        <div class="col-sm-2 col-lg-2">
+            <div class="sidebar-nav">
+                <div class="nav-canvas">
+                    <div class="nav-sm nav nav-stacked">
+
+                    </div>
+                    <ul class="nav nav-pills nav-stacked main-menu">
+                        <li class="nav-header">Main</li>
+                        <li><a class="ajax-link" href="/dashboard"><i class="glyphicon glyphicon-th-large"></i><span> Dashboard</span></a>
+                        </li>
+
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-home"></i><span> Class</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/class/create">Add New</a></li>
+                                <li><a href="/class/list">Class List</a></li>
+                            </ul>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-book"></i><span> Subject</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/subject/create">Add New</a></li>
+                                <li><a href="/subject/list">Subject List</a></li>
+                            </ul>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> Student</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/student/create">Add New</a></li>
+                                <li><a href="/student/list">Student List</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> Attendance</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/attendance/create-file">Add from file</a></li>
+                                <li><a href="/attendance/create">Add</a></li>
+                                <li><a href="/attendance/list">View</a></li>
+
+
+                            </ul>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> Mark Manage</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/mark/create">Add New</a></li>
+                                <li><a href="/mark/list">Marks List</a></li>
+                            </ul>
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> Result</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/result/generate">Generate</a></li>
+                                <li><a href="/result/search">Search</a></li>
+                                <li><a href="/results">Search Public</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="">
+                            <a href="/promotion"><i class="glyphicon glyphicon-arrow-up"></i><span> Promotion</span></a>
+
+                        </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list-alt"></i><span> Accounting</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/accounting/sectors">Sectors</a></li>
+                                <li><a href="/accounting/income">Add Income</a></li>
+                                <li><a href="/accounting/incomelist">View Income</a></li>
+                                <li><a href="/accounting/expence">Add Expence</a></li>
+                                <li><a href="/accounting/expencelist">View Expence</a></li>
+
+                            </ul>
+                        </li>
+                       <li class="accordion">
+
+                          <a href="#"><i class="glyphicon glyphicon-envelope"></i><span> SMS</span></a>
+                          <ul class="nav nav-pills nav-stacked">
+                              <li><a href="/sms">SMS Formats</a></li>
+                              <li><a href="/sms-bulk">Send Bulk SMS</a></li>
+                              <li><a href="/smslog">SMS Log</a></li>
+
+                          </ul>
+                      </li>
+                        <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-print"></i><span> Reports</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/gradesheet">Marksheet</a></li>
+                                <li><a href="/attendance/report">Attendance</a></li>
+                                <li><a href="/attendance/monthly-report">Monthly Attendance</a></li>
+                                <li><a href="/tabulation">Tabulationsheet</a></li>
+                                <li><a href="/accounting/report">Account By Type</a></li>
+                                <li><a href="/accounting/reportsum">Account Balance</a></li>
+                                 <li><a href="/barcode">Barcode Generate</a></li>
+
+
+                            </ul>
+                        </li>
+                                                <li class="accordion">
+                            <a href="#"><i class="glyphicon glyphicon-cog"></i><span> Settings</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/gpa">GPA Ruels</a></li>
+
+                                <li><a href="/users">Users</a></li>
+                                <li><a href="/holidays">Holidays</a></li>
+                                <li><a href="/class-off">Class Off Days</a></li>
+                                <li><a href="/institute">Institute</a></li>
+
+                            </ul>
+                        </li>
+                                              </ul>
+
+                </div>
+            </div>
+        </div>
+        <!--/span-->
+        <!-- left menu ends -->
+
+        <noscript>
+            <div class="alert alert-block col-md-12">
+                <h4 class="alert-heading">Warning!</h4>
+
+                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                    enabled to use this site.</p>
+            </div>
+        </noscript>
+
+        <div id="content" class="col-lg-10 col-sm-10">
+            <!-- content starts -->
+                        
+
+                    <div class="row">
+        <div class="box col-md-12">
+            <div class="box-inner">
+                <div data-original-title="" class="box-header well">
+                    <h2><i class="glyphicon glyphicon-user"></i> Expence Entry Form</h2>
+
+                </div>
+                <div class="box-content">
+                    
+                        <form role="form" action="/accounting/expencecreate" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="46EXQP4v4uCDFIzoSrAZVutOwdVjCa01tqbFE1fp">
+                                                                                    <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[48]" value="বেতন ভাতা (প্রাতিষ্ঠানিক) " readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[48]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[48]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[48]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[49]" value="ভবিষ্যৎ তহবিল" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[49]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[49]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[49]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[51]" value="বাড়ি ভাতা ও ইনক্রিমেন্ট" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[51]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[51]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[51]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[52]" value="Tuition Fee" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[52]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[52]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[52]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[53]" value="ছাত্রী ভর্তি ব্যবস্থাপনা" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[53]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[53]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[53]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[56]" value="বোর্ড/বিশ্ববিদ্যালয় পরীক্ষা" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[56]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[56]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[56]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[57]" value="বোর্ড/বিশ্ববিদ্যালয় ভর্তি" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[57]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[57]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[57]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[58]" value="বোর্ড/বিশ্ববিদ্যালয় নবায়ন" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[58]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[58]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[58]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[59]" value="পরীক্ষা (আভ্যন্তরীন)" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[59]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[59]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[59]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[60]" value="বিদ্যুৎ" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[60]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[60]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[60]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[61]" value="লাইব্রেরী" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[61]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[61]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[61]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[62]" value="বিজ্ঞানাগার" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[62]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[62]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[62]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[63]" value="মিলনায়তন" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[63]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[63]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[63]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[64]" value="বার্ষিক অনুষ্ঠান ও ক্রীড়া সাংস্কৃতি" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[64]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[64]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[64]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[66]" value="ধর্মীয় অনুষ্ঠান" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[66]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[66]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[66]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[67]" value="ডাক/টেলি" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[67]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[67]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[67]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[69]" value="নিয়োগ" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[69]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[69]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[69]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[72]" value="বিল্ডিং" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[72]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[72]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[72]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[73]" value="পৌর কর" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[73]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[73]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[73]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[76]" value="দরিদ্র তহবিল" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[76]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[76]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[76]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[77]" value="প্রিন্টিং ও ষ্টেশনারী" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[77]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[77]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[77]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[78]" value="জমি ক্রয়/ভূমি কর আইন বিষয়ে" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[78]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[78]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[78]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[80]" value="পরিদর্শন ও নিরীক্ষা" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[80]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[80]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[80]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[81]" value="শিক্ষা সফর" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[81]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[81]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[81]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[83]" value="যাতায়াত" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[83]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[83]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[83]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[84]" value="সংরক্ষণ/মেরামত" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[84]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[84]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[84]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[85]" value="ব্যাংক চার্জ" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[85]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[85]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[85]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[86]" value="মডেল টেস্ট পরীক্ষা" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[86]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[86]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[86]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[87]" value="টিউটোরিয়াল পরীক্ষা" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[87]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[87]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[87]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[88]" value="বিবিধ" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[88]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[88]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[88]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[89]" value="সংরক্ষিত এফডিআর" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[89]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[89]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[89]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[93]" value="Board Related Expenses" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[93]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[93]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[93]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[95]" value="সাময়িক ঋণ প্রদান" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[95]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[95]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[95]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[97]" value="সাধারণ তহবিল (NBL)" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[97]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[97]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[97]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[99]" value="সাময়িক ঋণ তহবিল (NBL)" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[99]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[99]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[99]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[101]" value="ভর্তি হিসাব (NBL)" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[101]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[101]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[101]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[103]" value="ভর্তুকি তহবিল (AB)" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[103]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[103]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[103]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[109]" value="সংরক্ষিত তহবিল (FSIB)" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[109]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[109]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[109]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[113]" value="নগদ" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[113]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[113]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[113]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[115]" value="স্কাউট হিসাব (MBL)" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[115]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[115]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[115]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[117]" value="ল্যাপটপ ঋণ প্রদান" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[117]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[117]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[117]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[122]" value="Play Material" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[122]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[122]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[122]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[127]" value="hamro " readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[127]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[127]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[127]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[131]" value="E-MEJA INVESTMENT COOPERATION" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[131]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[131]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[131]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[132]" value="sher" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[132]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[132]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[132]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                        <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="gpa">Sector Name</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control" required name="name[133]" value="Examination Fee" readonly="true" placeholder="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label class="control-label" for="type">Amount</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                <input type="text" class="form-control"  name="amount[133]"   placeholder="0.00">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group ">
+                                            <label for="dob">Date</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text"   class="form-control datepicker" name="date[133]"   data-date-format="dd/mm/yyyy">
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="control-label" for="description">Description</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                <textarea class="form-control"  name="description[133]"></textarea>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <button class="btn btn-primary pull-right" type="submit"><i class="glyphicon glyphicon-plus"></i>Save</button>
+
+                                                   </form>
+                        <br>  <br>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+            <!-- content ends -->
+        </div><!--/#content.col-md-0-->
+    </div><!--/fluid-row-->
+    <div class="row">
+        <div class="col-md-9 col-lg-9 col-xs-9 hidden-xs">
+
+
+
+        </div>
+
+    </div>
+
+<!-- footer content -->
+  <footer class="footer">
+         <hr>
+        <p class="col-md-3 col-sm-3 col-xs-12 copyright"> <a href="#" target="_blank">HR Model High School</a> &copy;2018</p>
+        <p class="col-md-9 col-sm-9 col-xs-12 powered-by">
+         <!-- Don't remove below text. Its againts copy right laws. -->
+         <strong>School Management System Version 1.0 - a291233</strong> || Developed by <a class="cplink" href="http://shanixlab.com">ShanixLab</a>
+        </p> 
+  </footer>
+  <!-- /footer content -->
+</div>
+</div>
+</div><!--/.fluid-container-->
+
+<!-- external javascript -->
+
+<script src="http://school.hrshadhin.me/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- library for cookie management -->
+<script src="http://school.hrshadhin.me/js/jquery.cookie.js"></script>
+<!-- calender plugin -->
+<script src='http://school.hrshadhin.me/bower_components/moment/min/moment.min.js'></script>
+<script src='http://school.hrshadhin.me/bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+<!-- data table plugin -->
+<script src='http://school.hrshadhin.me/bower_components/datatables/media/js/jquery.dataTables.js'></script>
+
+<!-- select or dropdown enhancer -->
+<script src="http://school.hrshadhin.me/bower_components/chosen/chosen.jquery.min.js"></script>
+<!-- plugin for gallery image view -->
+<script src="http://school.hrshadhin.me/bower_components/colorbox/jquery.colorbox-min.js"></script>
+<!-- notification plugin -->
+<script src="http://school.hrshadhin.me/js/jquery.noty.js"></script>
+<!-- library for making tables responsive -->
+<script src="http://school.hrshadhin.me/bower_components/responsive-tables/responsive-tables.js"></script>
+
+<!-- star rating plugin -->
+<script src="http://school.hrshadhin.me/js/jquery.raty.min.js"></script>
+<!-- for iOS style toggle switch -->
+<script src="http://school.hrshadhin.me/js/jquery.iphone.toggle.js"></script>
+<!-- autogrowing textarea plugin -->
+<script src="http://school.hrshadhin.me/js/jquery.autogrow-textarea.js"></script>
+<!-- multiple file upload plugin -->
+
+<script src="http://school.hrshadhin.me/js/jquery.history.js"></script>
+<!-- application script for Charisma demo -->
+<script src="http://school.hrshadhin.me/js/charisma.js"></script>
+
+    <script src="http://school.hrshadhin.me/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+
+        $( document ).ready(function() {
+
+            $('.datepicker').datepicker({autoclose:true,todayHighlight:true});
+
+        });
+
+    </script>
+
+</body>
+</html>
