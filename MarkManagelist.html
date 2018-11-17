@@ -16,7 +16,7 @@
         ===
     -->
     <meta charset="utf-8">
-    <title>校园管家</title>
+    <title>成绩查询</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -82,7 +82,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <span class="iname">HR Model High School</span>
+        <span class="iname">学生信息管理</span>
 
         <!-- user dropdown starts -->
         <div class="btn-group pull-right">
@@ -133,10 +133,10 @@
                 <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> 借书</a></li>
                 <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> 已借出书单</a></li>
                 <li class="divider"></li>
-                    <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 书籍列表</a></li>
-                    <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 图书记录</a></li>
-                    <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> 书籍报告</a></li>
-                    <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> 月度罚款记录</a></li>
+                <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 书籍列表</a></li>
+                <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 图书记录</a></li>
+                <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> Reports</a></li>
+                <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> 月度罚款记录</a></li>
 
 
             </ul>
@@ -155,9 +155,9 @@
                 <li><a href="/dormitory/assignstd"><i class="glyphicon glyphicon-plus"></i> 添加学生</a></li>
                 <li><a href="/dormitory/assignstd/list"><i class="glyphicon glyphicon-user"></i> 学生列表</a></li>
                 <li class="divider"></li>
-                    <li><a href="/dormitory/fee"><i class="glyphicon glyphicon-list"></i> 住宿费用</a></li>
-                    <li><a href="/dormitory/report/std"><i class="glyphicon glyphicon-print"></i> 宿舍情况报告</a></li>
-                    <li><a href="/dormitory/report/fee"><i class="glyphicon glyphicon-print"></i> 费用报单</a></li>
+                <li><a href="/dormitory/fee"><i class="glyphicon glyphicon-list"></i> 住宿费用</a></li>
+                <li><a href="/dormitory/report/std"><i class="glyphicon glyphicon-print"></i> 宿舍情况报告</a></li>
+                <li><a href="/dormitory/report/fee"><i class="glyphicon glyphicon-print"></i> 费用报单</a></li>
 
             </ul>
         </div>
@@ -182,30 +182,28 @@
             </ul>
         </div>
         <!-- fees dropdown ends -->
-      <!-- teacher dropdown starts-->
-       <!-- <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                <i class="glyphicon glyphicon-user"></i><span class=""> Employee</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/teacher/create"><i class="glyphicon glyphicon-plus"></i> 新增</a></li>
-                <li><a href="/teacher/list"><i class="glyphicon glyphicon-list-alt"></i> List</a></li>
-                <li class="divider"></li>
-                <li><a href="/leaves/create"><i class="glyphicon glyphicon-plus"></i> 新增 Leave</a></li>
-                <li><a href="/leaves"><i class="glyphicon glyphicon-list-alt"></i> Leave List</a></li>
-                <li class="divider"></li>
-                <li><a href="/workoutside/create"><i class="glyphicon glyphicon-plus"></i> 新增 Work Outside</a></li>
-                <li><a href="/workoutside"><i class="glyphicon glyphicon-list-alt"></i> Work Outside List</a></li>
-                <li class="divider"></li>
-                                <li><a href="/teacher-attendance/list"><i class="glyphicon glyphicon-list-alt"></i> Attendance List</a></li>
-                <li><a href="/teacher-attendance/absenteeism-report"><i class="glyphicon glyphicon-print"></i> Absenteeism Report</a></li>
-                <li><a href="/teacher-attendance/monthly-report"><i class="glyphicon glyphicon-print"></i> 月度考勤情况 Report</a></li>
-                <li><a href="/teacher-attendance/monthly-report-2"><i class="glyphicon glyphicon-print"></i> 月度考勤情况 Report Two</a></li>
-
-            </ul>
-        </div> -->
+        <!-- teacher dropdown starts-->
+        <!-- <div class="btn-group pull-right">
+             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                 <i class="glyphicon glyphicon-user"></i><span class=""> Employee</span>
+                 <span class="caret"></span>
+             </button>
+             <ul class="dropdown-menu">
+                 <li><a href="/teacher/create"><i class="glyphicon glyphicon-plus"></i> 新增</a></li>
+                 <li><a href="/teacher/list"><i class="glyphicon glyphicon-list-alt"></i> List</a></li>
+                 <li class="divider"></li>
+                 <li><a href="/leaves/create"><i class="glyphicon glyphicon-plus"></i> 新增 Leave</a></li>
+                 <li><a href="/leaves"><i class="glyphicon glyphicon-list-alt"></i> Leave List</a></li>
+                 <li class="divider"></li>
+                 <li><a href="/workoutside/create"><i class="glyphicon glyphicon-plus"></i> 新增 Work Outside</a></li>
+                 <li><a href="/workoutside"><i class="glyphicon glyphicon-list-alt"></i> Work Outside List</a></li>
+                 <li class="divider"></li>
+                                 <li><a href="/teacher-attendance/list"><i class="glyphicon glyphicon-list-alt"></i> Attendance List</a></li>
+                 <li><a href="/teacher-attendance/absenteeism-report"><i class="glyphicon glyphicon-print"></i> Absenteeism Report</a></li>
+                 <li><a href="/teacher-attendance/monthly-report"><i class="glyphicon glyphicon-print"></i> 月度考勤情况 Report</a></li>
+                 <li><a href="/teacher-attendance/monthly-report-2"><i class="glyphicon glyphicon-print"></i> 月度考勤情况 Report Two</a></li>
+             </ul>
+         </div> -->
         <!-- teacher dropdown ends -->
 
     </div>
@@ -289,16 +287,16 @@
 
                             </ul>
                         </li>
-                       <li class="accordion">
+                        <li class="accordion">
 
-                          <a href="#"><i class="glyphicon glyphicon-envelope"></i><span> 邮件中心</span></a>
-                          <ul class="nav nav-pills nav-stacked">
-                              <li><a href="/sms">邮件格式</a></li>
-                              <li><a href="/sms-bulk">批量发送</a></li>
-                              <li><a href="/smslog">邮件日志</a></li>
+                            <a href="#"><i class="glyphicon glyphicon-envelope"></i><span> 邮件中心</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="/sms">邮件格式</a></li>
+                                <li><a href="/sms-bulk">批量发送</a></li>
+                                <li><a href="/smslog">邮件日志</a></li>
 
-                          </ul>
-                      </li>
+                            </ul>
+                        </li>
                         <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
                             <ul class="nav nav-pills nav-stacked">
@@ -308,12 +306,12 @@
                                 <li><a href="/tabulation">表单制作</a></li>
                                 <li><a href="/accounting/report">收支类型</a></li>
                                 <li><a href="/accounting/reportsum">收支平衡状况</a></li>
-                                 <li><a href="/barcode">条形码生成</a></li>
+                                <li><a href="/barcode">条形码生成</a></li>
 
 
                             </ul>
                         </li>
-                                                <li class="accordion">
+                        <li class="accordion">
                             <a href="#"><i class="glyphicon glyphicon-cog"></i><span> 设置</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="/gpa">绩点规则</a></li>
@@ -325,7 +323,7 @@
 
                             </ul>
                         </li>
-                                              </ul>
+                    </ul>
 
                 </div>
             </div>
@@ -344,17 +342,17 @@
 
         <div id="content" class="col-lg-10 col-sm-10">
             <!-- content starts -->
-                        
+
 
             <div class="row">
 <div class="box col-md-12">
         <div class="box-inner">
             <div data-original-title="" class="box-header well">
-                <h2><i class="glyphicon glyphicon-book"></i> 成绩列表</h2>
+                <h2><i class="glyphicon glyphicon-book"></i> 成绩单 </h2>
 
             </div>
             <div class="box-content">
-              
+
               <form role="form" action="/mark/list" method="post" enctype="multipart/form-data">
                    <input type="hidden" name="_token" value="84WDdhwpXfs6qfS0p3s1CRDb4dLlLvkHggoyPbtH">
                              <div class="row">
@@ -362,30 +360,38 @@
 
                                <div class="col-md-4">
                                  <div class="form-group">
-                                 <label class="control-label" for="class">班级</label>
+                                 <label class="control-label" for="class">课程</label>
 
                                  <div class="input-group">
                                      <span class="input-group-addon"><i class="glyphicon glyphicon-home blue"></i></span>
-                                     
+
 
                                          <select id="class" id="class" name="class" required="true" class="form-control" >
-                                             <option value="" >--选择班级--</option>
-                                                                                              <option value="cl1">class 1</option>
-                                                                                              <option value="cl23">sadad</option>
-                                                                                              <option value="cl5">2</option>
-                                                                                              <option value="cl50">I</option>
-                                             
+                                             <option value="" >--选择课程--</option>
+                                             <option value="cl1">高等数学（上）</option>
+                                             <option value="cl1">高等数学（下）</option>
+                                             <option value="cl23">大学物理</option>
+                                             <option value="cl5">面向对象程序设计</option>
+                                             <option value="cl50">离散数学</option>
+
                                          </select>
                                                                       </div>
                              </div>
                                </div>
                                  <div class="col-md-4">
                                    <div class="form-group">
-                                   <label class="control-label" for="section">分部</label>
+                                   <label class="control-label" for="section">课程章节</label>
 
                                    <div class="input-group">
-                                       <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                                                <select class="form-control" required="true" name="section"><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="E">E</option><option value="F">F</option><option value="G">G</option><option value="H">H</option><option value="I">I</option><option value="J">J</option></select>
+                                       <span class="input-group-addon">
+                                           <i class="glyphicon glyphicon-info-sign blue"></i>
+                                       </span>
+                                       <select class="form-control" required="true" name="section">
+                                           <option value="">--选择课程章节--</option>
+                                           <option value="上">上</option>
+                                           <option value="下">下</option>
+
+                                       </select>
 
 
                                    </div>
@@ -394,16 +400,22 @@
 
                                    <div class="col-md-4">
                                      <div class="form-group">
-                                     <label class="control-label" for="shift">班次</label>
+                                     <label class="control-label" for="shift">课程时间</label>
 
                                      <div class="input-group">
-                                         <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                                                    <select class="form-control" required="true" name="shift"><option value="Day">Day</option><option value="Morning">Morning</option></select>
-
-
+                                         <span class="input-group-addon">
+                                             <i class="glyphicon glyphicon-info-sign blue"></i>
+                                         </span>
+                                         <select class="form-control" required="true" name="shift">
+                                             <option value="">--选择上课时间--</option>
+                                             <option value="Morning">上午</option>
+                                             <option value="Afternoon">下午</option>
+                                             <option value="Night">晚上</option>
+                                         </select>
                                      </div>
+
                                    </div>
-                                     </div>
+                                   </div>
 
                              </div>
                            </div>
@@ -411,7 +423,7 @@
                            <div class="col-md-12">
                              <div class="col-md-4">
                                <div class="form-group ">
-                                                <label for="session">学年</label>
+                                                <label for="session">选择学期</label>
                                                     <div class="input-group">
 
                                                      <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
@@ -419,28 +431,33 @@
                                                    </div>
                                             </div>
                                </div>
+                               <!--<div class="col-md-4">-->
+                                 <!--<div class="form-group">-->
+                                 <!--<label class="control-label" for="subject">subject</label>-->
+
+                                 <!--<div class="input-group">-->
+                                     <!--<span class="input-group-addon"><i class="glyphicon glyphicon-book blue"></i></span>-->
+                                                                              <!--<select id="subject" id="subject" name="subject" required="true" class="form-control" >-->
+                                             <!--<option value="">&#45;&#45;Select Subjects&#45;&#45;</option>-->
+
+                                         <!--</select>-->
+                                                                      <!--</div>-->
+                             <!--</div>-->
+                               <!--</div>-->
                                <div class="col-md-4">
                                  <div class="form-group">
-                                 <label class="control-label" for="subject">学科</label>
+                                 <label class="control-label" for="exam">测试</label>
 
                                  <div class="input-group">
-                                     <span class="input-group-addon"><i class="glyphicon glyphicon-book blue"></i></span>
-                                                                              <select id="subject" id="subject" name="subject" required="true" class="form-control" >
-                                             <option value="">--选择学科--</option>
-
-                                         </select>
-                                                                      </div>
-                             </div>
-                               </div>
-                               <div class="col-md-4">
-                                 <div class="form-group">
-                                 <label class="control-label" for="exam">考试</label>
-
-                                 <div class="input-group">
-                                     <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                                            <select class="form-control" required="true" name="exam"><option value="Class Test">班级测试</option><option value="Model Test">模拟测试</option><option value="期初">期初考试</option><option value="期中">期中考试</option><option value="Final Exam">期末考试</option></select>
-
-
+                                     <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue">
+                                     </i>
+                                     </span>
+                                     <select class="form-control" required="true" name="exam">
+                                         <option value="Class Test">随堂测试一</option>
+                                         <option value="Model Test">模块测试一</option>
+                                         <option value="First Term">期中测试</option>
+                                         <option value="Mid Term">期末考试</option>
+                                     </select>
                                  </div>
                                </div>
                                  </div>
@@ -449,12 +466,15 @@
                          </div>
                          <div class="row">
                           <div class="col-md-12">
-                            <button class="btn btn-primary pull-right"  type="submit"><i class="glyphicon glyphicon-th"></i>获取表格</button>
+                            <button class="btn btn-primary pull-right"  type="submit">
+                                <i class="glyphicon glyphicon-th">
+
+                                </i>查询成绩</button>
 
                           </div>
                         </div>
                        </form>
-              
+
 
         </div>
     </div>
@@ -483,7 +503,7 @@
         <p class="col-md-9 col-sm-9 col-xs-12 powered-by">
          <!-- Don't remove below text. Its againts copy right laws. -->
          <strong>School Management System Version 1.0 - a291233</strong> || Developed by <a class="cplink" href="http://shanixlab.com">ShanixLab</a>
-        </p> 
+        </p>
   </footer>
   <!-- /footer content -->
 </div>
@@ -542,7 +562,7 @@
                 dataType: 'json',
                 success: function( json ) {
                     $('#subject').empty();
-                    $('#subject').append($('<option>').text("--Select 学科--").attr('value',""));
+                    $('#subject').append($('<option>').text("--Select Subject--").attr('value',""));
                     $.each(json, function(i, subject) {
                         // console.log(subject);
 
