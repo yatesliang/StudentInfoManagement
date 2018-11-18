@@ -81,7 +81,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <span class="iname">HR Model High School</span>
+        <span class="iname">基于区块链的学生管理系统</span>
 
         <!-- user dropdown starts -->
         <div class="btn-group pull-right">
@@ -100,7 +100,7 @@
         <div class="btn-group pull-right">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                <i class="glyphicon glyphicon-th-large"></i><span class=""> Admission</span>
+                <i class="glyphicon glyphicon-th-large"></i><span class=""> 通知</span>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
@@ -123,7 +123,7 @@
         <div class="btn-group pull-right">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                <i class="glyphicon glyphicon-book"></i><span class=""> Library</span>
+                <i class="glyphicon glyphicon-book"></i><span class=""> 证书</span>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
@@ -145,7 +145,7 @@
         <div class="btn-group pull-right">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                <i class="glyphicon glyphicon-home"></i><span class=""> Dormitory</span>
+                <i class="glyphicon glyphicon-home"></i><span class=""> 课程</span>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
@@ -165,7 +165,7 @@
         <div class="btn-group pull-right">
             <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                <i class="glyphicon glyphicon-list-alt"></i><span class=""> Fees</span>
+                <i class="glyphicon glyphicon-list-alt"></i><span class=""> 成绩</span>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
@@ -222,35 +222,35 @@
                     </div>
                     <ul class="nav nav-pills nav-stacked main-menu">
                         <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="/dashboard"><i class="glyphicon glyphicon-th-large"></i><span> Dashboard</span></a>
+                        <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span> 主页</span></a>
                         </li>
 
                         <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-home"></i><span> Class</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-home"></i><span> 班级</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="/class/create">Add New</a></li>
-                                <li><a href="/class/list">Class List</a></li>
+                                <li><a href="createStudent.html">新增学生</a></li>
+                                <li><a href="/class/list">班级 List</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-book"></i><span> Subject</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-book"></i><span> 科目</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="/subject/create">Add New</a></li>
-                                <li><a href="/subject/list">Subject List</a></li>
+                                <li><a href="createSubject.hyml">新增科目</a></li>
+                                <li><a href="listSubject.html">课程列表</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> Student</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="/student/create">Add New</a></li>
-                                <li><a href="/student/list">Student List</a></li>
+                                <li><a href="createStudent.html">新增</a></li>
+                                <li><a href="Studentlist.html">学生列表</a></li>
 
                             </ul>
                         </li>
                         <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> Attendance</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="/attendance/create-file">Add from file</a></li>
+                                <li><a href="create-file.html">从文件添加</a></li>
                                 <li><a href="/attendance/create">Add</a></li>
                                 <li><a href="/attendance/list">View</a></li>
 
@@ -258,14 +258,14 @@
                             </ul>
                         </li>
                         <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> Mark Manage</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="/mark/create">Add New</a></li>
                                 <li><a href="/mark/list">Marks List</a></li>
                             </ul>
                         </li>
                         <li class="accordion">
-                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> Result</span></a>
+                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 成绩</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="/result/generate">Generate</a></li>
                                 <li><a href="/result/search">Search</a></li>
@@ -273,24 +273,10 @@
 
                             </ul>
                         </li>
-                        <li class="">
-                            <a href="/promotion"><i class="glyphicon glyphicon-arrow-up"></i><span> Promotion</span></a>
 
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list-alt"></i><span> Accounting</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="/accounting/sectors">Sectors</a></li>
-                                <li><a href="/accounting/income">Add Income</a></li>
-                                <li><a href="/accounting/incomelist">View Income</a></li>
-                                <li><a href="/accounting/expence">Add Expence</a></li>
-                                <li><a href="/accounting/expencelist">View Expence</a></li>
-
-                            </ul>
-                        </li>
                        <li class="accordion">
 
-                          <a href="#"><i class="glyphicon glyphicon-envelope"></i><span> SMS</span></a>
+                          <a href="#"><i class="glyphicon glyphicon-envelope"></i><span> 通知</span></a>
                           <ul class="nav nav-pills nav-stacked">
                               <li><a href="/sms">SMS Formats</a></li>
                               <li><a href="/sms-bulk">Send Bulk SMS</a></li>
@@ -299,7 +285,7 @@
                           </ul>
                       </li>
                         <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-print"></i><span> Reports</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-print"></i><span> 打印</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="/gradesheet">Marksheet</a></li>
                                 <li><a href="/attendance/report">Attendance</a></li>
@@ -313,13 +299,13 @@
                             </ul>
                         </li>
                                                 <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-cog"></i><span> Settings</span></a>
+                            <a href="#"><i class="glyphicon glyphicon-cog"></i><span> 设置</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="/gpa">GPA Ruels</a></li>
 
                                 <li><a href="/users">Users</a></li>
                                 <li><a href="/holidays">Holidays</a></li>
-                                <li><a href="/class-off">Class Off Days</a></li>
+                                <li><a href="/class-off">班级 Off Days</a></li>
                                 <li><a href="/institute">Institute</a></li>
 
                             </ul>
@@ -349,7 +335,7 @@
 <div class="box col-md-12">
         <div class="box-inner">
             <div data-original-title="" class="box-header well">
-                <h2><i class="glyphicon glyphicon-user"></i> Student New Admission</h2>
+                <h2><i class="glyphicon glyphicon-user"></i> 注册学生</h2>
 
             </div>
           <div class="box-content">
@@ -357,7 +343,7 @@
               <input type="hidden" name="_token" value="84WDdhwpXfs6qfS0p3s1CRDb4dLlLvkHggoyPbtH">
                 <div class="row">
                   <div class="col-md-12">
-                      <h3 class="text-info"> Acdemic Details</h3>
+                      <h3 class="text-info"> 院系资料</h3>
                       <hr>
                   </div>
                 </div>
@@ -365,29 +351,24 @@
                   <div class="col-md-12">
                       <div class="col-md-4">
                           <div class="form-group">
-                              <label class="control-label" for="class">Class</label>
+                              <label class="control-label" for="class">班级</label>
 
                               <div class="input-group">
                                   <span class="input-group-addon"><i class="glyphicon glyphicon-home blue"></i></span>
-                                  <select name="class" id="class" class="form-control" required>
-                                                                                <option value="cl50">I</option>
-                                                                                <option value="cl5">2</option>
-                                                                                <option value="cl23">sadad</option>
-                                                                                <option value="cl1">class 1</option>
-                                      
-                                  </select>
+                                  <input type="text" id="class"  class="form-control" name="class" required  >
+
                               </div>
                           </div>
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
-                              <label class="control-label" for="section">Section</label>
+                              <label class="control-label" for="section">院系</label>
 
                               <div class="input-group">
                                   <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                   <select name="section" id="section" required="true" class="form-control" >
-                                      <option value="A">A</option>
-                                      <option value="B">B</option>
+                                      <option value="A">软件学院</option>
+                                      <option value="B">建筑</option>
                                       <option value="C">C</option>
                                       <option value="D">D</option>
                                       <option value="E">E</option>
@@ -405,7 +386,7 @@
                       </div>
                       <div class="col-md-4">
                           <div class="form-group ">
-                              <label for="session">session</label>
+                              <label for="session">注册学年</label>
                               <div class="input-group">
 
                                   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
@@ -423,7 +404,7 @@
                   <div class="col-md-12">
                       <div class="col-md-4">
                           <div class="form-group">
-                              <label for="regiNo">Registration No</label>
+                              <label for="regiNo">学号</label>
                               <div class="input-group">
                                   <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                   <input type="text" id="regiNo" class="form-control" required name="regiNo" value="" placeholder="">
@@ -432,21 +413,21 @@
                       </div>
                       <div class="col-md-4">
                           <div class="form-group">
-                              <label for="rollNo">Card/Roll No</label>
+                              <label for="rollNo">身份证号</label>
                               <div class="input-group">
                                   <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                  <input type="text" id="rollNo" class="form-control" required name="rollNo" placeholder="Class roll no">
+                                  <input type="text" id="rollNo" class="form-control" required name="rollNo" placeholder="身份证ID">
                               </div>
                           </div>
                       </div>
                 <div class="col-md-4">
                   <div class="form-group">
-                  <label class="control-label" for="group">Group</label>
+                  <label class="control-label" for="group">专业</label>
 
                   <div class="input-group">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                       <select name="group" class="form-control" >
-                        <option value="N/A">N/A</option>
+                        <option value="N/A">软件工程</option>
                         <option value="Science">Science</option>
                           <option value="Arts">Arts</option>
                             <option value="Commerce">Commerce</option>
@@ -465,13 +446,13 @@
               <div class="col-md-12">
                 <div class="col-md-4">
                   <div class="form-group">
-                  <label class="control-label" for="shift">Shift</label>
+                  <label class="control-label" for="shift">学籍</label>
 
                   <div class="input-group">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                       <select name="shift" required="true" class="form-control" >
-                        <option value="Day">Day</option>
-                          <option value="Morning">Morning</option>
+                        <option value="Day">本校生</option>
+                          <option value="Morning">交换生</option>
                      </select>
 
                   </div>
@@ -482,7 +463,7 @@
 
             <div class="row">
               <div class="col-md-12">
-                  <h3 class="text-info"> Student's Detail</h3>
+                  <h3 class="text-info"> 个人资料</h3>
                   <hr>
               </div>
             </div>
@@ -490,14 +471,14 @@
                   <div class="col-md-12">
                     <div class="col-md-4">
                       <div class="form-group">
-                          <label for="fname">First Name</label>
+                          <label for="fname">姓名</label>
                           <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                              <input type="text" class="form-control" required name="fname" placeholder="First Name">
+                              <input type="text" class="form-control" required name="fname" placeholder="姓名">
                           </div>
                       </div>
                     </div>
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
 
                         <div class="form-group">
                             <label for="mname">Midle Name</label>
@@ -506,8 +487,8 @@
                                 <input type="text" class="form-control"  name="mname" placeholder="Midle Name">
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
+                    </div> -->
+                    <!-- <div class="col-md-4">
                       <div class="form-group">
                           <label for="lname">Last Name</label>
                           <div class="input-group">
@@ -515,7 +496,7 @@
                               <input type="text" class="form-control" required name="lname" placeholder="Last Name">
                           </div>
                       </div>
-                      </div>
+                    </div> -->
 
                     </div>
                   </div>
@@ -523,38 +504,38 @@
                     <div class="col-md-12">
                       <div class="col-md-4">
                         <div class="form-group">
-                        <label class="control-label" for="gender">Gender</label>
+                        <label class="control-label" for="gender">性别</label>
 
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                             <select name="gender" class="form-control" required >
 
-                                <option value="Male">Male</option>
-                               <option value="Female">Female</option>
-                              <option value="Other">Other</option>
+                                <option value="Male">男</option>
+                               <option value="Female">女</option>
+                    
                             </select>
                         </div>
                       </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
-                          <label class="control-label" for="religion">Religion</label>
+                          <label class="control-label" for="religion">地区</label>
 
                           <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                               <select name="religion" class="form-control" required >
-                                    <option value="Islam">Islam</option>
-                                  <option value="Hindu">Hindu</option>
-                                  <option value="Cristian">Cristian</option>
-                                  <option value="Buddhist">Buddhist</option>
-                                  <option value="Other">Other</option>
+                                    <option value="Islam">北京</option>
+                                  <option value="Hindu">上海</option>
+                                  <option value="Cristian">重庆</option>
+                                  <option value="Buddhist">天津</option>
+                                  <option value="Other">海南</option>
                               </select>
                           </div>
                         </div>
                           </div>
                       <div class="col-md-4">
                         <div class="form-group">
-                        <label class="control-label" for="bloodgroup">Bloodgroup</label>
+                        <label class="control-label" for="bloodgroup">血型</label>
 
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
@@ -580,19 +561,20 @@
                       <div class="col-md-12">
                         <div class="col-md-4">
                           <div class="form-group">
-                              <label for="nationality">Nationality</label>
+                              <label for="nationality">国籍</label>
                               <div class="input-group">
                                   <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                  <input type="text" class="form-control" required  name="nationality" placeholder="Nationality">
-                              </div>
+                                    <select name="nationality" class="form-control" required >
+                                    <option value="China">中国</option>
+                                    <option value="Other">...</option>
+                                    </select>                             
                           </div>
                         </div>
 
                           <div class="col-md-4">
                             <div class="form-group ">
-                                             <label for="dob">Date Of Birth</label>
+                                             <label for="dob">生日</label>
                                                  <div class="input-group">
-
                                                   <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
                                                     <input type="text"   class="form-control datepicker" name="dob" required  data-date-format="dd/mm/yyyy">
                                                 </div>
@@ -603,8 +585,8 @@
 
                             <div class="col-md-4">
                               <div class="form-group ">
-                              <label for="photo">Photo</label>
-                              <input id="photo" name="photo" required type="file">
+                              <label for="photo">照片</label>
+                              <input id="photo" name="photo" type="file">
                               </div>
                             </div>
 
@@ -616,14 +598,14 @@
 
                       <div class="col-md-4">
                         <div class="form-group">
-                            <label for="extraActivity">Extra Curicular Activity </label>
+                            <label for="extraActivity">招生方式</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                <input type="text" class="form-control"  name="extraActivity" placeholder="Sport,Writing,etc">
+                                <input type="text" class="form-control"  name="extraActivity" placeholder="自主招生、校招">
                             </div>
                         </div>
                         </div>
-                        <div class="col-md-4">
+                        <!-- <div class="col-md-4">
                           <div class="form-group">
                               <label for="remarks">Remarks </label>
                               <div class="input-group">
@@ -631,7 +613,7 @@
                                   <input type="text" class="form-control"  name="remarks" placeholder="Remarks">
                               </div>
                           </div>
-                          </div>
+                          </div> -->
                       </div>
                     </div>
 
@@ -639,7 +621,7 @@
 
                       <div class="row">
                         <div class="col-md-12">
-                            <h3 class="text-info"> Guardian's Detail</h3>
+                            <h3 class="text-info"> 监护人</h3>
                             <hr>
                         </div>
                       </div>
@@ -647,28 +629,28 @@
                           <div class="col-md-12">
                         <div class="col-md-4">
                           <div class="form-group">
-                              <label for="fatherName">Father's Name </label>
+                              <label for="fatherName">父亲名字 </label>
                               <div class="input-group">
                                   <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                  <input type="text" class="form-control" required  name="fatherName" placeholder="Name">
+                                  <input type="text" class="form-control" required  name="fatherName" placeholder="名字">
                               </div>
                           </div>
                           </div>
                           <div class="col-md-4">
                             <div class="form-group">
-                                <label for="fatherCellNo">Father's Mobile No </label>
+                                <label for="fatherCellNo">联系方式 </label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                    <input type="text" class="form-control"  required name="fatherCellNo" placeholder="+8801xxxxxxxxx">
+                                    <input type="text" class="form-control"  required name="fatherCellNo" placeholder="+8613xxxxxxxxx">
                                 </div>
                             </div>
                             </div>
                             <div class="col-md-4">
                               <div class="form-group">
-                                  <label for="motherName">Mother's Name </label>
+                                  <label for="motherName">母亲名字 </label>
                                   <div class="input-group">
                                       <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                      <input type="text" class="form-control" required  name="motherName" placeholder="Name">
+                                      <input type="text" class="form-control" required  name="motherName" placeholder="名字">
                                   </div>
                               </div>
                               </div>
@@ -679,28 +661,28 @@
 
                       <div class="col-md-4">
                         <div class="form-group">
-                            <label for="motherCellNo">Mother's Mobile No </label>
+                            <label for="motherCellNo">联系方式 </label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                <input type="text" class="form-control" required name="motherCellNo" placeholder="+8801xxxxxxxxx">
+                                <input type="text" class="form-control" required name="motherCellNo" placeholder="+8601xxxxxxxxx">
                             </div>
                         </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
-                              <label for="localGuardian">Local Guardian Name </label>
+                              <label for="localGuardian">主要监护人 </label>
                               <div class="input-group">
                                   <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                  <input type="text" class="form-control"  name="localGuardian" placeholder="Name">
+                                  <input type="text" class="form-control"  name="localGuardian" placeholder="名字">
                               </div>
                           </div>
                           </div>
                           <div class="col-md-4">
                             <div class="form-group">
-                                <label for="localGuardianCell">local Guardian Mobile No </label>
+                                <label for="localGuardianCell">联系方式 </label>
                                 <div class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                    <input type="text" class="form-control"  name="localGuardianCell" placeholder="+8801xxxxxxxxx">
+                                    <input type="text" class="form-control"  name="localGuardianCell" placeholder="+8601xxxxxxxxx">
                                 </div>
                             </div>
                             </div>
@@ -708,7 +690,7 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                    <h3 class="text-info"> Address Detail</h3>
+                    <h3 class="text-info"> 详细地址</h3>
                     <hr>
                 </div>
               </div>
@@ -716,19 +698,19 @@
                 <div class="col-md-12">
                           <div class="col-md-6">
                         <div class="form-group">
-                            <label for="presentAddress">Present Address</label>
+                            <label for="presentAddress">当前地址</label>
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker blue"></i></span>
-                                <textarea type="text" class="form-control" required name="presentAddress" placeholder="Address"></textarea>
+                                <textarea type="text" class="form-control" required name="presentAddress" placeholder="当前地址"></textarea>
                             </div>
                         </div>
                         </div>
                         <div class="col-md-6">
                           <div class="form-group">
-                              <label for="parmanentAddress">Parmanent Address</label>
+                              <label for="parmanentAddress">永久地址</label>
                               <div class="input-group">
                                   <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker blue"></i></span>
-                                  <textarea type="text" class="form-control" required name="parmanentAddress" placeholder="Address"></textarea>
+                                  <textarea type="text" class="form-control" required name="parmanentAddress" placeholder="永久地址"></textarea>
                               </div>
                           </div>
                           </div>
@@ -738,7 +720,7 @@
                     <div class="clearfix"></div>
 
                                 <div class="form-group">
-                    <button class="btn btn-primary pull-right" type="submit"><i class="glyphicon glyphicon-plus"></i>Add</button>
+                    <button class="btn btn-primary pull-right" type="submit"><i class="glyphicon glyphicon-plus"></i>添加</button>
                     <br>
                   </div>
                 </form>
