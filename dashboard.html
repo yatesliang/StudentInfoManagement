@@ -243,21 +243,21 @@
                         <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span> 主页</span></a>
                         </li>
 
-                        <li class="accordion">
+                        <li class="accordion" id="index_class">
                             <a href="#"><i class="glyphicon glyphicon-home"></i><span> 班级</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="create.html">新增班级</a></li>
                                 <li><a href="list.html">班级列表</a></li>
                             </ul>
                         </li>
-                        <li class="accordion">
+                        <li class="accordion" id="index_subject">
                             <a href="#"><i class="glyphicon glyphicon-book"></i><span> 学科</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="createSubject.html">新增</a></li>
                                 <li><a href="listSubject.html">学科列表</a></li>
                             </ul>
                         </li>
-                        <li class="accordion">
+                        <li class="accordion" id="index_stu">
                             <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="createStudent.html">新增</a></li>
@@ -265,7 +265,15 @@
 
                             </ul>
                         </li>
-                        <li class="accordion">
+                        <li class="accordion" id="index_com">
+                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> 公司</span></a>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="createCompany.html">新增</a></li>
+                                <li><a href="Companylist.html">公司列表</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="accordion" id="index_record">
                             <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="create-file.html">从文件添加</a></li>
@@ -275,14 +283,15 @@
 
                             </ul>
                         </li>
-                        <li class="accordion">
+                        <li class="accordion" id="index_grade">
                             <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="createMarkManage.html">新增</a></li>
-                                <li><a href="MarkManagelist.html">成绩列表</a></li>
+                                <li><a id="create_grade" href="createMarkManage.html">新增</a></li>
+                                <li><a id="stu_grade" href="MarkManagelist.html">成绩列表</a></li>
+                                <li><a id="tea_grade" href="MarkManagelist.html">成绩列表</a></li>
                             </ul>
                         </li>
-                        <li class="accordion">
+                        <li class="accordion" id="index_verify">
                             <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="/result/generate">Generate</a></li>
@@ -306,7 +315,7 @@
 
                             </ul>
                         </li> -->
-                       <li class="accordion">
+                       <li class="accordion" id="index_email">
 
                           <a href="#"><i class="glyphicon glyphicon-envelope"></i><span> 邮件中心</span></a>
                           <ul class="nav nav-pills nav-stacked">
@@ -316,7 +325,7 @@
 
                           </ul>
                       </li>
-                        <li class="accordion">
+                        <li class="accordion" id="index_print">
                             <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="gradesheet.html">成绩表</a></li>
@@ -330,7 +339,7 @@
 
                             </ul>
                         </li>
-                                                <li class="accordion">
+                        <li class="accordion" id="index_set">
                             <a href="#"><i class="glyphicon glyphicon-cog"></i><span> 设置</span></a>
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="Setting_GPA.html">绩点规则</a></li>
@@ -481,7 +490,7 @@
 <script src="js/jquery.history.js"></script>
 <!-- application script for Charisma demo -->
 <script src="js/charisma.js"></script>
-
+<script src="js/dashboard.js"></script>
 <script src="js/Chart.min.js"></script>
 
 <script>
