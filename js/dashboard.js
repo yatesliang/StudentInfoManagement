@@ -7,36 +7,36 @@ const usertypes = {
 
 $(document).ready(function(){
 
-    var str = sessionStorage.obj;
-        if(str==null){
-            window.location.href="School Manage.html";
-        }else{
-            var obj = $.parseJSON(str);
-            // 获取用户类型
-            var usertype = obj.usertype;
+    // var str = sessionStorage.obj;
+    //     if(str==null){
+    //         window.location.href="School Manage.html";
+    //     }else{
+    //         var obj = $.parseJSON(str);
+    //         // 获取用户类型
+    //         var usertype = obj.usertype;
             
-            // if (usertype==usertypes.ADMIN)
-            switch(usertype){
-                case usertypes.ADMIN:
-                    setAdmDom();
-                    break;
+    //         // if (usertype==usertypes.ADMIN)
+    //         switch(usertype){
+    //             case usertypes.ADMIN:
+    //                 setAdmDom();
+    //                 break;
 
-                case usertypes.COMPANY:
-                    setComDom();
-                    break;
+    //             case usertypes.COMPANY:
+    //                 setComDom();
+    //                 break;
 
-                case usertypes.STUDENT:
-                    setStuDom();
-                    break;
+    //             case usertypes.STUDENT:
+    //                 setStuDom();
+    //                 break;
 
-                case usertypes.TEACHER:
-                    setTeaDom();
-                    break;
+    //             case usertypes.TEACHER:
+    //                 setTeaDom();
+    //                 break;
 
-                default:
-                    alert("illegal usertype");
-            }
-        }
+    //             default:
+    //                 alert("illegal usertype");
+    //         }
+    //     }
 });
 
 function setAdmDom(){
