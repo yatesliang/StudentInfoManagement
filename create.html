@@ -376,8 +376,30 @@
                                 <textarea type="text" class="form-control" required name="class-id" placeholder="01"></textarea>
                             </div>
                         </div>
+						<div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label" for="shift">年级</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                                                                <select class="form-control" required="true" name="shift"><option value="Day">Day</option><option value="Morning">Morning</option></select>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group ">
+                                            <label for="session">学年</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text" id="session" required="true" class="form-control datepicker2" name="session" value=""   data-date-format="yyyy">
+                                            </div>
+                                        </div>
+                                    </div>
                         <div class="form-group">
-                            <label>是否为合作项目？ <input type="checkbox"  name="combinePass" ></label>
+                            <label class="control-label" for="shift">是否为合作项目？ <input type="checkbox"  name="combinePass" ></label>
                         </div>
 
                         <div class="clearfix"></div>

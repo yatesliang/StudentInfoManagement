@@ -369,7 +369,7 @@
                             <div class="col-md-12">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="name">编码</label>
+                                        <label for="name">课程编号</label>
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
                                             <input type="text" class="form-control" autofocus required name="code" placeholder="学科编码">
@@ -392,14 +392,31 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
                                             <select name="type" class="form-control" required>
-                                                <option value="Core">核心课程</option>
-                                                <option value="Comprehensive">综合课程</option>
-                                                <option value="Electives">选修课程</option>
+                                                <option value="Core">通识必修课程</option>
+												<option value="Electives">通识选修课程</option>
+                                                <option value="Comprehensive">专业必修课程</option>
+												<option value="Comprehensive">专业选修课程</option>
+                                                
                                             </select>
                                         </div>
                                     </div>
                                 </div>
+<div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="control-label" for="type">授课语言</label>
 
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
+                                            <select name="type" class="form-control" required>
+                                                
+                                                <option value="Comprehensive">中文</option>
+												<option value="Comprehensive">英文</option>
+												<option value="Comprehensive">中英双语</option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -419,20 +436,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <label class="control-label" for="stdgroup">所属范围</label>
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
-                                            <select name="stdgroup" class="form-control" required >
-                                                <option value="Science">科学</option>
-                                                <option value="Arts">艺术</option>
-                                                <option value="Commerce">商学</option>
-
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <!-- <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="control-label" for="class">班级</label>

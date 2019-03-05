@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -345,10 +346,89 @@
                         
 
                     <div class="row">
+					
+            <div class="row">
+<div class="box col-md-12">
+        <div class="box-inner">
+            <div data-original-title="" class="box-header well">
+                <h2><i class="glyphicon glyphicon-book"></i> 选择班级</h2>
+
+            </div>
+            <div class="box-content">
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <form role="form" action="/student/list" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="84WDdhwpXfs6qfS0p3s1CRDb4dLlLvkHggoyPbtH">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label" for="class">班级名称</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home blue"></i></span>
+                                                <select class="form-control" required="true" name="class"><option value="cl50">I</option><option value="cl5">2</option><option value="cl23">sadad</option><option value="cl1">class 1</option></select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label class="control-label" for="shift">年级</label>
+
+                                            <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                                                                <select class="form-control" required="true" name="shift"><option value="Day">Day</option><option value="Morning">Morning</option></select>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group ">
+                                            <label for="session">学年</label>
+                                            <div class="input-group">
+
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
+                                                <input type="text" id="session" required="true" class="form-control datepicker2" name="session" value=""   data-date-format="yyyy">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary pull-right"  type="submit"><i class="glyphicon glyphicon-th"></i>获取学生列表</button>
+
+                                </div>
+                            </div>
+                            <br>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-md-12">
+              
+                        </div>
+                    </div>
+                       
+
+
+        </div>
+    </div>
+</div>
+</div>					
+					
         <div class="box col-md-12">
             <div class="box-inner">
                 <div data-original-title="" class="box-header well">
-                    <h2><i class="glyphicon glyphicon-home"></i> 班级列表</h2>
+                    <h2><i class="glyphicon glyphicon-home"></i> 学生列表</h2>
 
                 </div>
                 <div class="box-content">
@@ -357,8 +437,7 @@
                         <tr>
                             <th>学号</th>
                             <th>姓名</th>
-                            <th>课程</th>
-                            <th>分数</th>
+                           
                             <th>操作</th>
                         </tr>
                         </thead>
@@ -366,11 +445,7 @@
                             <tr>
                                 <td>1652660</td>
                                 <td>贺鹏程</td>
-                                <td>数字图像处理</td>
-                                <td>
-                                <!-- <span class="badge" style="background: red;">5  </span> -->
-                                5
-                                </td>
+                                
                                 <td>
                                     <a title='Edit' class='btn btn-info' href='class/edit/185'> <i class="glyphicon glyphicon-edit icon-white"></i></a>&nbsp&nbsp<a title='Delete' class='btn btn-danger' href='class/delete/185'> <i class="glyphicon glyphicon-trash icon-white"></i></a>
                                 </td>
