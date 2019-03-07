@@ -1,22 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!--
-        ===
-        This comment should NOT be removed.
 
-        Charisma v2.0.0
-
-        Copyright 2012-2014 Muhammad Usman
-        Licensed under the Apache License v2.0
-        http://www.apache.org/licenses/LICENSE-2.0
-
-        http://usman.it
-        http://twitter.com/halalit_usman
-        ===
-    -->
     <meta charset="utf-8">
-    <title>校园管家</title>
+    <title>基于区块链的学生管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -44,10 +32,10 @@
     <link href='css/app.css' rel='stylesheet'>
 
     <link href='css/custom.min.css' rel='stylesheet'>
-<link href='font-awesome/css/font-awesome.min.css' rel='stylesheet'>
+    <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet'>
 
-<style>
-.fc-today{
+    <style>
+        .fc-today{
   background-color: #2AA2E6;
   color:#fff;
 
@@ -63,7 +51,7 @@
 
 </style>
     <style media="screen">
-   body {
+        body {
        color: #154d88;
        background: rgba(233, 237, 241, 0.27);
        font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
@@ -75,469 +63,355 @@
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
 
-    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
     <!-- The fav icon -->
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    <script>
-      var hash = 'a291233';
-    </script>
 
 </head>
 
 <body>
-<!-- topbar starts -->
-<div class="navbar navbar-default" role="navigation">
+    <div id="basal">
+        <!-- topbar starts -->
+        <div class="navbar navbar-default" role="navigation">
 
-    <div class="navbar-inner">
-        <button type="button" class="navbar-toggle pull-left animated flip">
-            <span class="sr-only">切换导航</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <span class="iname">H·R示范性高中</span>
+            <div class="navbar-inner">
+                <button type="button" class="navbar-toggle pull-left animated flip">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="iname">基于区块链的学生管理系统</span>
 
-        <!-- user dropdown starts -->
-        <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <!-- user dropdown starts -->
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> 管理员</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> 个人资料</a></li>
-                <li class="divider"></li>
-                <li><a href="Setting_Users.html/logout"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
-            </ul>
-        </div>
-        <!-- Addmission dropdown starts -->
-        <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> 管理员</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> 个人资料</a></li>
+                        <li class="divider"></li>
+                        <li><a href="Setting_Users.html/logout"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
+                    </ul>
+                </div>
+                <!-- Addmission dropdown starts -->
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                <i class="glyphicon glyphicon-th-large"></i><span class=""> 通知</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 申请人名单</a></li>
-                <li class="divider"></li>
-                <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> 在线注册</a></li>
-                <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> 打印许可证</a></li>
-
-
-
+                        <i class="glyphicon glyphicon-th-large"></i><span class=""> 通知</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 申请人名单</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> 在线注册</a></li>
+                        <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> 打印许可证</a></li>
 
 
-            </ul>
-        </div>
-        <!-- admission dropdown ends -->
+                    </ul>
+                </div>
+                <!-- admission dropdown ends -->
 
 
 
-        <!-- 证书 dropdown starts -->
-        <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <!-- 证书 dropdown starts -->
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                <i class="glyphicon glyphicon-book"></i><span class=""> 证书</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
+                        <i class="glyphicon glyphicon-book"></i><span class=""> 证书</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
 
-                <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 书籍搜索</a></li>
-                <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> 借书</a></li>
-                <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> 已借出书单</a></li>
-                <li class="divider"></li>
-                    <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 书籍列表</a></li>
-                    <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 图书记录</a></li>
-                    <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> 书籍报告</a></li>
-                    <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> 月度罚款记录</a></li>
-
-
-            </ul>
-        </div>
-        <!-- 证书 dropdown ends -->
-        <!-- Dormitory dropdown starts -->
-        <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                <i class="glyphicon glyphicon-home"></i><span class=""> 课程</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-
-                <li><a href="/dormitory"><i class="glyphicon glyphicon-home"></i> 宿舍详情</a></li>
-                <li><a href="/dormitory/assignstd"><i class="glyphicon glyphicon-plus"></i> 添加学生</a></li>
-                <li><a href="/dormitory/assignstd/list"><i class="glyphicon glyphicon-user"></i> 学生列表</a></li>
-                <li class="divider"></li>
-                    <li><a href="/dormitory/fee"><i class="glyphicon glyphicon-list"></i> 住宿费用</a></li>
-                    <li><a href="/dormitory/report/std"><i class="glyphicon glyphicon-print"></i> 宿舍情况报告</a></li>
-                    <li><a href="/dormitory/report/fee"><i class="glyphicon glyphicon-print"></i> 费用报单</a></li>
-
-            </ul>
-        </div>
-        <!-- Dormitory dropdown ends -->
-        <!-- fees dropdown starts-->
-        <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                <i class="glyphicon glyphicon-list-alt"></i><span class=""> 成绩</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 学费</a></li>
-                <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 缴费情况</a></li>
-
-                <li class="divider"></li>
-                <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 费用清单</a></li>
-                <li><a href="/fees/setup"><i class="glyphicon glyphicon-cog"></i> 费用设置</a></li>
-                <li class="divider"></li>
-                <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> 收费情况报单</a></li>
-
-            </ul>
-        </div>
-        <!-- fees dropdown ends -->
-      <!-- teacher dropdown starts-->
-       <!-- <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                <i class="glyphicon glyphicon-user"></i><span class=""> Employee</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/teacher/create"><i class="glyphicon glyphicon-plus"></i> 新增</a></li>
-                <li><a href="/teacher/list"><i class="glyphicon glyphicon-list-alt"></i> List</a></li>
-                <li class="divider"></li>
-                <li><a href="/leaves/create"><i class="glyphicon glyphicon-plus"></i> 新增 Leave</a></li>
-                <li><a href="/leaves"><i class="glyphicon glyphicon-list-alt"></i> Leave List</a></li>
-                <li class="divider"></li>
-                <li><a href="/workoutside/create"><i class="glyphicon glyphicon-plus"></i> 新增 Work Outside</a></li>
-                <li><a href="/workoutside"><i class="glyphicon glyphicon-list-alt"></i> Work Outside List</a></li>
-                <li class="divider"></li>
-                                <li><a href="/teacher-attendance/list"><i class="glyphicon glyphicon-list-alt"></i> Attendance List</a></li>
-                <li><a href="/teacher-attendance/absenteeism-report"><i class="glyphicon glyphicon-print"></i> Absenteeism Report</a></li>
-                <li><a href="/teacher-attendance/monthly-report"><i class="glyphicon glyphicon-print"></i> 年度证书报告 Report</a></li>
-                <li><a href="/teacher-attendance/monthly-report-2"><i class="glyphicon glyphicon-print"></i> 年度证书报告 Report Two</a></li>
-
-            </ul>
-        </div> -->
-        <!-- teacher dropdown ends -->
-
-    </div>
-</div>
-<!-- topbar ends -->
-<div class="ch-container">
-    <div class="row">
-
-        <!-- left menu starts -->
-        <div class="col-sm-2 col-lg-2">
-            <div class="sidebar-nav">
-                <div class="nav-canvas">
-                    <div class="nav-sm nav nav-stacked">
-
-                    </div>
-                    <ul class="nav nav-pills nav-stacked main-menu">
-                        <li class="nav-header">主菜单</li>
-                        <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span> 主页</span></a>
-                        </li>
-
-                        <li class="accordion" id="index_class">
-                            <a href="#"><i class="glyphicon glyphicon-home"></i><span> 班级</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="create.html">新增班级</a></li>
-                                <li><a href="list.html">班级列表</a></li>
-                            </ul>
-                        </li>
-                        <li class="accordion" id="index_subject">
-                            <a href="#"><i class="glyphicon glyphicon-book"></i><span> 学科</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="createSubject.html">新增</a></li>
-                                <li><a href="listSubject.html">学科列表</a></li>
-                                <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
-                            </ul>
-                        </li>
-                        <li class="accordion" id="index_stu">
-                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="createStudent.html">新增</a></li>
-                                <li><a href="Studentlist.html">学生列表</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="accordion" id="index_teacher">
-                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="createStudent.html">新增</a></li>
-                                <li><a href="Studentlist.html">教师列表</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="accordion" id="index_com">
-                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="createCompany.html">新增</a></li>
-                                <li><a href="Companylist.html">公司列表</a></li>
-                            </ul>
-                        </li>
-                        <li class="accordion" id="index_record">
-                            <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="create-file.html">从文件添加</a></li>
-                                <!--<li><a href="createAttendance.html">添加证书</a></li>-->
-                                <li><a href="/attendance/list">View</a></li>
+                        <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 书籍搜索</a></li>
+                        <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> 借书</a></li>
+                        <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> 已借出书单</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 书籍列表</a></li>
+                        <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 图书记录</a></li>
+                        <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> 书籍报告</a></li>
+                        <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> 月度罚款记录</a></li>
 
 
-                            </ul>
-                        </li>
-                        <li class="accordion" id="index_grade">
-                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a id="create_grade" href="createMarkManage.html">新增</a></li>
-                                <li><a id="stu_grade" href="MarkManagelist.html">成绩列表</a></li>
-                                <li><a id="tea_grade" href="MarkManagelist.html">成绩列表</a></li>
-                            </ul>
-                        </li>
-                        <li class="accordion" id="index_verify">
-                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="/result/generate">Generate</a></li>
-                                <li><a href="results.html">Search</a></li>
-                                <li><a href="resultsForVistor.html">全局搜索</a></li>
+                    </ul>
+                </div>
+                <!-- 证书 dropdown ends -->
+                <!-- Dormitory dropdown starts -->
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                            </ul>
-                        </li>
-                        <!-- <li class="">
-                            <a href="/promotion"><i class="glyphicon glyphicon-arrow-up"></i><span> 升学</span></a>
+                        <i class="glyphicon glyphicon-home"></i><span class=""> 课程</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
 
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list-alt"></i><span> 成绩核算</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="/accounting/sectors">项目</a></li>
-                                <li><a href="/accounting/income">增加收入项目</a></li>
-                                <li><a href="/accounting/incomelist">查看收入项目</a></li>
-                                <li><a href="/accounting/expence">增加支出项目</a></li>
-                                <li><a href="/accounting/expencelist">查看支出项目</a></li>
+                        <li><a href="/dormitory"><i class="glyphicon glyphicon-home"></i> 宿舍详情</a></li>
+                        <li><a href="/dormitory/assignstd"><i class="glyphicon glyphicon-plus"></i> 添加学生</a></li>
+                        <li><a href="/dormitory/assignstd/list"><i class="glyphicon glyphicon-user"></i> 学生列表</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/dormitory/fee"><i class="glyphicon glyphicon-list"></i> 住宿费用</a></li>
+                        <li><a href="/dormitory/report/std"><i class="glyphicon glyphicon-print"></i> 宿舍情况报告</a></li>
+                        <li><a href="/dormitory/report/fee"><i class="glyphicon glyphicon-print"></i> 费用报单</a></li>
 
-                            </ul>
-                        </li> -->
-                       <li class="accordion" id="index_email">
+                    </ul>
+                </div>
+                <!-- Dormitory dropdown ends -->
+                <!-- fees dropdown starts-->
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                          <a href="#"><i class="glyphicon glyphicon-envelope"></i><span> 邮件中心</span></a>
-                          <ul class="nav nav-pills nav-stacked">
-                              <li><a href="SMS_Formats.html">邮件格式</a></li>
-                              <li><a href="SMS_Send.html">批量发送</a></li>
-                              <li><a href="SMS_Log.html">邮件日志</a></li>
+                        <i class="glyphicon glyphicon-list-alt"></i><span class=""> 成绩</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 学费</a></li>
+                        <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 缴费情况</a></li>
 
-                          </ul>
-                      </li>
-                        <li class="accordion" id="index_print">
-                            <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="gradesheet.html">成绩表</a></li>
-                                <li><a href="Attendancereport.html">全部证书</a></li>
-                                <li><a href="monthly-report.html">年度证书报告</a></li>
-                                <li><a href="tabulation.html">表单制作</a></li>
-                                <!--<li><a href="/accounting/report">收支类型</a></li>-->
-                                <!--<li><a href="/accounting/reportsum">收支平衡状况</a></li>-->
-                                 <!--<li><a href="/barcode">条形码生成</a></li>-->
+                        <li class="divider"></li>
+                        <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 费用清单</a></li>
+                        <li><a href="/fees/setup"><i class="glyphicon glyphicon-cog"></i> 费用设置</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> 收费情况报单</a></li>
 
-
-                            </ul>
-                        </li>
-                        <li class="accordion" id="index_set">
-                            <a href="#"><i class="glyphicon glyphicon-cog"></i><span> 设置</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="Setting_GPA.html">绩点规则</a></li>
-
-                                <li><a href="Setting_Users.html">用户</a></li>
-                                <li><a href="Setting_Holidays.html">假期时间表</a></li>
-                                <li><a href="Setting_Class.html">上课时间表</a></li>
-                                <li><a href="Setting_Institute.html">学院信息</a></li>
-
-                            </ul>
-                        </li>
-                                              </ul>
-
+                    </ul>
                 </div>
             </div>
         </div>
-        <!--/span-->
-        <!-- left menu ends -->
+        <!-- topbar ends -->
 
-        <noscript>
-            <div class="alert alert-block col-md-12">
-                <h4 class="alert-heading">Warning!</h4>
-
-                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
-                    enabled to use this site.</p>
-            </div>
-        </noscript>
-
-        <div id="content" class="col-lg-10 col-sm-10">
-            <!-- content starts -->
-                        
-
+        <!-- front starts -->
+        <div class="ch-container">
             <div class="row">
-  <div class="col-md-12 col-sm-12 col-xs-12">
-    <!-- /top tiles -->
-    <div class="row tile_count text-center">
-      <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-2x fa-home green"></i>     班级</span>
-        <div class="count red">4</div>
-      </div>
-      <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-2x fa-users green"></i> 学生</span>
-        <div class="count blue">241</div>
-      </div>
-      <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-2x fa-file green"></i> 学科</span>
-        <div class="count yellow">35</div>
-      </div>
-    </div>
-    <div class="row tile_count text-center">
-      <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-2x fa-edit green"></i> 已认证证书</span>
-        <div class="count red">98</div>
-      </div>
-      <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-2x fa-pencil green"></i> 考试</span>
-        <div class="count blue">85</div>
-      </div>
-      <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-        <span class="count_top"><i class="fa fa-2x fa-book green"></i> 藏书</span>
-        <div class="count yellow">2</div>
-      </div>
-    </div>
-    <!-- /top tiles -->
-    <!-- Graph start -->
-    <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="x_panel">
-          <div class="x_title">
-            <h2>已上链条目<small>（月度）</small></h2>
-            <label class="total_bal">
-              总上链: 6056069条
-            </label>
-            <div class="clearfix"></div>
-          </div>
-          <div class="x_content"><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
-            <canvas height="136" id="lineChart" width="821" style="width: 821px; height: 136px;"></canvas>
-          </div>
+
+                <!-- left menu starts -->
+                <div class="col-sm-2 col-lg-2">
+                        <div class="sidebar-nav">
+                            <div class="nav-canvas">
+                                <div class="nav-sm nav nav-stacked">
+    
+                                </div>
+                                <ul class="nav nav-pills nav-stacked main-menu">
+                                    <li class="nav-header">主菜单</li>
+                                    <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span>
+                                                主页</span></a>
+                                    </li>
+    
+                                    <li class="accordion" id="index_class">
+                                        <a href="#"><i class="glyphicon glyphicon-home"></i><span> 专业</span></a>
+                                        <ul class="nav nav-pills nav-stacked">
+                                            <li><a href="createMajor.html">新增专业</a></li>
+                                            <li><a href="majorList.html">专业列表</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="accordion" id="index_subject">
+                                        <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
+                                        <ul class="nav nav-pills nav-stacked">
+                                            <li><a href="createSubject.html">新增</a></li>
+                                            <li><a href="subjectList.html">课程列表</a></li>
+                                            <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="accordion" id="index_stu">
+                                        <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
+                                        <ul class="nav nav-pills nav-stacked">
+                                            <li><a href="createStudent.html">新增</a></li>
+                                            <li><a href="studentList.html">学生列表</a></li>
+    
+                                        </ul>
+                                    </li>
+                                    <li class="accordion" id="index_teacher">
+                                        <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
+                                        <ul class="nav nav-pills nav-stacked">
+                                                <li><a href="createTeacher.html">新增</a></li>
+                                                <li><a href="teacherList.html">教师列表</a></li>    
+                                        </ul>
+                                    </li>
+                                    <li class="accordion" id="index_com">
+                                        <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
+                                        <ul class="nav nav-pills nav-stacked">
+                                            <li><a href="createFirm.html">新增</a></li>
+                                            <li><a href="firmList.html">公司列表</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="accordion" id="index_record">
+                                        <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
+                                        <ul class="nav nav-pills nav-stacked">
+                                            <li><a href="applyRecord.html">从文件添加</a></li>
+                                            <li><a href="recordList.html">查看我的证书</a></li>
+                                            <li><a href="checkRecord.html">审查申请</a></li>
+    
+                                        </ul>
+                                    </li>
+                                    <li class="accordion" id="index_grade">
+                                        <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
+                                        <ul class="nav nav-pills nav-stacked">
+                                            <li><a id="create_grade" href="createMarkManage.html">新增</a></li>
+                                            <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
+                                            <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="accordion" id="index_verify">
+                                        <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
+                                        <ul class="nav nav-pills nav-stacked">
+                                            <li><a href="resultsForVistor.html">快速验证</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="accordion" id="index_print">
+                                        <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
+                                        <ul class="nav nav-pills nav-stacked">
+                                            <li><a href="gradesheet.html">成绩表</a></li>
+                                            <li><a href="Attendancereport.html">自选简历</a></li>
+                                            <li><a href="monthly-report.html">全部简历</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                </ul>
+    
+                            </div>
+                        </div>
+                    </div>
+                <!--/span-->
+                <!-- left menu ends -->
+
+                <div id="content" class="col-lg-10 col-sm-10">
+                        <!-- content starts -->
+    
+    
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <!-- /top tiles -->
+                                <div class="row tile_count text-center">
+                                    <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
+                                        <span class="count_top"><i class="fa fa-2x fa-home green"></i> 班级</span>
+                                        <div class="count red">4</div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
+                                        <span class="count_top"><i class="fa fa-2x fa-users green"></i> 学生</span>
+                                        <div class="count blue">241</div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
+                                        <span class="count_top"><i class="fa fa-2x fa-file green"></i> 课程</span>
+                                        <div class="count yellow">35</div>
+                                    </div>
+                                </div>
+                                <div class="row tile_count text-center">
+                                    <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
+                                        <span class="count_top"><i class="fa fa-2x fa-edit green"></i> 已认证证书</span>
+                                        <div class="count red">98</div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
+                                        <span class="count_top"><i class="fa fa-2x fa-pencil green"></i> 考试</span>
+                                        <div class="count blue">85</div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
+                                        <span class="count_top"><i class="fa fa-2x fa-book green"></i> 藏书</span>
+                                        <div class="count yellow">2</div>
+                                    </div>
+                                </div>
+                                <!-- /top tiles -->
+                                <!-- Graph start -->
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <div class="x_panel">
+                                            <div class="x_title">
+                                                <h2>已上链条目<small>（月度）</small></h2>
+                                                <label class="total_bal">
+                                                    总上链: 6056069条
+                                                </label>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                            <div class="x_content"><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                                <canvas height="136" id="lineChart" width="821" style="width: 821px; height: 136px;"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="col-md-9 col-lg-9 col-xs-9 hidden-xs">
+                </div>
+            </div>
         </div>
-      </div>
 
     </div>
+    <!-- external javascript -->
 
-  </div>
-</div>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
+    <!-- library for cookie management -->
+    <script src="js/jquery.cookie.js"></script>
+    <!-- calender plugin -->
+    <script src='bower_components/moment/min/moment.min.js'></script>
+    <script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+    <!-- data table plugin -->
+    <script src='bower_components/datatables/media/js/jquery.dataTables.js'></script>
 
+    <!-- select or dropdown enhancer -->
+    <script src="bower_components/chosen/chosen.jquery.min.js"></script>
+    <!-- plugin for gallery image view -->
+    <script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+    <!-- notification plugin -->
+    <script src="js/jquery.noty.js"></script>
+    <!-- library for making tables responsive -->
+    <script src="bower_components/responsive-tables/responsive-tables.js"></script>
 
+    <!-- star rating plugin -->
+    <script src="js/jquery.raty.min.js"></script>
+    <!-- for iOS style toggle switch -->
+    <script src="js/jquery.iphone.toggle.js"></script>
+    <!-- autogrowing textarea plugin -->
+    <script src="js/jquery.autogrow-textarea.js"></script>
+    <!-- multiple file upload plugin -->
 
+    <script src="js/jquery.history.js"></script>
+    <!-- application script for Charisma demo -->
+    <script src="js/basic.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/Chart.min.js"></script>
 
+    <script>
+        Chart.defaults.global.legend = {
+            enabled: false
+        };
 
-
-            <!-- content ends -->
-        </div><!--/#content.col-md-0-->
-    </div><!--/fluid-row-->
-    <div class="row">
-        <div class="col-md-9 col-lg-9 col-xs-9 hidden-xs">
-
-
-
-        </div>
-
-    </div>
-
-<!-- footer content -->
-  <footer class="footer">
-         <hr>
-        <p class="col-md-3 col-sm-3 col-xs-12 copyright"> <a href="#" target="_blank">H·R示范性高中</a> &copy;2018</p>
-        <p class="col-md-9 col-sm-9 col-xs-12 powered-by">
-         <!-- Don't remove below text. Its againts copy right laws. -->
-         <strong>School Management System Version 1.0 - a291233</strong> || Developed by <a class="cplink" href="http://shanixlab.com">ShanixLab</a>
-        </p> 
-  </footer>
-  <!-- /footer content -->
-</div>
-</div>
-</div><!--/.fluid-container-->
-
-<!-- external javascript -->
-
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- library for cookie management -->
-<script src="js/jquery.cookie.js"></script>
-<!-- calender plugin -->
-<script src='bower_components/moment/min/moment.min.js'></script>
-<script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
-<!-- data table plugin -->
-<script src='bower_components/datatables/media/js/jquery.dataTables.js'></script>
-
-<!-- select or dropdown enhancer -->
-<script src="bower_components/chosen/chosen.jquery.min.js"></script>
-<!-- plugin for gallery image view -->
-<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
-<!-- notification plugin -->
-<script src="js/jquery.noty.js"></script>
-<!-- library for making tables responsive -->
-<script src="bower_components/responsive-tables/responsive-tables.js"></script>
-
-<!-- star rating plugin -->
-<script src="js/jquery.raty.min.js"></script>
-<!-- for iOS style toggle switch -->
-<script src="js/jquery.iphone.toggle.js"></script>
-<!-- autogrowing textarea plugin -->
-<script src="js/jquery.autogrow-textarea.js"></script>
-<!-- multiple file upload plugin -->
-
-<script src="js/jquery.history.js"></script>
-<!-- application script for Charisma demo -->
-<script src="js/charisma.js"></script>
-<script src="js/dashboard.js"></script>
-<script src="js/Chart.min.js"></script>
-
-<script>
-Chart.defaults.global.legend = {
-  enabled: false
-};
-
-// Line chart
-   var ctx = document.getElementById("lineChart");
-   var lineChart = new Chart(ctx, {
-     type: 'line',
-     data: {
-       labels: ["01,2018","02,2018","03,2018","04,2018","05,2018","06,2018","07,2018","08,2018","09,2018","10,2018","11,2018","12,2018"],
-       datasets: [{
-         label: "Income",
-         backgroundColor: "rgba(38, 185, 154, 0.31)",
-         borderColor: "rgba(38, 185, 154, 0.7)",
-         pointBorderColor: "rgba(38, 185, 154, 0.7)",
-         pointBackgroundColor: "rgba(38, 185, 154, 0.7)",
-         pointHoverBackgroundColor: "#fff",
-         pointHoverBorderColor: "rgba(220,220,220,1)",
-         pointBorderWidth: 1,
-         data: [52662545.31,32271914.00,20651857.91,31068496.90,26380827.16,30801979.51,21194321.49,23102023.47,30958587.33,29130438.73,23880016.56,25513149.38]
-       }, {
-         label: "Expence",
-         backgroundColor: "rgba(3, 88, 106, 0.3)",
-         borderColor: "rgba(3, 88, 106, 0.70)",
-         pointBorderColor: "rgba(3, 88, 106, 0.70)",
-         pointBackgroundColor: "rgba(3, 88, 106, 0.70)",
-         pointHoverBackgroundColor: "#fff",
-         pointHoverBorderColor: "rgba(151,187,205,1)",
-         pointBorderWidth: 1,
-         data: [56301010.42,32220143.00,20669087.91,27231585.68,25534450.16,29856959.27,29705459.44,26657952.24,31748953.35,28979974.59,20992977.15,23773674.36]
-       }]
-     },
-   });
+        // Line chart
+        var ctx = document.getElementById("lineChart");
+        var lineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["01,2018", "02,2018", "03,2018", "04,2018", "05,2018", "06,2018", "07,2018", "08,2018", "09,2018", "10,2018", "11,2018", "12,2018"],
+                datasets: [{
+                    label: "Income",
+                    backgroundColor: "rgba(38, 185, 154, 0.31)",
+                    borderColor: "rgba(38, 185, 154, 0.7)",
+                    pointBorderColor: "rgba(38, 185, 154, 0.7)",
+                    pointBackgroundColor: "rgba(38, 185, 154, 0.7)",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(220,220,220,1)",
+                    pointBorderWidth: 1,
+                    data: [52662545.31, 32271914.00, 20651857.91, 31068496.90, 26380827.16, 30801979.51, 21194321.49, 23102023.47, 30958587.33, 29130438.73, 23880016.56, 25513149.38]
+                }, {
+                    label: "Expence",
+                    backgroundColor: "rgba(3, 88, 106, 0.3)",
+                    borderColor: "rgba(3, 88, 106, 0.70)",
+                    pointBorderColor: "rgba(3, 88, 106, 0.70)",
+                    pointBackgroundColor: "rgba(3, 88, 106, 0.70)",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(151,187,205,1)",
+                    pointBorderWidth: 1,
+                    data: [56301010.42, 32220143.00, 20669087.91, 27231585.68, 25534450.16, 29856959.27, 29705459.44, 26657952.24, 31748953.35, 28979974.59, 20992977.15, 23773674.36]
+                }]
+            },
+        });
 
 
 
-</script>
+    </script>
 </body>
+
 </html>

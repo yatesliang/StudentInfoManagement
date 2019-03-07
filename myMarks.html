@@ -169,32 +169,6 @@
 
                 </ul>
             </div>
-            <!-- fees dropdown ends -->
-            <!-- teacher dropdown starts-->
-            <!-- <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                <i class="glyphicon glyphicon-user"></i><span class=""> Employee</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/teacher/create"><i class="glyphicon glyphicon-plus"></i> 新增</a></li>
-                <li><a href="/teacher/list"><i class="glyphicon glyphicon-list-alt"></i> List</a></li>
-                <li class="divider"></li>
-                <li><a href="/leaves/create"><i class="glyphicon glyphicon-plus"></i> 新增 Leave</a></li>
-                <li><a href="/leaves"><i class="glyphicon glyphicon-list-alt"></i> Leave List</a></li>
-                <li class="divider"></li>
-                <li><a href="/workoutside/create"><i class="glyphicon glyphicon-plus"></i> 新增 Work Outside</a></li>
-                <li><a href="/workoutside"><i class="glyphicon glyphicon-list-alt"></i> Work Outside List</a></li>
-                <li class="divider"></li>
-                                <li><a href="/teacher-attendance/list"><i class="glyphicon glyphicon-list-alt"></i> Attendance List</a></li>
-                <li><a href="/teacher-attendance/absenteeism-report"><i class="glyphicon glyphicon-print"></i> Absenteeism Report</a></li>
-                <li><a href="/teacher-attendance/monthly-report"><i class="glyphicon glyphicon-print"></i> 年度证书报告 Report</a></li>
-                <li><a href="/teacher-attendance/monthly-report-2"><i class="glyphicon glyphicon-print"></i> 年度证书报告 Report Two</a></li>
-
-            </ul>
-        </div> -->
-            <!-- teacher dropdown ends -->
 
         </div>
     </div>
@@ -313,154 +287,9 @@
 
                             </div>
                             <div class="box-content">
-
                                 <div class="row">
                                     <div class="col-md-12">
-
-                                        <form id="searchGrade" role="form" method="post" enctype="multipart/form-data">
-                                            <input type="hidden" name="_token" value="84WDdhwpXfs6qfS0p3s1CRDb4dLlLvkHggoyPbtH">
-                                            <div class="row">
-                                                <div class="col-md-12">
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="class">课程名称</label>
-
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home blue"></i></span>
-
-
-                                                                <select id="class" id="class" name="class" required="true"
-                                                                    class="form-control">
-                                                                    <option value="">--选择课程--</option>
-                                                                    <option value="cl1">高等数学（上）</option>
-                                                                    <option value="cl1">高等数学（下）</option>
-                                                                    <option value="cl23">大学物理</option>
-                                                                    <option value="cl5">面向对象程序设计</option>
-                                                                    <option value="cl50">离散数学</option>
-
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="fname">课程编号</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                                <input type="text" class="form-control" required id="subjectId"
-                                                                    name="subjectId" placeholder="课程编号">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="type">课程类型</label>
-
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
-                                                                <select name="subjectType" class="form-control"
-                                                                    required>
-                                                                    <option value="Core">通识必修课程</option>
-                                                                    <option value="Electives">通识选修课程</option>
-                                                                    <option value="MajorCore">专业必修课程</option>
-                                                                    <option value="MajorElectives">专业选修课程</option>
-
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="class">课程所属院系</label>
-
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home blue"></i></span>
-                                                                <select class="form-control" required="true" name="class">
-                                                                    <option value="0" selected="selected">全部</option>
-                                                                    <option value="cl50">软件学院</option>
-
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="section">课程所属专业</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
-                                                                <select name="majorId" class="form-control" required>
-                                                                    <option value="2163">软件工程</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="direction">课程所属方向</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
-                                                                <select name="directId" class="form-control" required>
-                                                                    <option value="2163">软件工程</option>
-                                                                    <option value="4197">数字媒体</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="shift">课程时间</label>
-
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon">
-                                                                    <i class="glyphicon glyphicon-info-sign blue"></i>
-                                                                </span>
-                                                                <select class="form-control" required="true" name="shift">
-                                                                    <option value="">--选择上课时间--</option>
-                                                                    <option value="Morning">上午</option>
-                                                                    <option value="Afternoon">下午</option>
-                                                                    <option value="Night">晚上</option>
-                                                                </select>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group ">
-                                                            <label for="session">选择学期</label>
-                                                            <div class="input-group">
-
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i>
-                                                                </span>
-                                                                <input type="text" id="session" required="true" class="form-control datepicker2"
-                                                                    name="session" value="" data-date-format="yyyy">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <button class="btn btn-primary pull-right" type="submit"><i class="glyphicon glyphicon-th"></i>查询成绩</button>
-
-                                                </div>
-                                            </div>
-                                            <br>
-                                        </form>
+                                        <h3 class="text-info"> 2018-2019年第二学期</h3>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -468,14 +297,15 @@
                                         <table id="gradeTable" class="table table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>学号</th>
-                                                    <th>姓名</th>
                                                     <th>课程编号</th>
                                                     <th>课程名称</th>
-                                                    <th>课程学期</th>
-                                                    <th>课程类型</th>
+                                                    <th>成绩</th>
                                                     <th>学分</th>
+                                                    <th>绩点</th>
                                                     <th>是否合格</th>
+                                                    <th>课程类型</th>
+                                                    <th>更新时间</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
                                             </tbody>
@@ -483,8 +313,6 @@
                                     </div>
                                 </div>
                                 <br><br>
-
-
                             </div>
                         </div>
                     </div>
@@ -547,7 +375,6 @@
     <script src="js/bootstrap-datepicker.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#gradeTable').dataTable();
             $(".datepicker2").datepicker({
                 format: " yyyy", // Notice the Extra space at the beginning
                 viewMode: "years",
@@ -558,7 +385,7 @@
         });
 
 
-        function searchGrade(){
+        function searchGrade() {
             var searchjson = $("#searchGrade").serializeObject();
             $.ajax({
                 url: 'searchGrade',
@@ -592,20 +419,17 @@
         function insertGrade(msg) {
             var tbody = $("tbody");
             var tr = $("<tr id=\"" + msg.id + "\"></tr>");
-            var td_stuid = $("<td>" + msg.stu.id + "</td>");
-            var td_stuname = $("<td>" + msg.stu.name + "</td>");
-            var td_subid = $("<td>" + msg.sub.id + "</td>");
-            var td_subname = $("<td>" + msg.sub.name + "</td>");
-            var td_subyear = $("<td>" + msg.sub.year + "</td>");
-            var td_subtype = $("<td>" + msg.sub.type + "</td>");
-
-            var td_credit = $("<td>" + msg.credit + "</td>");
-            
+            var td_subid = $("<td>" + msg.subid + "</td>");
+            var td_subname = $("<td>" + msg.subname + "</td>");
+            var td_grade = $("<td>" + msg.subgrade + "</td>");
+            var td_credit = $("<td>" + msg.subcredit + "</td>");
+            var td_gp = $("<td>" + msg.subgp + "</td>");
             var td_ispass = $("<td>" + msg.ispass + "</td>");
+            var td_subtype = $("<td>" + msg.subtype + "</td>");
 
+            var td_updateTime = $("<td>" + msg.updateTime + "</td>");
             
-
-            tr.append(td_stuid, td_stuname, td_subid,td_subname, td_subyear,td_subtype, td_credit,td_ispass);
+            tr.append(td_subid, td_subname, td_grade, td_credit, td_gp,td_ispass, td_subtype, td_updateTime);
             tbody.append(tr);
         }
 

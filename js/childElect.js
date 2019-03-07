@@ -8,9 +8,9 @@ $(document).ready(function(){
         tr.appendTo(tbody);          
         var courseId=$("<td>" + 1 + "</td>");
         
-        var courseName=$("<td>" + 1 + "</td>");
+        var courseName=$("<td class=\"cname\">" + 1 + "</td>");
         
-        var courseTime=$("<td>" + 1 + "</td>");
+        var courseTime=$("<td class=\"time Mon ctime1 ctime2\">" + 1 + "</td>");
         
         var courseAdr=$("<td>" + 1 + "</td>");
         

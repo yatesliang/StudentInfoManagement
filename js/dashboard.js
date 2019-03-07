@@ -1,19 +1,18 @@
 const usertypes = {
-    ADMIN: 'admin',
-    STUDENT: 'student',
-    TEACHER: 'teacher',
-    COMPANY: 'company'
+    ADMIN: 'Admin',
+    STUDENT: 'Stu',
+    TEACHER: 'Tea',
+    COMPANY: 'Firm'
 }
 
 $(document).ready(function(){
 
     // var str = sessionStorage.obj;
     //     if(str==null){
-    //         window.location.href="School Manage.html";
+    //         window.location.href="School_Manage.html";
     //     }else{
     //         var obj = $.parseJSON(str);
-    //         // 获取用户类型
-    //         var usertype = obj.usertype;
+    //         var usertype = obj.role;
             
     //         // if (usertype==usertypes.ADMIN)
     //         switch(usertype){

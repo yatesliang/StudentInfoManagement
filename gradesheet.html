@@ -1,22 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--
-        ===
-        This comment should NOT be removed.
-
-        Charisma v2.0.0
-
-        Copyright 2012-2014 Muhammad Usman
-        Licensed under the Apache License v2.0
-        http://www.apache.org/licenses/LICENSE-2.0
-
-        http://usman.it
-        http://twitter.com/halalit_usman
-        ===
-    -->
+    
     <meta charset="utf-8">
-    <title>校园管家</title>
+    <title>基于区块链的学生管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -82,7 +69,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <span class="iname">H·R示范性高中</span>
+        <span class="iname">基于区块链的学生管理系统</span>
 
         <!-- user dropdown starts -->
         <div class="btn-group pull-right">
@@ -216,120 +203,91 @@
 
         <!-- left menu starts -->
         <div class="col-sm-2 col-lg-2">
-            <div class="sidebar-nav">
-                <div class="nav-canvas">
-                    <div class="nav-sm nav nav-stacked">
+                <div class="sidebar-nav">
+                    <div class="nav-canvas">
+                        <div class="nav-sm nav nav-stacked">
+
+                        </div>
+                        <ul class="nav nav-pills nav-stacked main-menu">
+                            <li class="nav-header">主菜单</li>
+                            <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span>
+                                        主页</span></a>
+                            </li>
+
+                            <li class="accordion" id="index_class">
+                                <a href="#"><i class="glyphicon glyphicon-home"></i><span> 专业</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="createMajor.html">新增专业</a></li>
+                                    <li><a href="majorList.html">专业列表</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_subject">
+                                <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="createSubject.html">新增</a></li>
+                                    <li><a href="subjectList.html">课程列表</a></li>
+                                    <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_stu">
+                                <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="createStudent.html">新增</a></li>
+                                    <li><a href="studentList.html">学生列表</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_teacher">
+                                <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createTeacher.html">新增</a></li>
+                                        <li><a href="teacherList.html">教师列表</a></li>    
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_com">
+                                <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="createFirm.html">新增</a></li>
+                                    <li><a href="firmList.html">公司列表</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_record">
+                                <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="applyRecord.html">从文件添加</a></li>
+                                    <li><a href="recordList.html">查看我的证书</a></li>
+                                    <li><a href="checkRecord.html">审查申请</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_grade">
+                                <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a id="create_grade" href="createMarkManage.html">新增</a></li>
+                                    <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
+                                    <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_verify">
+                                <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="resultsForVistor.html">快速验证</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_print">
+                                <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="gradesheet.html">成绩表</a></li>
+                                    <li><a href="Attendancereport.html">自选简历</a></li>
+                                    <li><a href="monthly-report.html">全部简历</a></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
 
                     </div>
-                    <ul class="nav nav-pills nav-stacked main-menu">
-                        <li class="nav-header">主菜单</li>
-                        <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span> 主页</span></a>
-                        </li>
-
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-home"></i><span> 班级</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="create.html">新增班级</a></li>
-                                <li><a href="list.html">班级列表</a></li>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-book"></i><span> 学科</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="createSubject.html">新增</a></li>
-                                <li><a href="listSubject.html">学科列表</a></li>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="createStudent.html">新增</a></li>
-                                <li><a href="Studentlist.html">学生列表</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="create-file.html">从文件添加</a></li>
-                                <!--<li><a href="createAttendance.html">添加证书</a></li>-->
-                                <li><a href="Attendancelist.html">查看</a></li>
-
-
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="createMarkManage.html">新增</a></li>
-                                <li><a href="MarkManagelist.html">成绩列表</a></li>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="generate.html">生成全部成绩</a></li>
-                                <li><a href="results.html">搜索</a></li>
-                                <li><a href="resultsForVistor.html">全局搜索</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="">
-                            <a href="/promotion"><i class="glyphicon glyphicon-arrow-up"></i><span> 升学</span></a>
-
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list-alt"></i><span> 成绩核算</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="/accounting/sectors">项目</a></li>
-                                <li><a href="/accounting/income">增加收入项目</a></li>
-                                <li><a href="/accounting/incomelist">查看收入项目</a></li>
-                                <li><a href="/accounting/expence">增加支出项目</a></li>
-                                <li><a href="/accounting/expencelist">查看支出项目</a></li>
-
-                            </ul>
-                        </li>
-                       <li class="accordion">
-
-                          <a href="#"><i class="glyphicon glyphicon-envelope"></i><span> 邮件中心</span></a>
-                          <ul class="nav nav-pills nav-stacked">
-                              <li><a href="SMS_Formats.html">邮件格式</a></li>
-                              <li><a href="SMS_Send.html">批量发送</a></li>
-                              <li><a href="SMS_Log.html">邮件日志</a></li>
-
-                          </ul>
-                      </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="gradesheet.html">成绩表</a></li>
-                                <li><a href="Attendancereport.html">全部证书</a></li>
-                                <li><a href="monthly-report.html">年度证书报告</a></li>
-                                <li><a href="tabulation.html">表单制作</a></li>
-                                <!--<li><a href="/accounting/report">收支类型</a></li>-->
-                                <!--<li><a href="/accounting/reportsum">收支平衡状况</a></li>-->
-                                 <!--<li><a href="/barcode">条形码生成</a></li>-->
-
-
-                            </ul>
-                        </li>
-                                                <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-cog"></i><span> 设置</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="Setting_GPA.html">绩点规则</a></li>
-
-                                <li><a href="Setting_Users.html">用户</a></li>
-                                <li><a href="Setting_Holidays.html">假期时间表</a></li>
-                                <li><a href="Setting_Class.html">上课时间表</a></li>
-                                <li><a href="Setting_Institute.html">学院信息</a></li>
-
-                            </ul>
-                        </li>
-                                              </ul>
-
                 </div>
             </div>
-        </div>
         <!--/span-->
         <!-- left menu ends -->
 
@@ -440,19 +398,7 @@
 
     </div>
 
-<!-- footer content -->
-  <footer class="footer">
-         <hr>
-        <p class="col-md-3 col-sm-3 col-xs-12 copyright"> <a href="#" target="_blank">H·R示范性高中</a> &copy;2018</p>
-        <p class="col-md-9 col-sm-9 col-xs-12 powered-by">
-         <!-- Don't remove below text. Its againts copy right laws. -->
-         <strong>School Management System Version 1.0 - a291233</strong> || Developed by <a class="cplink" href="http://shanixlab.com">ShanixLab</a>
-        </p> 
-  </footer>
-  <!-- /footer content -->
-</div>
-</div>
-</div><!--/.fluid-container-->
+
 
 <!-- external javascript -->
 
@@ -485,7 +431,7 @@
 
 <script src="js/jquery.history.js"></script>
 <!-- application script for Charisma demo -->
-<script src="js/charisma.js"></script>
+<script src="js/basic.js"></script>
 
     <script src="js/bootstrap-datepicker.js"></script>
     <script type="text/javascript">
