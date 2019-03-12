@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>基于区块链的学生管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- The styles -->
+    <link id="bs-css" href="css/bootstrap-cerulean.min.css" rel="stylesheet">
+
+    <link href="css/charisma-app.css" rel="stylesheet">
+
+
+
+
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="./js/school_manage.js"></script>
+    <!-- The fav icon -->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+
+</head>
+
+<body>
+<div class="ch-container">
+    <div class="row">
+
+        <div class="row">
+            <div class="col-md-12 center login-header">
+                <h2>基于区块链的校园管理系统</h2>
+            </div>
+            <!--/span-->
+        </div><!--/row-->
+
+        <div class="row">
+            <div class="well col-md-5 center login-box">
+                <img src="img/logo.png" style="height:120px;">
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user red"></i></span>
+                            <input type="text" class="form-control" name="id" placeholder="学号">
+                        </div>
+                        <div class="clearfix"></div><br>
+
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock red"></i></span>
+                            <input type="password" class="form-control" name="password" placeholder="密码">
+                        </div>
+                        <div id="role" name="role" class="form-group">
+                            <label class="control-label" for="shift"><input type="checkbox"  value="0" > 学生 </label>
+                            <label class="control-label" for="shift"><input type="checkbox"  value="1" > 教师 </label>
+                            <label class="control-label" for="shift"> <input type="checkbox"  value="2" > 管理员 </label>
+                            <label class="control-label" for="shift"> <input type="checkbox"  value="3" > 公司/机构 </label>
+                        </div>
+                        <div class="clearfix"></div>
+
+                    
+                        <div class="clearfix"></div>
+                        
+
+                        <p class="center col-md-5">
+                            <button class="btn btn-primary"onclick="login();"><span class="glyphicon glyphicon-log-in"></span>登录</button>
+                        </p>
+            </div>
+            <!--/span-->
+        </div><!--/row-->
+    </div><!--/fluid-row-->
+
+</div><!--/.fluid-container-->
+
+<!-- external javascript -->
+
+</body>
+</html>

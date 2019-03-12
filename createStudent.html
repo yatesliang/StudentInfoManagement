@@ -1,27 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!--
-        ===
-        This comment should NOT be removed.
-
-        Charisma v2.0.0
-
-        Copyright 2012-2014 Muhammad Usman
-        Licensed under the Apache License v2.0
-        http://www.apache.org/licenses/LICENSE-2.0
-
-        http://usman.it
-        http://twitter.com/halalit_usman
-
+    <!-- The styles -->
     <meta charset="utf-8">
-    <title>HMHS | School Manage</title>
+    <title>基于区块链的学生管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <!-- The styles -->
     <link id="bs-css" href="css/bootstrap-cerulean.min.css" rel="stylesheet">
 
     <link href="css/charisma-app.css" rel="stylesheet">
@@ -45,797 +32,650 @@
 
     <link href="css/bootstrap-datepicker.css" rel="stylesheet">
     <style media="screen">
-   body {
-       color: #154d88;
-       background: rgba(233, 237, 241, 0.27);
-       font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-       font-size: 13px;
-       font-weight: 400;
-       line-height: 1.471;
-   }
-   </style>
+        body {
+            color: #154d88;
+            background: rgba(233, 237, 241, 0.27);
+            font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.471;
+        }
+    </style>
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
-
-    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- The fav icon -->
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    <script>
-      var hash = 'a291233';
-    </script>
 
 </head>
 
 <body>
-<!-- topbar starts -->
-<div class="navbar navbar-default" role="navigation">
+    <div id="basal">
+        <!-- topbar starts -->
+        <div class="navbar navbar-default" role="navigation">
 
-    <div class="navbar-inner">
-        <button type="button" class="navbar-toggle pull-left animated flip">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <span class="iname">基于区块链的学生管理系统</span>
+            <div class="navbar-inner">
+                <button type="button" class="navbar-toggle pull-left animated flip">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="iname">基于区块链的学生管理系统</span>
 
-        <!-- user dropdown starts -->
-        <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <!-- user dropdown starts -->
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> Mr. Admin</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
-                <li class="divider"></li>
-                <li><a href="Setting_Users.html/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
-            </ul>
-        </div>
-        <!-- Addmission dropdown starts -->
-        <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> 管理员</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> 个人资料</a></li>
+                        <li class="divider"></li>
+                        <li><a href="Setting_Users.html/logout"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Addmission dropdown starts -->
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                <i class="glyphicon glyphicon-th-large"></i><span class=""> 通知</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> Applicant List</a></li>
-                <li class="divider"></li>
-                <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> Online Registration</a></li>
-                <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> Print  Admitcard</a></li>
-
-
-
-
-
-            </ul>
-        </div>
-        <!-- admission dropdown ends -->
-
-
-
-        <!-- Library dropdown starts -->
-        <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                <i class="glyphicon glyphicon-book"></i><span class=""> 证书</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-
-                <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> Book Search</a></li>
-                <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> Borrow Book</a></li>
-                <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> Borrowd Book List</a></li>
-                <li class="divider"></li>
-                    <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> Book List</a></li>
-                    <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> Book Entry</a></li>
-                    <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> Reports</a></li>
-                    <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> Monthly Fine Reports</a></li>
-
-
-            </ul>
-        </div>
-        <!-- Library dropdown ends -->
-        <!-- Dormitory dropdown starts -->
-        <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                <i class="glyphicon glyphicon-home"></i><span class=""> 课程</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-
-                <li><a href="/dormitory"><i class="glyphicon glyphicon-home"></i> Dormitory</a></li>
-                <li><a href="/dormitory/assignstd"><i class="glyphicon glyphicon-plus"></i> Assign Student</a></li>
-                <li><a href="/dormitory/assignstd/list"><i class="glyphicon glyphicon-user"></i> Student List</a></li>
-                <li class="divider"></li>
-                    <li><a href="/dormitory/fee"><i class="glyphicon glyphicon-list"></i> Fee Collection</a></li>
-                    <li><a href="/dormitory/report/std"><i class="glyphicon glyphicon-print"></i> Dormitory Report</a></li>
-                    <li><a href="/dormitory/report/fee"><i class="glyphicon glyphicon-print"></i> Fee Reports</a></li>
-
-            </ul>
-        </div>
-        <!-- Dormitory dropdown ends -->
-        <!-- fees dropdown starts-->
-        <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                <i class="glyphicon glyphicon-list-alt"></i><span class=""> 成绩</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> Student Fees</a></li>
-                <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> Fees Collection</a></li>
-
-                <li class="divider"></li>
-                <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> Fees List</a></li>
-                <li><a href="/fees/setup"><i class="glyphicon glyphicon-cog"></i> Fees Setup</a></li>
-                <li class="divider"></li>
-                <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> Fee Collection Report</a></li>
-
-            </ul>
-        </div>
-        <!-- fees dropdown ends -->
-      <!-- teacher dropdown starts-->
-       <!-- <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                <i class="glyphicon glyphicon-user"></i><span class=""> Employee</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/teacher/create"><i class="glyphicon glyphicon-plus"></i> Add New</a></li>
-                <li><a href="/teacher/list"><i class="glyphicon glyphicon-list-alt"></i> List</a></li>
-                <li class="divider"></li>
-                <li><a href="/leaves/create"><i class="glyphicon glyphicon-plus"></i> Add New Leave</a></li>
-                <li><a href="/leaves"><i class="glyphicon glyphicon-list-alt"></i> Leave List</a></li>
-                <li class="divider"></li>
-                <li><a href="/workoutside/create"><i class="glyphicon glyphicon-plus"></i> Add New Work Outside</a></li>
-                <li><a href="/workoutside"><i class="glyphicon glyphicon-list-alt"></i> Work Outside List</a></li>
-                <li class="divider"></li>
-                                <li><a href="/teacher-attendance/list"><i class="glyphicon glyphicon-list-alt"></i> Attendance List</a></li>
-                <li><a href="/teacher-attendance/absenteeism-report"><i class="glyphicon glyphicon-print"></i> Absenteeism Report</a></li>
-                <li><a href="/teacher-attendance/monthly-report"><i class="glyphicon glyphicon-print"></i> Monthly Attendance Report</a></li>
-                <li><a href="/teacher-attendance/monthly-report-2"><i class="glyphicon glyphicon-print"></i> Monthly Attendance Report Two</a></li>
-
-            </ul>
-        </div> -->
-        <!-- teacher dropdown ends -->
-
-    </div>
-</div>
-<!-- topbar ends -->
-<div class="ch-container">
-    <div class="row">
-
-        <!-- left menu starts -->
-        <div class="col-sm-2 col-lg-2">
-            <div class="sidebar-nav">
-                <div class="nav-canvas">
-                    <div class="nav-sm nav nav-stacked">
-
-                    </div>
-                    <ul class="nav nav-pills nav-stacked main-menu">
-                        <li class="nav-header">Main</li>
-                        <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span> 主页</span></a>
+                        <i class="glyphicon glyphicon-th-large"></i><span class=""> 通知</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 申请人名单</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> 在线注册</a>
+                        </li>
+                        <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> 打印许可证</a>
                         </li>
 
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-home"></i><span> 班级</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="create.html">新增班级</a></li>
-                                <li><a href="list.html">班级列表</a></li>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-book"></i><span> 科目</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="createSubject.html">新增科目</a></li>
-                                <li><a href="listSubject.html">课程列表</a></li>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="createStudent.html">新增学生</a></li>
-                                <li><a href="Studentlist.html">学生列表</a></li>
-
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="create-file.html">从文件添加</a></li>
-                                <!--<li><a href="createAttendance.html">添加证书</a></li>-->
-                                <li><a href="/attendance/list">View</a></li>
 
 
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="createMarkManage.html">Add New</a></li>
-                                <li><a href="MarkManagelist.html">Marks List</a></li>
-                            </ul>
-                        </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="/result/generate">Generate</a></li>
-                                <li><a href="results.html">Search</a></li>
-                                <li><a href="resultsForVistor.html">Search Public</a></li>
-
-                            </ul>
-                        </li>
-
-                       <li class="accordion">
-
-                          <a href="#"><i class="glyphicon glyphicon-envelope"></i><span> 通知</span></a>
-                          <ul class="nav nav-pills nav-stacked">
-                              <li><a href="SMS_Formats.html">SMS Formats</a></li>
-                              <li><a href="SMS_Send.html">Send Bulk SMS</a></li>
-                              <li><a href="SMS_Log.html">SMS Log</a></li>
-
-                          </ul>
-                      </li>
-                        <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-print"></i><span> 打印</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="gradesheet.html">Marksheet</a></li>
-                                <li><a href="Attendancereport.html">Attendance</a></li>
-                                <li><a href="monthly-report.html">Monthly Attendance</a></li>
-                                <li><a href="tabulation.html">Tabulationsheet</a></li>
-                                <li><a href="/accounting/report">Account By Type</a></li>
-                                <li><a href="/accounting/reportsum">Account Balance</a></li>
-                                 <li><a href="/barcode">Barcode Generate</a></li>
 
 
-                            </ul>
-                        </li>
-                                                <li class="accordion">
-                            <a href="#"><i class="glyphicon glyphicon-cog"></i><span> 设置</span></a>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="Setting_GPA.html">GPA Ruels</a></li>
+                    </ul>
+                </div>
+                <!-- admission dropdown ends -->
 
-                                <li><a href="Setting_Users.html">Users</a></li>
-                                <li><a href="Setting_Holidays.html">Holidays</a></li>
-                                <li><a href="Setting_Class.html">班级 Off Days</a></li>
-                                <li><a href="Setting_Institute.html">Institute</a></li>
 
-                            </ul>
-                        </li>
-                                              </ul>
 
+                <!-- 证书 dropdown starts -->
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                        <i class="glyphicon glyphicon-book"></i><span class=""> 证书</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+
+                        <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 书籍搜索</a></li>
+                        <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> 借书</a></li>
+                        <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> 已借出书单</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 书籍列表</a></li>
+                        <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 图书记录</a></li>
+                        <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> 书籍报告</a></li>
+                        <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> 月度罚款记录</a></li>
+
+
+                    </ul>
+                </div>
+                <!-- 证书 dropdown ends -->
+                <!-- Dormitory dropdown starts -->
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                        <i class="glyphicon glyphicon-home"></i><span class=""> 课程</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+
+                        <li><a href="/dormitory"><i class="glyphicon glyphicon-home"></i> 宿舍详情</a></li>
+                        <li><a href="/dormitory/assignstd"><i class="glyphicon glyphicon-plus"></i> 添加学生</a></li>
+                        <li><a href="/dormitory/assignstd/list"><i class="glyphicon glyphicon-user"></i> 学生列表</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/dormitory/fee"><i class="glyphicon glyphicon-list"></i> 住宿费用</a></li>
+                        <li><a href="/dormitory/report/std"><i class="glyphicon glyphicon-print"></i> 宿舍情况报告</a></li>
+                        <li><a href="/dormitory/report/fee"><i class="glyphicon glyphicon-print"></i> 费用报单</a></li>
+
+                    </ul>
+                </div>
+                <!-- Dormitory dropdown ends -->
+                <!-- fees dropdown starts-->
+                <div class="btn-group pull-right">
+                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                        <i class="glyphicon glyphicon-list-alt"></i><span class=""> 成绩</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 学费</a></li>
+                        <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 缴费情况</a></li>
+
+                        <li class="divider"></li>
+                        <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 费用清单</a></li>
+                        <li><a href="/fees/setup"><i class="glyphicon glyphicon-cog"></i> 费用设置</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> 收费情况报单</a></li>
+
+                    </ul>
                 </div>
             </div>
         </div>
-        <!--/span-->
-        <!-- left menu ends -->
+        <!-- topbar ends -->
 
-        <noscript>
-            <div class="alert alert-block col-md-12">
-                <h4 class="alert-heading">Warning!</h4>
-
-                <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
-                    enabled to use this site.</p>
-            </div>
-        </noscript>
-
-        <div id="content" class="col-lg-10 col-sm-10">
-            <!-- content starts -->
-                        
-
+        <!-- front starts -->
+        <div class="ch-container">
             <div class="row">
-<div class="box col-md-12">
-        <div class="box-inner">
-            <div data-original-title="" class="box-header well">
-                <h2><i class="glyphicon glyphicon-user"></i> 注册学生</h2>
 
-            </div>
-          <div class="box-content">
-                          <form role="form" action="/student/create" method="post" enctype="multipart/form-data">
-              <input type="hidden" name="_token" value="84WDdhwpXfs6qfS0p3s1CRDb4dLlLvkHggoyPbtH">
-                <div class="row">
-                  <div class="col-md-12">
-                      <h3 class="text-info"> 院系资料</h3>
-                      <hr>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <label class="control-label" for="class">班级</label>
+                <!-- left menu starts -->
+                <div class="col-sm-2 col-lg-2">
+                    <div class="sidebar-nav">
+                        <div class="nav-canvas">
+                            <div class="nav-sm nav nav-stacked">
 
-                              <div class="input-group">
-                                  <span class="input-group-addon"><i class="glyphicon glyphicon-home blue"></i></span>
-                                  <input type="text" id="class"  class="form-control" name="class" required  >
-
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <label class="control-label" for="section">院系</label>
-
-                              <div class="input-group">
-                                  <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                  <select name="section" id="section" required="true" class="form-control" >
-                                      <option value="A">软件学院</option>
-                                      <option value="B">建筑</option>
-                                      <option value="C">C</option>
-                                      <option value="D">D</option>
-                                      <option value="E">E</option>
-                                      <option value="F">F</option>
-                                      <option value="G">G</option>
-                                      <option value="H">H</option>
-                                      <option value="I">I</option>
-                                      <option value="J">J</option>
-
-                                  </select>
-
-
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4">
-                          <div class="form-group ">
-                              <label for="session">注册学年</label>
-                              <div class="input-group">
-
-                                  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
-                                  <input type="text" id="session"  class="form-control datepicker2" name="session" required  data-date-format="yyyy">
-                              </div>
-                          </div>
-                      </div>
-
-
-
-
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="regiNo">学号</label>
-                              <div class="input-group">
-                                  <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                  <input type="text" id="regiNo" class="form-control" required name="regiNo" value="" placeholder="">
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="rollNo">身份证号</label>
-                              <div class="input-group">
-                                  <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                  <input type="text" id="rollNo" class="form-control" required name="rollNo" placeholder="身份证ID">
-                              </div>
-                          </div>
-                      </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                  <label class="control-label" for="group">专业</label>
-
-                  <div class="input-group">
-                      <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                      <select name="group" class="form-control" >
-                        <option value="N/A">软件工程</option>
-                        <option value="Science">Science</option>
-                          <option value="Arts">Arts</option>
-                            <option value="Commerce">Commerce</option>
-
-
-                     </select>
-
-
-                  </div>
-                </div>
-                  </div>
-
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div class="col-md-4">
-                  <div class="form-group">
-                  <label class="control-label" for="shift">学籍</label>
-
-                  <div class="input-group">
-                      <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                      <select name="shift" required="true" class="form-control" >
-                        <option value="Day">本校生</option>
-                          <option value="Morning">交换生</option>
-                     </select>
-
-                  </div>
-                </div>
-                  </div>
-                </div>
-              </div>
-
-            <div class="row">
-              <div class="col-md-12">
-                  <h3 class="text-info"> 个人资料</h3>
-                  <hr>
-              </div>
-            </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="col-md-4">
-                      <div class="form-group">
-                          <label for="fname">姓名</label>
-                          <div class="input-group">
-                              <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                              <input type="text" class="form-control" required name="fname" placeholder="姓名">
-                          </div>
-                      </div>
-                    </div>
-                    <!-- <div class="col-md-4">
-
-                        <div class="form-group">
-                            <label for="mname">Midle Name</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                <input type="text" class="form-control"  name="mname" placeholder="Midle Name">
                             </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-md-4">
-                      <div class="form-group">
-                          <label for="lname">Last Name</label>
-                          <div class="input-group">
-                              <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                              <input type="text" class="form-control" required name="lname" placeholder="Last Name">
-                          </div>
-                      </div>
-                    </div> -->
+                            <ul class="nav nav-pills nav-stacked main-menu">
+                                <li class="nav-header">主菜单</li>
+                                <li><a class="ajax-link" href="./dashboard.html"><i
+                                            class="glyphicon glyphicon-th-large"></i><span>
+                                            主页</span></a>
+                                </li>
 
+                                <li class="accordion" id="index_class">
+                                    <a href="#"><i class="glyphicon glyphicon-home"></i><span> 专业</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createMajor.html">新增专业</a></li>
+                                        <li><a href="majorList.html">专业列表</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_subject">
+                                    <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createSubject.html">新增</a></li>
+                                        <li><a href="subjectList.html">课程列表</a></li>
+                                        <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_stu">
+                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createStudent.html">新增</a></li>
+                                        <li><a href="studentList.html">学生列表</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_teacher">
+                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createTeacher.html">新增</a></li>
+                                        <li><a href="teacherList.html">教师列表</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_com">
+                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createFirm.html">新增</a></li>
+                                        <li><a href="firmList.html">公司列表</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_record">
+                                    <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="applyRecord.html">从文件添加</a></li>
+                                        <li><a href="recordList.html">查看我的证书</a></li>
+                                        <li><a href="checkRecord.html">审查申请</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_grade">
+                                    <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
+                                        <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
+                                        <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_verify">
+                                    <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span>
+                                            链上验证</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="resultsForVistor.html">快速验证</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_print">
+                                    <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="gradesheet.html">成绩表</a></li>
+                                        <li><a href="Attendancereport.html">自选简历</a></li>
+                                        <li><a href="monthly-report.html">全部简历</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
+                        </div>
                     </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="col-md-4">
-                        <div class="form-group">
-                        <label class="control-label" for="gender">性别</label>
+                </div>
+                <!--/span-->
+                <!-- left menu ends -->
 
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                            <select name="gender" class="form-control" required >
+                <div id="content" class="col-lg-10 col-sm-10">
+                    <!-- content starts -->
 
-                                <option value="Male">男</option>
-                               <option value="Female">女</option>
-                    
-                            </select>
-                        </div>
-                      </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-group">
-                          <label class="control-label" for="religion">地区</label>
 
-                          <div class="input-group">
-                              <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                              <select name="religion" class="form-control" required >
-                                    <option value="Islam">北京</option>
-                                  <option value="Hindu">上海</option>
-                                  <option value="Cristian">重庆</option>
-                                  <option value="Buddhist">天津</option>
-                                  <option value="Other">海南</option>
-                              </select>
-                          </div>
-                        </div>
-                          </div>
-                      <div class="col-md-4">
-                        <div class="form-group">
-                        <label class="control-label" for="bloodgroup">血型</label>
-
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                            <select name="bloodgroup" class="form-control" required >
-                      				<option value="A+">A+</option>
-                      				<option value="A-">A-</option>
-                      				<option value="B+">B+</option>
-                      				<option value="B-">B-</option>
-                      				<option value="AB+">AB+</option>
-                      				<option value="AB-">AB-</option>
-                      				<option value="O+">O+</option>
-                      				<option value="O-">O-</option>
-		                     	</select>
-
-                            </select>
-                        </div>
-                      </div>
-                        </div>
-
-                      </div>
-                    </div>
                     <div class="row">
-                      <div class="col-md-12">
-                        <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="nationality">国籍</label>
-                              <div class="input-group">
-                                  <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                    <select name="nationality" class="form-control" required >
-                                    <option value="China">中国</option>
-                                    <option value="Other">...</option>
-                                    </select>                             
-                          </div>
-                        </div>
+                        <div class="box col-md-12 col-sm-12 col-xs-12">
+                            <div class="box-inner">
+                                <div data-original-title="" class="box-header well">
+                                    <h2><i class="glyphicon glyphicon-user"></i> 注册学生</h2>
 
-                          <div class="col-md-4">
-                            <div class="form-group ">
-                                             <label for="dob">生日</label>
-                                                 <div class="input-group">
-                                                  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i> </span>
-                                                    <input type="text"   class="form-control datepicker" name="dob" required  data-date-format="dd/mm/yyyy">
+                                </div>
+                                <div class="box-content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3 class="text-info"> 个人资料</h3>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <!-- <div id="uploadPhotoForm" class="form-group"> -->
+                                        <form enctype="multipart/form-data">
+                                            <label for="photo">照片</label>
+                                            <input id="photoFile" name="photo" type="file">
+                                            <button onclick="uploadPhoto();" type="button">上传</button>
+                                            <!-- </div> -->
+                                        </form>
+                                    </div>
+                                    <form id="stuForm" role="form" action="" method="post">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="fname">姓名</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <input type="texudentNt" class="form-control" required
+                                                                id="stame" name="studentName" placeholder="姓名">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="gender">性别</label>
+
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <select id="gender" name="gender" class="form-control"
+                                                                required>
+
+                                                                <option value="Male">男</option>
+                                                                <option value="Female">女</option>
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="nationality">国籍</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <select name="nationality" class="form-control" required>
+                                                                <option value="China">中国</option>
+                                                                <option value="Other">...</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="religion">省份</label>
+
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <select id="province" name="province" class="form-control"
+                                                                required>
+                                                                <option value="Islam">北京</option>
+                                                                <option value="Hindu">上海</option>
+                                                                <option value="Cristian">重庆</option>
+                                                                <option value="Buddhist">天津</option>
+                                                                <option value="Other">海南</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="bloodgroup">血型</label>
+
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <select name="bloodType" class="form-control" required>
+                                                                <option value="A+">A+</option>
+                                                                <option value="A-">A-</option>
+                                                                <option value="B+">B+</option>
+                                                                <option value="B-">B-</option>
+                                                                <option value="AB+">AB+</option>
+                                                                <option value="AB-">AB-</option>
+                                                                <option value="O+">O+</option>
+                                                                <option value="O-">O-</option>
+                                                            </select>
+
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="identityID">身份证号</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <input type="text" id="identityNumber" class="form-control"
+                                                                required name="identityNumber" placeholder="身份证ID">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="motherCellNo">联系方式 </label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <input type="text" class="form-control" required id="phone"
+                                                                name="phone" placeholder="+8601xxxxxxxxx">
+                                                        </div>
+                                                    </div>
                                                 </div>
 
 
-                                         </div>
-                            </div>
+                                            </div>
+                                        </div>
 
-                            <div class="col-md-4">
-                              <div class="form-group ">
-                              <label for="photo">照片</label>
-                              <input id="photo" name="photo" type="file">
-                              </div>
-                            </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3 class="text-info"> 院系资料</h3>
+                                                <hr>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="section">院系</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <select id="collegeId" name="collegeId" required="true"
+                                                                class="form-control">
+                                                                <option value="A">软件学院</option>
+                                                                <option value="B">建筑</option>
+                                                                <option value="C">C</option>
+                                                                <option value="D">D</option>
+                                                                <option value="E">E</option>
+                                                                <option value="F">F</option>
+                                                                <option value="G">G</option>
+                                                                <option value="H">H</option>
+                                                                <option value="I">I</option>
+                                                                <option value="J">J</option>
 
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-
-
-                      <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="extraActivity">招生方式</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                <input type="text" class="form-control"  name="extraActivity" placeholder="自主招生、校招">
-                            </div>
-                        </div>
-                        </div>
-                        <!-- <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="remarks">Remarks </label>
-                              <div class="input-group">
-                                  <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                  <input type="text" class="form-control"  name="remarks" placeholder="Remarks">
-                              </div>
-                          </div>
-                          </div> -->
-                      </div>
-                    </div>
+                                                            </select>
 
 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group ">
+                                                        <label for="rollinYear">注册学年</label>
+                                                        <div class="input-group">
 
-                      <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="text-info"> 监护人</h3>
-                            <hr>
-                        </div>
-                      </div>
-                        <div class="row">
-                          <div class="col-md-12">
-                        <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="fatherName">父亲名字 </label>
-                              <div class="input-group">
-                                  <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                  <input type="text" class="form-control" required  name="fatherName" placeholder="名字">
-                              </div>
-                          </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="fatherCellNo">联系方式 </label>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                    <input type="text" class="form-control"  required name="fatherCellNo" placeholder="+8613xxxxxxxxx">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-calendar"></i>
+                                                            </span>
+                                                            <input type="text" id="rollinYear"
+                                                                class="form-control datepicker2" name="rollinYear"
+                                                                required data-date-format="yyyy">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="group">专业</label>
+
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <select name="majorId" id="majorId" class="form-control">
+                                                                <option value="N/A">软件工程</option>
+                                                                <option value="Science">Science</option>
+                                                                <option value="Arts">Arts</option>
+                                                                <option value="Commerce">Commerce</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label class="control-label" for="shift">学籍</label>
+
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <select name="studentType" id="studentType" required="true"
+                                                                class="form-control">
+                                                                <option value="ungrad">本科生</option>
+                                                                <option value="master">研究生</option>
+                                                                <option value="phd">博士生</option>
+                                                                <option value="post-phd">博士后</option>
+                                                                <option value="temp">交流/交换生</option>
+                                                            </select>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="recuitType">招生方式</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <select name="recruitType" class="form-control" required>
+                                                                <option value="self">自主招生</option>
+                                                                <option value="CEE">全国统一高考</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3 class="text-info"> 监护人</h3>
+                                                <hr>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="fatherName">父亲名字 </label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <input type="text" class="form-control" required id="fatherName"
+                                                                name="fatherName" placeholder="名字">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="fatherCellNo">联系方式 </label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <input type="text" class="form-control" required id="fatherPhone"
+                                                                name="fatherPhone" placeholder="+8613xxxxxxxxx">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="motherName">母亲名字 </label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <input type="text" class="form-control" required id="motherName"
+                                                                name="motherName" placeholder="名字">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="motherCellNo">联系方式 </label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <input type="text" class="form-control" required id="motherPhone"
+                                                                name="motherPhone" placeholder="+8601xxxxxxxxx">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h3 class="text-info"> 详细地址</h3>
+                                                <hr>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="presentAddress">当前地址</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-map-marker blue"></i></span>
+                                                            <textarea type="text" class="form-control" required
+                                                                id="currentAddress" name="currentAddress"
+                                                                placeholder="当前地址"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="parmanentAddress">永久地址</label>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-map-marker blue"></i></span>
+                                                            <textarea type="text" class="form-control" required
+                                                                name="permanentAddress" id="permanentAddress"
+                                                                placeholder="永久地址"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+
+                                        <div class="form-group">
+                                            <button class="btn btn-primary pull-right" onclick="addStu();"><i
+                                                    class="glyphicon glyphicon-plus"></i>添加</button>
+                                            <br>
+                                        </div>
+
                                 </div>
+                                </form>
                             </div>
-                            </div>
-                            <div class="col-md-4">
-                              <div class="form-group">
-                                  <label for="motherName">母亲名字 </label>
-                                  <div class="input-group">
-                                      <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                      <input type="text" class="form-control" required  name="motherName" placeholder="名字">
-                                  </div>
-                              </div>
-                              </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
 
-                      <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="motherCellNo">联系方式 </label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                <input type="text" class="form-control" required name="motherCellNo" placeholder="+8601xxxxxxxxx">
-                            </div>
+
+
                         </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-group">
-                              <label for="localGuardian">主要监护人 </label>
-                              <div class="input-group">
-                                  <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                  <input type="text" class="form-control"  name="localGuardian" placeholder="名字">
-                              </div>
-                          </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="localGuardianCell">联系方式 </label>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                    <input type="text" class="form-control"  name="localGuardianCell" placeholder="+8601xxxxxxxxx">
-                                </div>
-                            </div>
-                            </div>
+                    </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                    <h3 class="text-info"> 详细地址</h3>
-                    <hr>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                          <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="presentAddress">当前地址</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker blue"></i></span>
-                                <textarea type="text" class="form-control" required name="presentAddress" placeholder="当前地址"></textarea>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group">
-                              <label for="parmanentAddress">永久地址</label>
-                              <div class="input-group">
-                                  <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker blue"></i></span>
-                                  <textarea type="text" class="form-control" required name="parmanentAddress" placeholder="永久地址"></textarea>
-                              </div>
-                          </div>
-                          </div>
-              </div>
+
+                <!-- content ends -->
             </div>
-
-                    <div class="clearfix"></div>
-
-                                <div class="form-group">
-                    <button class="btn btn-primary pull-right" type="submit"><i class="glyphicon glyphicon-plus"></i>添加</button>
-                    <br>
-                  </div>
-                </form>
-
-
-
-
-
-
+            <!--/#content.col-md-0-->
+        </div>
+        <!--/fluid-row-->
+        <div class="row">
+            <div class="col-md-9 col-lg-9 col-xs-9 hidden-xs">
+            </div>
         </div>
     </div>
-</div>
-</div>
-
-
-
-
-            <!-- content ends -->
-        </div><!--/#content.col-md-0-->
-    </div><!--/fluid-row-->
-    <div class="row">
-        <div class="col-md-9 col-lg-9 col-xs-9 hidden-xs">
-
-
-
-        </div>
-
     </div>
+    </div>
+    <!--/.fluid-container-->
 
-<!-- footer content -->
-  <footer class="footer">
-         <hr>
-        <p class="col-md-3 col-sm-3 col-xs-12 copyright"> <a href="#" target="_blank">HR Model High School</a> &copy;2018</p>
-        <p class="col-md-9 col-sm-9 col-xs-12 powered-by">
-         <!-- Don't remove below text. Its againts copy right laws. -->
-         <strong>School Management System Version 1.0 - a291233</strong> || Developed by <a class="cplink" href="http://shanixlab.com">ShanixLab</a>
-        </p> 
-  </footer>
-  <!-- /footer content -->
-</div>
-</div>
-</div><!--/.fluid-container-->
+    <!-- external javascript -->
 
-<!-- external javascript -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- library for cookie management -->
+    <script src="js/jquery.cookie.js"></script>
+    <!-- calender plugin -->
+    <script src='bower_components/moment/min/moment.min.js'></script>
+    <script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+    <!-- data table plugin -->
+    <script src='bower_components/datatables/media/js/jquery.dataTables.js'></script>
 
-<!-- library for cookie management -->
-<script src="js/jquery.cookie.js"></script>
-<!-- calender plugin -->
-<script src='bower_components/moment/min/moment.min.js'></script>
-<script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
-<!-- data table plugin -->
-<script src='bower_components/datatables/media/js/jquery.dataTables.js'></script>
+    <!-- select or dropdown enhancer -->
+    <script src="bower_components/chosen/chosen.jquery.min.js"></script>
+    <!-- plugin for gallery image view -->
+    <script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+    <!-- notification plugin -->
+    <script src="js/jquery.noty.js"></script>
+    <!-- library for making tables responsive -->
+    <script src="bower_components/responsive-tables/responsive-tables.js"></script>
 
-<!-- select or dropdown enhancer -->
-<script src="bower_components/chosen/chosen.jquery.min.js"></script>
-<!-- plugin for gallery image view -->
-<script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
-<!-- notification plugin -->
-<script src="js/jquery.noty.js"></script>
-<!-- library for making tables responsive -->
-<script src="bower_components/responsive-tables/responsive-tables.js"></script>
+    <!-- star rating plugin -->
+    <script src="js/jquery.raty.min.js"></script>
+    <!-- for iOS style toggle switch -->
+    <script src="js/jquery.iphone.toggle.js"></script>
+    <!-- autogrowing textarea plugin -->
+    <script src="js/jquery.autogrow-textarea.js"></script>
+    <!-- multiple file upload plugin -->
 
-<!-- star rating plugin -->
-<script src="js/jquery.raty.min.js"></script>
-<!-- for iOS style toggle switch -->
-<script src="js/jquery.iphone.toggle.js"></script>
-<!-- autogrowing textarea plugin -->
-<script src="js/jquery.autogrow-textarea.js"></script>
-<!-- multiple file upload plugin -->
+    <script src="js/jquery.history.js"></script>
+    <script src="js/basic.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
 
-<script src="js/jquery.history.js"></script>
-<!-- application script for Charisma demo -->
-<script src="js/charisma.js"></script>
+    <script src="js/create.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".datepicker2").datepicker({
+                format: " yyyy", // Notice the Extra space at the beginning
+                viewMode: "years",
+                minViewMode: "years",
+                autoclose: true
 
-<script src="js/bootstrap-datepicker.js"></script>
-<script type="text/javascript">
+            });
+            $(".datepicker").datepicker({
+                autoclose: true,
+                todayHighlight: true
 
-    $( document ).ready(function() {
-
-      $('.datepicker').datepicker({autoclose:true});
-      $(".datepicker2").datepicker( {
-    format: " yyyy", // Notice the Extra space at the beginning
-    viewMode: "years",
-    minViewMode: "years",
-    autoclose:true
-}).on('changeDate', function (ev) {
-
-          var aclass = $('#class').val();
-          var session = $('#session').val().trim();
-          var section=$('#section').val().trim();
-          $.ajax({
-              url: '/student/getRegi/'+aclass+'/'+session+'/'+section,
-              data: {
-                  format: 'json'
-              },
-              error: function(error) {
-                  alert(error);
-              },
-              dataType: 'json',
-              success: function(data) {
-
-                  $('#regiNo').val(data[0]);
-                  $('#rollNo').val(data[1]);
-
-              },
-              type: 'GET'
-          });
-
-
+            });
         });
-
-    });
-
-</script>
+    </script>
 </body>
+
 </html>

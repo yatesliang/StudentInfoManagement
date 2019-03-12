@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>基于区块链的学生管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- The styles -->
+    <link id="bs-css" href="css/bootstrap-cerulean.min.css" rel="stylesheet">
+
+    <link href="css/charisma-app.css" rel="stylesheet">
+    <link href='bower_components/fullcalendar/dist/fullcalendar.css' rel='stylesheet'>
+    <link href='bower_components/fullcalendar/dist/fullcalendar.print.css' rel='stylesheet' media='print'>
+    <link href='bower_components/chosen/chosen.min.css' rel='stylesheet'>
+    <link href='bower_components/colorbox/example3/colorbox.css' rel='stylesheet'>
+
+    <link href='  bower_components/datatables/media/css/jquery.dataTables.css' rel='stylesheet'>
+
+    <link href='bower_components/responsive-tables/responsive-tables.css' rel='stylesheet'>
+
+    <link href='css/jquery.noty.css' rel='stylesheet'>
+    <link href='css/noty_theme_default.css' rel='stylesheet'>
+    <link href='css/elfinder.min.css' rel='stylesheet'>
+    <link href='css/elfinder.theme.css' rel='stylesheet'>
+    <link href='css/jquery.iphone.toggle.css' rel='stylesheet'>
+    <link href='css/uploadify.css' rel='stylesheet'>
+    <link href='css/animate.min.css' rel='stylesheet'>
+    <link href='css/app.css' rel='stylesheet'>
+
+    <style media="screen">
+        body {
+       color: #154d88;
+       background: rgba(233, 237, 241, 0.27);
+       font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+       font-size: 13px;
+       font-weight: 400;
+       line-height: 1.471;
+   }
+   </style>
+    <!-- jQuery -->
+    <script src="bower_components/jquery/jquery.min.js"></script>
+
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- The fav icon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <script>
+        var hash = 'a291233';
+    </script>
+
+</head>
+
+<body>
+    <!-- topbar starts -->
+    <div class="navbar navbar-default" role="navigation">
+
+        <div class="navbar-inner">
+            <button type="button" class="navbar-toggle pull-left animated flip">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="iname">基于区块链的学生管理系统</span>
+
+            <!-- user dropdown starts -->
+            <div class="btn-group pull-right">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> 管理员</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> 个人资料</a></li>
+                    <li class="divider"></li>
+                    <li><a href="Setting_Users.html/logout"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
+                </ul>
+            </div>
+            <!-- Addmission dropdown starts -->
+            <div class="btn-group pull-right">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                    <i class="glyphicon glyphicon-th-large"></i><span class=""> 通知</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 申请人名单</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> 在线注册</a></li>
+                    <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> 打印许可证</a></li>
+
+
+
+
+
+                </ul>
+            </div>
+            <!-- admission dropdown ends -->
+
+
+
+            <!-- 证书 dropdown starts -->
+            <div class="btn-group pull-right">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                    <i class="glyphicon glyphicon-book"></i><span class=""> 证书</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+
+                    <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 书籍搜索</a></li>
+                    <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> 借书</a></li>
+                    <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> 已借出书单</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 书籍列表</a></li>
+                    <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 图书记录</a></li>
+                    <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> Reports</a></li>
+                    <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> 月度罚款记录</a></li>
+
+
+                </ul>
+            </div>
+            <!-- 证书 dropdown ends -->
+            <!-- Dormitory dropdown starts -->
+            <div class="btn-group pull-right">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                    <i class="glyphicon glyphicon-home"></i><span class=""> 课程</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+
+                    <li><a href="/dormitory"><i class="glyphicon glyphicon-home"></i> 宿舍详情</a></li>
+                    <li><a href="/dormitory/assignstd"><i class="glyphicon glyphicon-plus"></i> 添加学生</a></li>
+                    <li><a href="/dormitory/assignstd/list"><i class="glyphicon glyphicon-user"></i> 学生列表</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/dormitory/fee"><i class="glyphicon glyphicon-list"></i> 住宿费用</a></li>
+                    <li><a href="/dormitory/report/std"><i class="glyphicon glyphicon-print"></i> 宿舍情况报告</a></li>
+                    <li><a href="/dormitory/report/fee"><i class="glyphicon glyphicon-print"></i> 费用报单</a></li>
+
+                </ul>
+            </div>
+            <!-- Dormitory dropdown ends -->
+            <!-- fees dropdown starts-->
+            <div class="btn-group pull-right">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+
+                    <i class="glyphicon glyphicon-list-alt"></i><span class=""> 成绩</span>
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 学费</a></li>
+                    <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 缴费情况</a></li>
+
+                    <li class="divider"></li>
+                    <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 费用清单</a></li>
+                    <li><a href="/fees/setup"><i class="glyphicon glyphicon-cog"></i> 费用设置</a></li>
+                    <li class="divider"></li>
+                    <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> 收费情况报单</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- topbar ends -->
+    <div class="ch-container">
+        <div class="row">
+
+            <!-- left menu starts -->
+            <div class="col-sm-2 col-lg-2">
+                    <div class="sidebar-nav">
+                        <div class="nav-canvas">
+                            <div class="nav-sm nav nav-stacked">
+
+                            </div>
+                            <ul class="nav nav-pills nav-stacked main-menu">
+                                <li class="nav-header">主菜单</li>
+                                <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span>
+                                            主页</span></a>
+                                </li>
+
+                                <li class="accordion" id="index_class">
+                                    <a href="#"><i class="glyphicon glyphicon-home"></i><span> 专业</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createMajor.html">新增专业</a></li>
+                                        <li><a href="majorList.html">专业列表</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_subject">
+                                    <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createSubject.html">新增</a></li>
+                                        <li><a href="subjectList.html">课程列表</a></li>
+                                        <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_stu">
+                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createStudent.html">新增</a></li>
+                                        <li><a href="studentList.html">学生列表</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_teacher">
+                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                            <li><a href="createTeacher.html">新增</a></li>
+                                            <li><a href="teacherList.html">教师列表</a></li>    
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_com">
+                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createFirm.html">新增</a></li>
+                                        <li><a href="firmList.html">公司列表</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_record">
+                                    <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="applyRecord.html">从文件添加</a></li>
+                                        <li><a href="recordList.html">查看我的证书</a></li>
+                                        <li><a href="checkRecord.html">审查申请</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_grade">
+                                    <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
+                                        <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
+                                        <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_verify">
+                                    <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="resultsForVistor.html">快速验证</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_print">
+                                    <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="gradesheet.html">成绩表</a></li>
+                                        <li><a href="Attendancereport.html">自选简历</a></li>
+                                        <li><a href="monthly-report.html">全部简历</a></li>
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            <!--/span-->
+            <!-- left menu ends -->
+
+
+
+            <div id="content" class="col-lg-10 col-sm-10">
+                <!-- content starts -->
+
+
+                <div class="row">
+
+                    <div class="row">
+                        <div id="content" class="col-lg-10 col-sm-10">
+                            <!-- content starts -->
+
+
+                            <div class="row">
+                                <div class="box col-md-12">
+                                    <div class="box-inner">
+                                        <div data-original-title="" class="box-header well">
+                                            <h2><i class="glyphicon glyphicon-user"></i> 证明审核 </h2>
+
+                                        </div>
+                                        <div class="box-content">
+                                            <form id="checkRecordForm" role="form" action="/attendance/create-file"
+                                                method="post" enctype="multipart/form-data">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="recordId">证书编号</label>
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                                    <input type="text" class="form-control" required id="recordId"
+                                                                        name="recordId" placeholder="证书编号">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="name">证书名称</label>
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                                    <input type="text" class="form-control" required
+                                                                        name="recordName" placeholder="证书名称">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="class">选择证明类型</label>
+
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home blue"></i></span>
+                                                                    <select id="RecordType" name="RecordType" class="form-control">
+                                                                        <option value="">--选择证明类型--</option>
+                                                                        <option value="cl1">实践证明</option>
+                                                                        <option value="cl23">科技竞赛证明</option>
+                                                                        <option value="cl5">课程证明</option>
+
+
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group ">
+                                                                <label for="applyDate">申请日期</label>
+                                                                <div class="input-group">
+
+                                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i>
+                                                                    </span>
+                                                                    <input type="text" id="applyDate" class="form-control datepicker2"
+                                                                        name="applyDate" required data-date-format="yyyy/mm/dd"
+                                                                        placeholder="2018/03/26">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="section">申报人学院</label>
+
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                                    <select class="form-control" id="section" required="true"
+                                                                        name="section">
+                                                                        <option value="A">A</option>
+                                                                        <option value="B">B</option>
+                                                                        <option value="C">C</option>
+                                                                        <option value="D">D</option>
+                                                                        <option value="E">E</option>
+                                                                        <option value="F">F</option>
+                                                                        <option value="G">G</option>
+                                                                        <option value="H">H</option>
+                                                                        <option value="I">I</option>
+                                                                        <option value="J">J</option>
+                                                                    </select>
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="group">申报人专业</label>
+
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                                    <select name="majorID" id="majorID" class="form-control">
+                                                                        <option value="N/A">软件工程</option>
+                                                                        <option value="Science">Science</option>
+                                                                        <option value="Arts">Arts</option>
+                                                                        <option value="Commerce">Commerce</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="fname">申报人姓名</label>
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                                    <input type="text" class="form-control" required id="stuName"
+                                                                        name="stuName" placeholder="姓名">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="col-md-3">
+                                                            <div class="form-group">
+                                                                <label for="fname">申报人学号</label>
+                                                                <div class="input-group">
+                                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                                    <input type="text" class="form-control" required id="stuId"
+                                                                        name="stuId" placeholder="学号">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group" align="right" style="margin-right:5%">
+                                                            <input type="checkbox" name="checked"><label class="control-label"
+                                                                for="shift">已审核 </label>
+                                                        </div>
+
+
+                                                        <div class="col-md-12" align="right">
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="class">&nbsp;</label>
+                                                                <div class="input-group">
+                                                                    <button class="btn btn-primary pull-left" type="submit"
+                                                                        onclick="searchRecord();"><i class="glyphicon glyphicon-th"></i>
+                                                                        查询</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+
+                                        <div data-original-title="" class="box-header well">
+                                            <h2><i class="glyphicon glyphicon-home"></i> 最近提交记录</h2>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <table id="recordList" class="table table-striped table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>证书编号</th>
+                                                            <th>证书名称</th>
+                                                            <th>证明类型</th>
+                                                            <th>申报人学号</th>
+                                                            <th>姓名</th>
+                                                            <th>学院</th>
+                                                            <th>申报日期</th>
+                                                            <th>审核材料</th>
+                                                            <th>审核状态</th>
+                                                            <th>审核结果</th>
+                                                            <th>操作</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>123</td>
+                                                            <td>SITP结题</td>
+                                                            <td>科技证明</td>
+                                                            <td>1529245</td>
+                                                            <td>张三</td>
+                                                            <td>软件学院</td>
+                                                            <td>2019/05/12</td>
+                                                            <td>[<a href="">下载PDF</a>]</td>
+                                                            <td>已审核</td>
+                                                            <td>审核通过</td>
+                                                            <td>
+                                                                <a title='Edit' class='btn btn-info' href='class/edit/185'>
+                                                                    <i class="glyphicon glyphicon-plus"></i></a>&nbsp&nbsp<a
+                                                                    title='Delete' class='btn btn-danger' href='class/delete/185'>
+                                                                    <i class="glyphicon glyphicon-log-out icon-white"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <br><br>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- content ends -->
+                                </div>
+                                <!--/#content.col-md-0-->
+                            </div>
+                            <!--/fluid-row-->
+                            <div class="row">
+                                <div class="col-md-9 col-lg-9 col-xs-9 hidden-xs">
+
+
+
+                                </div>
+
+                            </div>
+                            <!-- external javascript -->
+
+                            <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+                            <!-- library for cookie management -->
+                            <script src="js/jquery.cookie.js"></script>
+                            <!-- calender plugin -->
+                            <script src='bower_components/moment/min/moment.min.js'></script>
+                            <script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+                            <!-- data table plugin -->
+                            <script src='bower_components/datatables/media/js/jquery.dataTables.js'></script>
+
+                            <!-- select or dropdown enhancer -->
+                            <script src="bower_components/chosen/chosen.jquery.min.js"></script>
+                            <!-- plugin for gallery image view -->
+                            <script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+                            <!-- notification plugin -->
+                            <script src="js/jquery.noty.js"></script>
+                            <!-- library for making tables responsive -->
+                            <script src="bower_components/responsive-tables/responsive-tables.js"></script>
+
+                            <!-- star rating plugin -->
+                            <script src="js/jquery.raty.min.js"></script>
+                            <!-- for iOS style toggle switch -->
+                            <script src="js/jquery.iphone.toggle.js"></script>
+                            <!-- autogrowing textarea plugin -->
+                            <script src="js/jquery.autogrow-textarea.js"></script>
+                            <!-- multiple file upload plugin -->
+
+                            <script src="js/jquery.history.js"></script>
+                            <!-- application script for Charisma demo -->
+                            <script src="js/basic.js"></script>
+
+                            <script type="text/javascript">
+                                $(document).ready(function () {
+                                    $('#recordList').dataTable();
+                                });
+                                function searchRecord() {
+                                    var searchjson = $("#searchRecord").serializeObject();
+                                    $.ajax({
+                                        url: sessionStorage.host+'searchRecord',
+                                        type: 'post',
+                                        data: searchjson,
+                                        offline: false,
+                                        success: function (msg) {
+                                            for (var i = 0; i < msg.length; i++) {
+                                                insertRecord(msg[i]);
+                                            }
+                                        }
+                                    })
+                                }
+
+                                $.fn.serializeObject = function () {
+                                    var o = {};
+                                    var a = this.serializeArray();
+                                    $.each(a, function () {
+                                        if (o[this.name] !== undefined) {
+                                            if (!o[this.name].push) {
+                                                o[this.name] = [o[this.name]];
+                                            }
+                                            o[this.name].push(this.value || '');
+                                        } else {
+                                            o[this.name] = this.value || '';
+                                        }
+                                    });
+                                    return o;
+                                };
+                               
+                                function insertRecord(Record) {
+                                    var tbody = $("tbody");
+                                    var tr = $("<tr id=\"" + Record.id + "\"></tr>");
+                                    var td_id = $("<td>" + Record.id + "</td>");
+                                    var td_name = $("<td>" + Record.name + "</td>");
+                                    var td_type = $("<td>" + Record.type + "</td>");
+                                    var td_stuId = $("<td>" + Record.stuId + "</td>");
+                                    var td_stuName = $("<td>" + Record.stuName + "</td>");
+                                    var td_section = $("<td>" + Record.type + "</td>");
+                                    var td_applyDate = $("<td>" + Record.applyDate + "</td>");
+                                    var td_file = $("<td>" + "[<a href=\"" + Record.fileLink + "\">下载PDF</a>]" + "</td>");
+                                    var td_status = $("<td>" + Record.status + "</td>");
+                                    var td_result = $("<td>" + Record.result + "</td>");
+
+                                    var edit = $("<td></td>");
+                                    // 未审核
+                                    if (td_status == "no") {
+                                        var add_button = $("<button class='btn btn-primary' id=\"add" + Record.id + "\" onclick=\"pass(this);\"></button>");
+                                        var add_button_i = $("<i class= 'glyphicon glyphicon-plus icon-white'></i>");
+                                        add_button.appendTo(edit);
+                                        add_button_i.appendTo(add_button);
+
+                                        var delete_button = $("<button class='btn btn-danger' id=\"delete" + Record.id + "\" onclick=\"refuse(this);\"></button>");
+                                        var delete_button_i = $("<i class= 'glyphicon glyphicon-trash icon-white'></i>");
+                                        delete_button.appendTo(edit);
+                                        delete_button_i.appendTo(delete_button);
+                                    }
+
+                                    tr.append(td_id, td_name, td_type, td_stuId, td_stuName, td_section, td_applyDate, td_file, td_status, td_result, edit);
+                                    tbody.append(tr);
+                                }
+
+                                function pass(this) {
+                                    var recordId = $(this).attr("id");
+                                    $.ajax({
+                                        url: sessionStorage.host+"passRecord",
+                                        type: "post",
+                                        data: {
+                                            recordId: recordId
+                                        },
+                                        offline: false,
+                                        success: function (msg) {
+                                            alert("操作成功！");
+                                        }
+                                    })
+                                }
+
+                                function refuse(this) {
+                                    var recordId = $(this).attr("id");
+                                    $.ajax({
+                                        url: sessionStorage.host+"refuseRecord",
+                                        type: "post",
+                                        data: {
+                                            recordId: recordId
+                                        },
+                                        offline: false,
+                                        success: function (msg) {
+                                            alert("操作成功！");
+                                        }
+                                    })
+                                }
+
+                            </script>
+</body>
+
+</html>
