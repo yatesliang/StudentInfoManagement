@@ -237,7 +237,7 @@
                                 <li class="accordion" id="index_grade">
                                     <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
                                     <ul class="nav nav-pills nav-stacked">
-                                        <li><a id="create_grade" href="createMarkManage.html">新增</a></li>
+                                        <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
                                         <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
                                         <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
                                     </ul>
@@ -456,6 +456,8 @@
     <script src="js/basic.js"></script>
 
     <script type="text/javascript">
+        var urole;
+        sessionStorage.host = "http://192.168.1.53:8080/";
         $(document).ready(function () {
             $('#recordList').dataTable();
         });
@@ -469,7 +471,7 @@
                 var userId = obj.role;
             }
             $.ajax({
-                url: 'getStuRecord',
+                url: sessionStorage.host+'getStuRecord',
                 type: 'post',
                 data: {
                     userId: userId
@@ -482,6 +484,8 @@
                 }
             })
         }
+        var urole;
+        sessionStorage.host = "http://192.168.1.53:8080/";
 
         function searchStuRecord() {
 
@@ -493,7 +497,7 @@
                 var userId = obj.role;
                 var searchjson = $("#searchStuRecord").serializeObject();
                 $.ajax({
-                    url: 'searchStuRecord',
+                    url: sessionStorage.host+'searchStuRecord',
                     type: 'post',
                     data: {
                         userId: userId,

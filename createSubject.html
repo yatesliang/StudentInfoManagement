@@ -262,7 +262,7 @@
                                 <li class="accordion" id="index_grade">
                                     <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
                                     <ul class="nav nav-pills nav-stacked">
-                                        <li><a id="create_grade" href="createMarkManage.html">新增</a></li>
+                                        <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
                                         <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
                                         <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
                                     </ul>
@@ -316,9 +316,7 @@
                                     </div>
                                 </div>
 
-                                <form id="subjctForm" role="form" method="post">
-                                    <input type="hidden" name="_token" value="84WDdhwpXfs6qfS0p3s1CRDb4dLlLvkHggoyPbtH">
-                                    <div class="row">
+                                <form id="subjectForm" role="form" method="post">                                    <div class="row">
                                         <div class="col-md-12">
                                             <h3 class="text-info"> 课程细节</h3>
                                             <hr>
@@ -379,9 +377,9 @@
                                                     <label class="control-label" for="section">所属院系</label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
-                                                        <select name="sectionId" class="form-control" required>
-                                                            <option value="2163">软件学院</option>
-                                                            <option value="4197">建筑与规划学院</option>
+                                                        <select name="collegeId" class="form-control" required>
+                                                            <option value="1">软件学院</option>
+                                                            <option value="2">建筑与规划学院</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -392,31 +390,20 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
                                                         <select name="majorId" class="form-control" required>
-                                                            <option value="2163">软件工程</option>
+                                                            <option value="1">软件工程</option>
                                                         </select>
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="control-label" for="direction">方向</label>
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
-                                                        <select name="directId" class="form-control" required>
-                                                            <option value="2163">软件工程</option>
-                                                            <option value="4197">数字媒体</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                           
 
                                             <div class="col-md-3">
                                                 <div class="form-group">
                                                     <label for="for">学分</label>
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                        <select name="gradeSystem" required class="form-control">
+                                                        <select name="credit" required class="form-control">
                                                             <option value="6">6分 </option>
                                                             <option value="5">5分 </option>
                                                             <option value="4">4分 </option>
@@ -424,6 +411,54 @@
                                                             <option value="2">2分 </option>
                                                             <option value="1">1分 </option>
                                                         </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="col-md-4">
+                                                    <div class="form-group ">
+                                                        <label for="rollinYear">学年</label>
+                                                        <div class="input-group">
+
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i>
+                                                            </span>
+                                                            <input type="text" id="rollinYear" class="form-control datepicker2"
+                                                                name="year" required data-date-format="yyyy">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="section">学期</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
+                                                        <select name="season" class="form-control" required>
+                                                            <option value="1">春季</option>
+                                                            <option value="2">秋季</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="name">上课时间</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                        <input type="text" class="form-control" required name="schedule"
+                                                            placeholder="周几，时间段">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="name">课程描述</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                        <input type="text" class="form-control" required name="comment"
+                                                            placeholder="100字以内">
                                                     </div>
                                                 </div>
                                             </div>
@@ -461,7 +496,7 @@
                                                             placeholder="考勤">
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="fgrade1" required="true"
+                                                        <input type="text" class="form-control" name="percent1" required="true"
                                                             placeholder="0">
                                                     </div>
                                                 </div>
@@ -482,7 +517,7 @@
                                                     </div>
 
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="fgrade2" required="true"
+                                                        <input type="text" class="form-control" name="percent2" required="true"
                                                             placeholder="0">
                                                     </div>
                                                 </div>
@@ -502,7 +537,7 @@
                                                             placeholder="日常作业">
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="fgrade3" required="true"
+                                                        <input type="text" class="form-control" name="percent3" required="true"
                                                             placeholder="0">
                                                     </div>
                                                 </div>
@@ -517,12 +552,12 @@
                                                 <div class="form-group">
 
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="wfull" required="false"
+                                                        <input type="text" class="form-control" name="coursePerformance" required="false"
                                                             placeholder="课堂成绩">
                                                     </div>
 
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="pfull" required="true"
+                                                        <input type="text" class="form-control" name="performancePercent" required="true"
                                                             placeholder="0">
                                                     </div>
                                                 </div>
@@ -539,12 +574,12 @@
                                                 <div class="form-group">
 
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="wfull" required="false"
+                                                        <input type="text" class="form-control" name="finalExam" required="false"
                                                             placeholder="期末考试">
                                                     </div>
 
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="pfull" required="true"
+                                                        <input type="text" class="form-control" name="finalPercent" required="true"
                                                             placeholder="0">
                                                     </div>
                                                 </div>

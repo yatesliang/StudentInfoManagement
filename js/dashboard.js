@@ -1,41 +1,40 @@
 const usertypes = {
-    ADMIN: 'Admin',
-    STUDENT: 'Stu',
-    TEACHER: 'Tea',
-    COMPANY: 'Firm'
+    ADMIN: 2,
+    STUDENT: 0,
+    TEACHER: 1,
+    COMPANY: 3
 }
 
 $(document).ready(function(){
 
-    // var str = sessionStorage.obj;
-    //     if(str==null){
-    //         window.location.href="School_Manage.html";
-    //     }else{
-    //         var obj = $.parseJSON(str);
-    //         var usertype = obj.role;
+    var str = sessionStorage.obj;
+        if(str==null){
+            window.location.href="School_Manage.html";
+        }else{
             
-    //         // if (usertype==usertypes.ADMIN)
-    //         switch(usertype){
-    //             case usertypes.ADMIN:
-    //                 setAdmDom();
-    //                 break;
+            var usertype = str;
+            
+            switch(usertype){
+                case usertypes.ADMIN:
+                    setAdmDom();
+                    break;
 
-    //             case usertypes.COMPANY:
-    //                 setComDom();
-    //                 break;
+                case usertypes.COMPANY:
+                    setComDom();
+                    break;
 
-    //             case usertypes.STUDENT:
-    //                 setStuDom();
-    //                 break;
+                case usertypes.STUDENT:
+                    setStuDom();
+                    break;
 
-    //             case usertypes.TEACHER:
-    //                 setTeaDom();
-    //                 break;
+                case usertypes.TEACHER:
+                    setTeaDom();
+                    break;
 
-    //             default:
-    //                 alert("illegal usertype");
-    //         }
-    //     }
+                default:
+                    alert("illegal usertype");
+            }
+        }
 });
 
 function setAdmDom(){

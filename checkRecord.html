@@ -235,7 +235,7 @@
                                 <li class="accordion" id="index_grade">
                                     <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
                                     <ul class="nav nav-pills nav-stacked">
-                                        <li><a id="create_grade" href="createMarkManage.html">新增</a></li>
+                                        <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
                                         <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
                                         <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
                                     </ul>
@@ -529,7 +529,7 @@
                                 function searchRecord() {
                                     var searchjson = $("#searchRecord").serializeObject();
                                     $.ajax({
-                                        url: 'searchRecord',
+                                        url: sessionStorage.host+'searchRecord',
                                         type: 'post',
                                         data: searchjson,
                                         offline: false,
@@ -556,7 +556,7 @@
                                     });
                                     return o;
                                 };
-
+                               
                                 function insertRecord(Record) {
                                     var tbody = $("tbody");
                                     var tr = $("<tr id=\"" + Record.id + "\"></tr>");
@@ -592,7 +592,7 @@
                                 function pass(this) {
                                     var recordId = $(this).attr("id");
                                     $.ajax({
-                                        url: "passRecord",
+                                        url: sessionStorage.host+"passRecord",
                                         type: "post",
                                         data: {
                                             recordId: recordId
@@ -607,7 +607,7 @@
                                 function refuse(this) {
                                     var recordId = $(this).attr("id");
                                     $.ajax({
-                                        url: "refuseRecord",
+                                        url: sessionStorage.host+"refuseRecord",
                                         type: "post",
                                         data: {
                                             recordId: recordId

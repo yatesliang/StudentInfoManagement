@@ -1,37 +1,35 @@
 var selectedList = [];
 
 $(document).ready(function () {
-    var tes = ["a", "b", "c"];
-    removeVal(tes, "a");
-    alert(tes);
+    
 
-    var str = sessionStorage.obj;
-    if (str == null) {
-        window.location.href = "School_Manage.html";
-    } else {
-        var stuId = $.parseJSON(str).id;
-        $.ajax({
-            url: 'getCur',
-            data: {
-                id=stuId,
-                selected: selectedList
-            },
-            type: 'post',
-            offline: false,
-            success: function (msg) {
-                alert(msg);
-                if (msg.code == 200) {
-                    console.log("success to get curriculum");
-                    for (var i = 0; i < msg.length; i++) {
-                        insertCourse(msg[i]);
-                    }
-                }
-                if (msg.code == 400) {
-                    console.log("fail to get curriculum");
-                }
-            }
-        })
-    }
+    // var str = sessionStorage.obj;
+    // if (str == null) {
+    //     window.location.href = "School_Manage.html";
+    // } else {
+    //     var stuId = $.parseJSON(str).id;
+    //     $.ajax({
+    //         url: 'getCur',
+    //         data: {
+    //             id:stuId,
+    //             selected: selectedList
+    //         },
+    //         type: 'post',
+    //         offline: false,
+    //         success: function (msg) {
+    //             alert(msg);
+    //             if (msg.code == 200) {
+    //                 console.log("success to get curriculum");
+    //                 for (var i = 0; i < msg.length; i++) {
+    //                     insertCourse(msg[i]);
+    //                 }
+    //             }
+    //             if (msg.code == 400) {
+    //                 console.log("fail to get curriculum");
+    //             }
+    //         }
+    //     })
+    // }
 
 
 });
@@ -48,7 +46,7 @@ function insertCourse(cou) {
 }
 
 function show() {
-    newWindow = window.open('childElect.html', 'new', 'location=no, toolbar=no')
+    newWindow = window.open('childElect.html', 'new', 'location=no, toolbar=no');
 }
 
 function closeChild() {
@@ -115,9 +113,10 @@ function getIndex(list, val) {
 
 function removeVal(list, val) {
     var index = getIndex(list, val);
-    if (val > -1) {
-        list.split(index, 1);
+    if (index > -1) {
+        list.splice(index, 1);
     }
+
 }
 
 function save() {
