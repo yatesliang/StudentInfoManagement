@@ -3,35 +3,7 @@ var selectedList = [];
 $(document).ready(function () {
     
 
-    // var str = sessionStorage.obj;
-    // if (str == null) {
-    //     window.location.href = "School_Manage.html";
-    // } else {
-    //     var stuId = $.parseJSON(str).id;
-    //     $.ajax({
-    //         url: 'getCur',
-    //         data: {
-    //             id:stuId,
-    //             selected: selectedList
-    //         },
-    //         type: 'post',
-    //         offline: false,
-    //         success: function (msg) {
-    //             alert(msg);
-    //             if (msg.code == 200) {
-    //                 console.log("success to get curriculum");
-    //                 for (var i = 0; i < msg.length; i++) {
-    //                     insertCourse(msg[i]);
-    //                 }
-    //             }
-    //             if (msg.code == 400) {
-    //                 console.log("fail to get curriculum");
-    //             }
-    //         }
-    //     })
-    // }
-
-
+   
 });
 
 function insertCourse(cou) {
@@ -63,6 +35,7 @@ function addSelect(ob) {
     var cname = tr.find(".cname").text();
 
     var timeTd = tr.find(".time");
+    var temp = timeTd.attr("class");
     var timeArr = timeTd.attr("class").split(" ");
     var cTimes = [];
     var weekDay = timeArr[1];
@@ -121,18 +94,22 @@ function removeVal(list, val) {
 
 function save() {
     $.ajax({
-        url: 'saveCur',
-        data: selectedList,
-        type: 'put',
+        url: sessionStorage.host+'applyCourse',
+        data: {
+            list:selectedList
+        },
+        type: 'post',
         offline: false,
+        dataType: "json",
         success: function (msg) {
-            alert(msg);
-            if (msg.code == 200) {
-                alert("修改课表成功");
+            // alert(msg);
+            if (msg=="OK") {
+                alert("保存课表成功");
             }
-            if (msg.code == 400) {
-                alert("修改课表失败");
+            if (msg=="Wrong") {
+                alert("保存课表失败");
             }
         }
     })
+    alert("保存课表成功");
 }

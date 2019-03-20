@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    
+
     <meta charset="utf-8">
     <title>基于区块链的学生管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,27 +33,17 @@
 
     <style media="screen">
         body {
-       color: #154d88;
-       background: rgba(233, 237, 241, 0.27);
-       font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-       font-size: 13px;
-       font-weight: 400;
-       line-height: 1.471;
-   }
-   </style>
+            color: #154d88;
+            background: rgba(233, 237, 241, 0.27);
+            font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.471;
+        }
+    </style>
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
 
-    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <!-- The fav icon -->
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    <script>
-        var hash = 'a291233';
-    </script>
 
 </head>
 
@@ -74,27 +64,27 @@
             <div class="btn-group pull-right">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> 管理员</span>
+                    <i class="glyphicon glyphicon-user"></i><span id="userType" class="hidden-sm hidden-xs"> 管理员</span>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
                     <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> 个人资料</a></li>
                     <li class="divider"></li>
-                    <li><a href="Setting_Users.html/logout"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
+                    <li><a href="./School_Manage.html"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
                 </ul>
             </div>
             <!-- Addmission dropdown starts -->
             <div class="btn-group pull-right">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                    <i class="glyphicon glyphicon-th-large"></i><span class=""> 通知</span>
+                    <i class="glyphicon glyphicon-th-large"></i><span class=""> 报单</span>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 申请人名单</a></li>
+                    <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 成绩表</a></li>
                     <li class="divider"></li>
-                    <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> 在线注册</a></li>
-                    <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> 打印许可证</a></li>
+                    <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-print"></i> 部分简历</a></li>
+                    <li><a href="allResumeSheet.html" target="_blank"><i class="glyphicon glyphicon-print"></i> 全部简历</a></li>
 
 
 
@@ -115,12 +105,12 @@
                 </button>
                 <ul class="dropdown-menu">
 
-                    <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 书籍搜索</a></li>
+                    <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 查看我的证书</a></li>
                     <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> 借书</a></li>
                     <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> 已借出书单</a></li>
                     <li class="divider"></li>
-                    <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 书籍列表</a></li>
-                    <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 图书记录</a></li>
+                    <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 审查申请</a></li>
+                    <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 从文件添加</a></li>
                     <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> Reports</a></li>
                     <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> 月度罚款记录</a></li>
 
@@ -156,43 +146,17 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 学费</a></li>
-                    <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 缴费情况</a></li>
+                    <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 查看我的成绩</a></li>
+                    <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 登记课程成绩</a></li>
 
                     <li class="divider"></li>
-                    <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 费用清单</a></li>
+                    <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 查看班级成绩</a></li>
                     <li><a href="/fees/setup"><i class="glyphicon glyphicon-cog"></i> 费用设置</a></li>
                     <li class="divider"></li>
                     <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> 收费情况报单</a></li>
 
                 </ul>
             </div>
-            <!-- fees dropdown ends -->
-            <!-- teacher dropdown starts-->
-            <!-- <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                <i class="glyphicon glyphicon-user"></i><span class=""> Employee</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/teacher/create"><i class="glyphicon glyphicon-plus"></i> 新增</a></li>
-                <li><a href="/teacher/list"><i class="glyphicon glyphicon-list-alt"></i> List</a></li>
-                <li class="divider"></li>
-                <li><a href="/leaves/create"><i class="glyphicon glyphicon-plus"></i> 新增 Leave</a></li>
-                <li><a href="/leaves"><i class="glyphicon glyphicon-list-alt"></i> Leave List</a></li>
-                <li class="divider"></li>
-                <li><a href="/workoutside/create"><i class="glyphicon glyphicon-plus"></i> 新增 Work Outside</a></li>
-                <li><a href="/workoutside"><i class="glyphicon glyphicon-list-alt"></i> Work Outside List</a></li>
-                <li class="divider"></li>
-                                <li><a href="/teacher-attendance/list"><i class="glyphicon glyphicon-list-alt"></i> Attendance List</a></li>
-                <li><a href="/teacher-attendance/absenteeism-report"><i class="glyphicon glyphicon-print"></i> Absenteeism Report</a></li>
-                <li><a href="/teacher-attendance/monthly-report"><i class="glyphicon glyphicon-print"></i> 年度证书报告 Report</a></li>
-                <li><a href="/teacher-attendance/monthly-report-2"><i class="glyphicon glyphicon-print"></i> 年度证书报告 Report Two</a></li>
-
-            </ul>
-        </div> -->
-            <!-- teacher dropdown ends -->
 
         </div>
     </div>
@@ -202,102 +166,97 @@
 
             <!-- left menu starts -->
             <div class="col-sm-2 col-lg-2">
-                    <div class="sidebar-nav">
-                        <div class="nav-canvas">
-                            <div class="nav-sm nav nav-stacked">
-
-                            </div>
-                            <ul class="nav nav-pills nav-stacked main-menu">
-                                <li class="nav-header">主菜单</li>
-                                <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span>
-                                            主页</span></a>
-                                </li>
-
-                                <li class="accordion" id="index_class">
-                                    <a href="#"><i class="glyphicon glyphicon-home"></i><span> 专业</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="createMajor.html">新增专业</a></li>
-                                        <li><a href="majorList.html">专业列表</a></li>
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_subject">
-                                    <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="createSubject.html">新增</a></li>
-                                        <li><a href="subjectList.html">课程列表</a></li>
-                                        <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_stu">
-                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="createStudent.html">新增</a></li>
-                                        <li><a href="studentList.html">学生列表</a></li>
-
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_teacher">
-                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                            <li><a href="createTeacher.html">新增</a></li>
-                                            <li><a href="teacherList.html">教师列表</a></li>    
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_com">
-                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="createFirm.html">新增</a></li>
-                                        <li><a href="firmList.html">公司列表</a></li>
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_record">
-                                    <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="applyRecord.html">从文件添加</a></li>
-                                        <li><a href="recordList.html">查看我的证书</a></li>
-                                        <li><a href="checkRecord.html">审查申请</a></li>
-
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_grade">
-                                    <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
-                                        <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
-                                        <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_verify">
-                                    <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="resultsForVistor.html">快速验证</a></li>
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_print">
-                                    <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="gradesheet.html">成绩表</a></li>
-                                        <li><a href="Attendancereport.html">自选简历</a></li>
-                                        <li><a href="monthly-report.html">全部简历</a></li>
-                                    </ul>
-                                </li>
-                                
-                            </ul>
+                <div class="sidebar-nav">
+                    <div class="nav-canvas">
+                        <div class="nav-sm nav nav-stacked">
 
                         </div>
+                        <ul class="nav nav-pills nav-stacked main-menu">
+                            <li class="nav-header">主菜单</li>
+                            <li><a class="ajax-link" href="./dashboard.html"><i
+                                        class="glyphicon glyphicon-th-large"></i><span>
+                                        主页</span></a>
+                            </li>
+
+                            <li class="accordion" id="index_class">
+                                <a href="#"><i class="glyphicon glyphicon-home"></i><span> 专业</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="createMajor.html">新增专业</a></li>
+                                    <li><a href="majorList.html">专业列表</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_subject">
+                                <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li id="add_stu_child"><a href="createSubject.html">新增</a></li>
+                                    <li><a href="subjectList.html">课程列表</a></li>
+                                    <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_stu">
+                                <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="createStudent.html">新增</a></li>
+                                    <li><a href="studentList.html">学生列表</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_teacher">
+                                <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="createTeacher.html">新增</a></li>
+                                    <li><a href="teacherList.html">教师列表</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_com">
+                                <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="createFirm.html">新增</a></li>
+                                    <li><a href="firmList.html">公司列表</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_record">
+                                <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a id="add_from_file" href="applyRecord.html">从文件添加</a></li>
+
+                                    <li><a id="view_my_record" href="recordList.html">查看我的证书</a></li>
+                                    <li id="view_record"><a href="checkRecord.html">审查申请</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_grade">
+                                <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
+                                    <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
+                                    <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_verify">
+                                <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="resultsForVistor.html">快速验证</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_print">
+                                <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="gradesheet.html">成绩表</a></li>
+                                    <li><a href="partResumeSheet.html">自选简历</a></li>
+                                    <li><a href="allResumeSheet.html">全部简历</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
                     </div>
                 </div>
+            </div>
             <!--/span-->
             <!-- left menu ends -->
 
-            <noscript>
-                <div class="alert alert-block col-md-12">
-                    <h4 class="alert-heading">Warning!</h4>
 
-                    <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
-                        enabled to use this site.</p>
-                </div>
-            </noscript>
 
             <div id="content" class="col-lg-10 col-sm-10">
                 <!-- content starts -->
@@ -316,7 +275,8 @@
                                     </div>
                                 </div>
 
-                                <form id="subjectForm" role="form" method="post">                                    <div class="row">
+                                <form id="subjectForm" role="form" method="post">
+                                    <div class="row">
                                         <div class="col-md-12">
                                             <h3 class="text-info"> 课程细节</h3>
                                             <hr>
@@ -329,9 +289,10 @@
                                                 <div class="form-group">
                                                     <label for="name">课程名称</label>
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                        <input type="text" class="form-control" required name="subjectName"
-                                                            placeholder="课程名称">
+                                                        <span class="input-group-addon"><i
+                                                                class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                        <input type="text" class="form-control" required
+                                                            name="subjectName" placeholder="课程名称">
                                                     </div>
                                                 </div>
                                             </div>
@@ -340,7 +301,8 @@
                                                     <label class="control-label" for="type">类型</label>
 
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
+                                                        <span class="input-group-addon"><i
+                                                                class="glyphicon glyphicon-info-sign  blue"></i></span>
                                                         <select name="subjectType" class="form-control" required>
                                                             <option value="Core">通识必修课程</option>
                                                             <option value="Electives">通识选修课程</option>
@@ -356,7 +318,8 @@
                                                     <label class="control-label" for="type">授课语言</label>
 
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
+                                                        <span class="input-group-addon"><i
+                                                                class="glyphicon glyphicon-info-sign  blue"></i></span>
                                                         <select name="subjectLang" class="form-control" required>
 
                                                             <option value="Chinese">中文</option>
@@ -376,7 +339,8 @@
                                                 <div class="form-group">
                                                     <label class="control-label" for="section">所属院系</label>
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
+                                                        <span class="input-group-addon"><i
+                                                                class="glyphicon glyphicon-info-sign  blue"></i></span>
                                                         <select name="collegeId" class="form-control" required>
                                                             <option value="1">软件学院</option>
                                                             <option value="2">建筑与规划学院</option>
@@ -388,7 +352,8 @@
                                                 <div class="form-group">
                                                     <label class="control-label" for="section">专业</label>
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
+                                                        <span class="input-group-addon"><i
+                                                                class="glyphicon glyphicon-info-sign  blue"></i></span>
                                                         <select name="majorId" class="form-control" required>
                                                             <option value="1">软件工程</option>
                                                         </select>
@@ -396,13 +361,14 @@
                                                 </div>
                                             </div>
 
-                                           
 
-                                            <div class="col-md-3">
+
+                                            <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label for="for">学分</label>
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                        <span class="input-group-addon"><i
+                                                                class="glyphicon glyphicon-info-sign blue"></i></span>
                                                         <select name="credit" required class="form-control">
                                                             <option value="6">6分 </option>
                                                             <option value="5">5分 </option>
@@ -414,24 +380,27 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
-                                            <div class="col-md-4">
-                                                    <div class="form-group ">
-                                                        <label for="rollinYear">学年</label>
-                                                        <div class="input-group">
 
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i>
-                                                            </span>
-                                                            <input type="text" id="rollinYear" class="form-control datepicker2"
-                                                                name="year" required data-date-format="yyyy">
-                                                        </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group ">
+                                                    <label for="rollinYear">学年</label>
+                                                    <div class="input-group">
+
+                                                        <span class="input-group-addon"><i
+                                                                class="glyphicon glyphicon-calendar"></i>
+                                                        </span>
+                                                        <input type="text" id="rollinYear"
+                                                            class="form-control datepicker2" name="year" required
+                                                            data-date-format="yyyy">
                                                     </div>
                                                 </div>
+                                            </div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <label class="control-label" for="section">学期</label>
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
+                                                        <span class="input-group-addon"><i
+                                                                class="glyphicon glyphicon-info-sign  blue"></i></span>
                                                         <select name="season" class="form-control" required>
                                                             <option value="1">春季</option>
                                                             <option value="2">秋季</option>
@@ -442,21 +411,53 @@
 
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="name">上课时间</label>
+                                                    <label for="time">上课时间</label>
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                        <input type="text" class="form-control" required name="schedule"
-                                                            placeholder="周几，时间段">
+                                                        <span class="input-group-addon"><i
+                                                                class="glyphicon glyphicon-info-sign blue"></i></span>
+
+                                                        <select name="weekday" class="form-control" required>
+                                                            <!-- <option value='' disabled selected style='display:none;'>
+                                                                选择工作日</option> -->
+                                                            <option value="Mon">周一</option>
+                                                            <option value="Tue">周二</option>
+                                                            <option value="Wed">周三</option>
+                                                            <option value="Thu">周四</option>
+                                                            <option value="Fri">周五</option>
+                                                            <option value="Sat">周六</option>
+                                                            <option value="Sun">周日</option>
+
+                                                        </select>
+                                                        <select name="weektime" class="form-control" required>
+                                                            <!-- <option value='' disabled selected style='display:none;'>
+                                                                选择上课时间</option> -->
+                                                            <option value="1">1-2节</option>
+                                                            <option value="2">3-4节</option>
+                                                            <option value="3">5-6节</option>
+                                                            <option value="4">7-8节</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
 
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="name">课程地址</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i
+                                                                class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                        <input type="text" class="form-control" required name="campus"
+                                                            placeholder="100字以内">
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label for="name">课程描述</label>
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                        <span class="input-group-addon"><i
+                                                                class="glyphicon glyphicon-info-sign blue"></i></span>
                                                         <input type="text" class="form-control" required name="comment"
                                                             placeholder="100字以内">
                                                     </div>
@@ -492,14 +493,49 @@
                                             <div class="col-md-4">
                                                 <div class="form-group">
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="way1" required="false"
-                                                            placeholder="考勤">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="way1"
+                                                                required="false" placeholder="考勤">
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="percent1" required="true"
-                                                            placeholder="0">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="percent1"
+                                                                required="false" placeholder="5">
+                                                        </div>
                                                     </div>
                                                 </div>
+                                            </div>
+
+                                            <div class="col-md-2"></div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+
+
+
+                                                    <div class="col-md-4">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="way2"
+                                                                required="false" placeholder="单元测试">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="percent2"
+                                                                required="false" placeholder="20">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
                                             </div>
 
                                             <div class="col-md-2"></div>
@@ -512,33 +548,16 @@
                                                 <div class="form-group">
 
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="way2" required="false"
-                                                            placeholder="单元测试">
-                                                    </div>
-
-                                                    <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="percent2" required="true"
-                                                            placeholder="0">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-2"></div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="col-md-2"></div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-
-                                                    <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="way3" required="false"
-                                                            placeholder="日常作业">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="way3"
+                                                                required="false" placeholder="日常作业">
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="percent3" required="true"
-                                                            placeholder="0">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="percent3"
+                                                                required="false" placeholder="30">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -552,13 +571,17 @@
                                                 <div class="form-group">
 
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="coursePerformance" required="false"
-                                                            placeholder="课堂成绩">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="way4"
+                                                                required="false" placeholder="课堂成绩">
+                                                        </div>
                                                     </div>
 
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="performancePercent" required="true"
-                                                            placeholder="0">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="percent4"
+                                                                required="false" placeholder="5">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -574,13 +597,17 @@
                                                 <div class="form-group">
 
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="finalExam" required="false"
-                                                            placeholder="期末考试">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="way5"
+                                                                required="false" placeholder="期末考试">
+                                                        </div>
                                                     </div>
 
                                                     <div class="col-md-4">
-                                                        <input type="text" class="form-control" name="finalPercent" required="true"
-                                                            placeholder="0">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" name="percent5"
+                                                                required="false" placeholder="0">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -594,12 +621,15 @@
                                             <div class="col-md-2"></div>
                                             <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="totalfull" class="col-md-4 control-label">总计:
+                                                    <label for="totalfull" class="col-md-4 ">总计:
                                                     </label>
                                                     <div class="col-md-4">
-                                                        <input type="text" required class="form-control" required="true"
-                                                            name="totalfull" placeholder="100%">
-                                                    </div>
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" name="totalfull"
+                                                                    required="false" placeholder="100(可不填)">
+                                                            </div>
+                                                           
+                                                        </div>
                                                 </div>
                                             </div>
 
@@ -609,8 +639,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
 
-                                            <button class="btn btn-primary pull-right" type="submit" onclick="addSub();"><i
-                                                    class="glyphicon glyphicon-plus"></i>添加</button>
+                                            <button class="btn btn-primary pull-right" type="submit"
+                                                onclick="addSub();"><i class="glyphicon glyphicon-plus"></i>添加</button>
 
                                         </div>
                                     </div>
@@ -678,6 +708,7 @@
 
     <script src="js/create.js"></script>
 
+    <script src="js/dashboard.js"></script>
 
 </body>
 

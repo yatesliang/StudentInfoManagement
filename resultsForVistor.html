@@ -35,35 +35,33 @@
     <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet'>
 
     <style>
-        .fc-today{
-              background-color: #2AA2E6;
-              color:#fff;
-            
-            
-            }
-            .fc-button-today
-            {
-              display: none;
-            }
-            .green{
-              color: #1ABB9C;
-            }
-            
-            </style>
+        .fc-today {
+            background-color: #2AA2E6;
+            color: #fff;
+
+
+        }
+
+        .fc-button-today {
+            display: none;
+        }
+
+        .green {
+            color: #1ABB9C;
+        }
+    </style>
     <style media="screen">
         body {
-                   color: #154d88;
-                   background: rgba(233, 237, 241, 0.27);
-                   font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-                   font-size: 13px;
-                   font-weight: 400;
-                   line-height: 1.471;
-               }
-               </style>
+            color: #154d88;
+            background: rgba(233, 237, 241, 0.27);
+            font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.471;
+        }
+    </style>
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
-
-    <!-- The fav icon -->
 
 </head>
 
@@ -85,27 +83,29 @@
                 <div class="btn-group pull-right">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                        <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> 管理员</span>
+                        <i class="glyphicon glyphicon-user"></i><span id="userType" class="hidden-sm hidden-xs"> 管理员</span>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> 个人资料</a></li>
                         <li class="divider"></li>
-                        <li><a href="Setting_Users.html/logout"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
+                        <li><a href="./School_Manage.html"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
                     </ul>
                 </div>
                 <!-- Addmission dropdown starts -->
                 <div class="btn-group pull-right">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                        <i class="glyphicon glyphicon-th-large"></i><span class=""> 通知</span>
+                        <i class="glyphicon glyphicon-th-large"></i><span class=""> 报单</span>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 申请人名单</a></li>
+                        <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 成绩表</a></li>
                         <li class="divider"></li>
-                        <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> 在线注册</a></li>
-                        <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> 打印许可证</a></li>
+                        <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-print"></i> 部分简历</a>
+                        </li>
+                        <li><a href="allResumeSheet.html" target="_blank"><i class="glyphicon glyphicon-print"></i> 全部简历</a>
+                        </li>
 
 
                     </ul>
@@ -115,20 +115,20 @@
 
 
                 <!-- 证书 dropdown starts -->
-                <div class="btn-group pull-right">
-                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <div id="nav-records" class="btn-group pull-right">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                        <i class="glyphicon glyphicon-book"></i><span class=""> 证书</span>
+                    <i class="glyphicon glyphicon-book"></i><span class=""> 证书</span>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
 
-                        <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 书籍搜索</a></li>
+                        <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 查看我的证书</a></li>
                         <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> 借书</a></li>
                         <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> 已借出书单</a></li>
                         <li class="divider"></li>
-                        <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 书籍列表</a></li>
-                        <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 图书记录</a></li>
+                        <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 审查申请</a></li>
+                        <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 从文件添加</a></li>
                         <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> 书籍报告</a></li>
                         <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> 月度罚款记录</a></li>
 
@@ -137,10 +137,10 @@
                 </div>
                 <!-- 证书 dropdown ends -->
                 <!-- Dormitory dropdown starts -->
-                <div class="btn-group pull-right">
-                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <div id="nav-course" class="btn-group pull-right">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                        <i class="glyphicon glyphicon-home"></i><span class=""> 课程</span>
+                    <i class="glyphicon glyphicon-home"></i><span class=""> 课程</span>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
@@ -157,18 +157,18 @@
                 </div>
                 <!-- Dormitory dropdown ends -->
                 <!-- fees dropdown starts-->
-                <div class="btn-group pull-right">
-                    <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                <div id="nav-grades" class="btn-group pull-right">
+                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                        <i class="glyphicon glyphicon-list-alt"></i><span class=""> 成绩</span>
-                        <span class="caret"></span>
+                    <i class="glyphicon glyphicon-list-alt"></i><span class=""> 成绩</span>
+                    <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 学费</a></li>
-                        <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 缴费情况</a></li>
+                        <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 查看我的成绩</a></li>
+                        <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 登记课程成绩</a></li>
 
                         <li class="divider"></li>
-                        <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 费用清单</a></li>
+                        <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 查看班级成绩</a></li>
                         <li><a href="/fees/setup"><i class="glyphicon glyphicon-cog"></i> 费用设置</a></li>
                         <li class="divider"></li>
                         <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> 收费情况报单</a></li>
@@ -180,92 +180,95 @@
         <div class="ch-container">
 
             <div class="row">
-                    <div class="col-sm-2 col-lg-2">
-                            <div class="sidebar-nav">
-                                <div class="nav-canvas">
-                                    <div class="nav-sm nav nav-stacked">
-        
-                                    </div>
-                                    <ul class="nav nav-pills nav-stacked main-menu">
-                                        <li class="nav-header">主菜单</li>
-                                        <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span>
-                                                    主页</span></a>
-                                        </li>
-        
-                                        <li class="accordion" id="index_class">
-                                            <a href="#"><i class="glyphicon glyphicon-home"></i><span> 专业</span></a>
-                                            <ul class="nav nav-pills nav-stacked">
-                                                <li><a href="createMajor.html">新增专业</a></li>
-                                                <li><a href="majorList.html">专业列表</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="accordion" id="index_subject">
-                                            <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
-                                            <ul class="nav nav-pills nav-stacked">
-                                                <li><a href="createSubject.html">新增</a></li>
-                                                <li><a href="subjectList.html">课程列表</a></li>
-                                                <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="accordion" id="index_stu">
-                                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
-                                            <ul class="nav nav-pills nav-stacked">
-                                                <li><a href="createStudent.html">新增</a></li>
-                                                <li><a href="studentList.html">学生列表</a></li>
-        
-                                            </ul>
-                                        </li>
-                                        <li class="accordion" id="index_teacher">
-                                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
-                                            <ul class="nav nav-pills nav-stacked">
-                                                    <li><a href="createTeacher.html">新增</a></li>
-                                                    <li><a href="teacherList.html">教师列表</a></li>    
-                                            </ul>
-                                        </li>
-                                        <li class="accordion" id="index_com">
-                                            <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
-                                            <ul class="nav nav-pills nav-stacked">
-                                                <li><a href="createFirm.html">新增</a></li>
-                                                <li><a href="firmList.html">公司列表</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="accordion" id="index_record">
-                                            <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
-                                            <ul class="nav nav-pills nav-stacked">
-                                                <li><a href="applyRecord.html">从文件添加</a></li>
-                                                <li><a href="recordList.html">查看我的证书</a></li>
-                                                <li><a href="checkRecord.html">审查申请</a></li>
-        
-                                            </ul>
-                                        </li>
-                                        <li class="accordion" id="index_grade">
-                                            <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
-                                            <ul class="nav nav-pills nav-stacked">
-                                                <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
-                                                <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
-                                                <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="accordion" id="index_verify">
-                                            <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
-                                            <ul class="nav nav-pills nav-stacked">
-                                                <li><a href="resultsForVistor.html">快速验证</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="accordion" id="index_print">
-                                            <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
-                                            <ul class="nav nav-pills nav-stacked">
-                                                <li><a href="gradesheet.html">成绩表</a></li>
-                                                <li><a href="Attendancereport.html">自选简历</a></li>
-                                                <li><a href="monthly-report.html">全部简历</a></li>
-                                            </ul>
-                                        </li>
-                                        
-                                    </ul>
-        
-                                </div>
+                <div class="col-sm-2 col-lg-2">
+                    <div class="sidebar-nav">
+                        <div class="nav-canvas">
+                            <div class="nav-sm nav nav-stacked">
+
                             </div>
+                            <ul class="nav nav-pills nav-stacked main-menu">
+                                <li class="nav-header">主菜单</li>
+                                <li><a class="ajax-link" href="./dashboard.html"><i
+                                            class="glyphicon glyphicon-th-large"></i><span>
+                                            主页</span></a>
+                                </li>
+
+                                <li class="accordion" id="index_class">
+                                    <a href="#"><i class="glyphicon glyphicon-home"></i><span> 专业</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createMajor.html">新增专业</a></li>
+                                        <li><a href="majorList.html">专业列表</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_subject">
+                                    <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li id="add_stu_child"><a href="createSubject.html">新增</a></li>
+                                        <li><a href="subjectList.html">课程列表</a></li>
+                                        <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_stu">
+                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createStudent.html">新增</a></li>
+                                        <li><a href="studentList.html">学生列表</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_teacher">
+                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createTeacher.html">新增</a></li>
+                                        <li><a href="teacherList.html">教师列表</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_com">
+                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createFirm.html">新增</a></li>
+                                        <li><a href="firmList.html">公司列表</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_record">
+                                    <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a id="add_from_file" href="applyRecord.html">从文件添加</a></li>
+
+                                        <li><a id="view_my_record" href="recordList.html">查看我的证书</a></li>
+                                        <li id="view_record"><a href="checkRecord.html">审查申请</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_grade">
+                                    <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
+                                        <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
+                                        <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_verify">
+                                    <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span>
+                                            链上验证</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="resultsForVistor.html">快速验证</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_print">
+                                    <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="gradesheet.html">成绩表</a></li>
+                                        <li><a href="partResumeSheet.html">自选简历</a></li>
+                                        <li><a href="allResumeSheet.html">全部简历</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
                         </div>
+                    </div>
+                </div>
                 <div id="content" class="col-lg-10 col-sm-10">
 
                     <div class="row">
@@ -287,37 +290,41 @@
                                         </div>
                                         <div class="col-md-12">
 
-                                            <div class="col-md-8">
-                                                <div class="col-md-6">
+                                            <div class="col-md-10">
+                                                <div class="col-md-7">
 
                                                     <div class="form-group ">
                                                         <label for="file">上传需要验证的成绩单/简历</label>
-                                                        <form id="checkFileForm" role="form" method="post" enctype="multipart/form-data">
+                                                        <!-- <form id="checkFileForm" role="form" method="post" -->
+                                                            <!-- enctype="multipart/form-data"> -->
 
                                                             <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i>
+                                                                <span class="input-group-addon"><i
+                                                                        class="glyphicon glyphicon-file"></i>
                                                                 </span>
                                                                 <input type="file" required="true" class="form-control"
                                                                     id="checkFileUpload" name="checkFileUpload">
                                                             </div>
-                                                        </form>
+                                                        <!-- </form> -->
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md-2" style="margin-top:25px">
-                                                    <button class="btn btn-primary pull-right" onclick="uploadCheckFile();">
-                                                        <i class="glyphicon glyphicon-arrow-up"></i>上传</button>
+                                                <div class="col-md-3" style="margin-top:25px">
+                                                    <button class="btn btn-primary pull-right"
+                                                        onclick="uploadCheckFile();">
+                                                        <i class="glyphicon glyphicon-arrow-up"></i>上传并验证</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="row">
+                                    <!-- <div class="row">
                                         <div class="col-md-12">
-                                            <button class="btn btn-primary pull-right" onclick="checkFile();"><i class="glyphicon glyphicon-th"></i>验证</button>
+                                            <button class="btn btn-primary pull-right" onclick="checkFile();"><i
+                                                    class="glyphicon glyphicon-th"></i>验证</button>
 
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div data-original-title="" class="box-header well">
@@ -336,37 +343,38 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-md-8">
-                                            <div class="col-md-6">
+                                        <div class="col-md-10">
+                                            <div class="col-md-7">
 
                                                 <div class="form-group ">
                                                     <label for="file">上传需要验证的成绩单/简历</label>
-                                                    <form id="zipFileForm" role="form" method="post" enctype="multipart/form-data">
-
+                                                
                                                         <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i>
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-file"></i>
                                                             </span>
-                                                            <input type="file" required="true" class="form-control" id="checkZipUpload"
-                                                                name="checkZipUpload">
+                                                            <input type="file" required="true" class="form-control"
+                                                                id="checkZipUpload" name="checkZipUpload">
                                                         </div>
-                                                    </form>
 
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-2" style="margin-top:25px">
-                                                <button class="btn btn-primary pull-right" type="submit" onclick="uploadZipFile();">
-                                                    <i class="glyphicon glyphicon-arrow-up"></i>上传</button>
+                                            <div class="col-md-3" style="margin-top:25px">
+                                                <button class="btn btn-primary pull-right" type="submit"
+                                                    onclick="uploadZipFile();">
+                                                    <i class="glyphicon glyphicon-arrow-up"></i>上传并一键验证</button>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="row">
+                                    <!-- <div class="row">
                                         <div class="col-md-12">
-                                            <button class="btn btn-primary pull-right" onclick="checkZip();"><i class="glyphicon glyphicon-th"></i>一键验证</button>
+                                            <button class="btn btn-primary pull-right" onclick="checkZip();"><i
+                                                    class="glyphicon glyphicon-th"></i>一键验证</button>
 
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -411,102 +419,108 @@
     <!-- application script for Charisma demo -->
     <script src="js/basic.js"></script>
     <script src="js/Chart.min.js"></script>
+
+    <script src="js/dashboard.js"></script>
+
     <script type="text/javascript">
-        var uploadFile = false;
-        var uploadZip = true;
-        var fileId = 0;
-        var zipId = 0;
+        // var uploadFile = false;
+        // var uploadZip = true;
+        // var fileId = 0;
+        // var zipId = 0;
         $(document).ready(function () {
 
 
         });
 
         function uploadCheckFile() {
+            var formData = new FormData();
+            formData.append("files", $("#checkFileUpload")[0].files[0]);
+
             $.ajax({
-                url: 'uploadCheckFile',
+                url: sessionStorage.host + 'verifyFile',
                 type: 'POST',
                 cache: false,
-                data: new FormData($('#checkFileUpload')),
+                data: formData,
                 processData: false,
                 contentType: false,
                 success: function (msg) {
-                    alert(msg);
-                    fileId = msg.id;
-                    if (msg.code == 200) {
-                        alert("上传成功");
+                    if (msg=="OK") {
+                        alert("核实：内容未被修改！");
                     }
-                    if (msg.code == 400) {
-                        alert("上传失败");
+                    if (msg=="Wrong") {
+                        alert("核实：已篡改文件！");
                     }
                 }
             }).done(function (res) {
             }).fail(function (res) { });
         }
 
-        function checkFile() {
-            if (fileId !== 0) {
-                $.ajax({
-                    url: 'checkFile',
-                    type: 'post',
-                    data: {
-                        fileId: fileId
-                    },
-                    offline: false,
-                    success: function (msg) {
-                        if (msg == true) {
-                            alert("文件真实");
-                        }
-                        if (msg == false) {
-                            alert("文件造假");
-                        }
-                    }
-                })
-            } else {
-                alert("请先上传文件！");
-            }
-        }
+        // function checkFile() {
+        //     if (fileId !== 0) {
+        //         $.ajax({
+        //             url: 'checkFile',
+        //             type: 'post',
+        //             data: {
+        //                 fileId: fileId
+        //             },
+        //             offline: false,
+        //             success: function (msg) {
+        //                 if (msg == true) {
+        //                     alert("文件真实");
+        //                 }
+        //                 if (msg == false) {
+        //                     alert("文件造假");
+        //                 }
+        //             }
+        //         })
+        //     } else {
+        //         alert("请先上传文件！");
+        //     }
+        // }
 
 
         function uploadZipFile() {
+            var formData = new FormData();
+            formData.append("files", $("#checkZipUpload")[0].files[0]);
+
             $.ajax({
-                url: 'uploadZipFile',
+                url: sessionStorage.host + 'verifyFile',
                 type: 'POST',
                 cache: false,
-                data: new FormData($('#checkZipUpload')),
+                data: formData,
                 processData: false,
                 contentType: false,
                 success: function (msg) {
-                    alert(msg);
-                    zipId = msg.id;
-                    if (msg.code == 200) {
-                        alert("上传成功");
+                    
+                    if (msg=="OK") {
+                        alert("核实为真实文件！");
                     }
-                    if (msg.code == 400) {
-                        alert("上传失败");
+                    if (msg=="Wrong") {
+                        alert("核实为已篡改文件！");
                     }
                 }
             }).done(function (res) {
             }).fail(function (res) { });
         }
 
-        function checkZip() {
-            if (zipId !== 0) {
-                $.ajax({
-                    url: 'checkFile',
-                    type: 'post',
-                    data: {
-                        zipId: zipId
-                    },
-                    offline: false,
-                    success: function (msg) {
-                        alert(msg);
-                    }
-                })
-            } else {
-                alert("请先上传文件");
-            }
+        // function checkZip() {
+        //     if (zipId !== 0) {
+        //         $.ajax({
+        //             url: 'checkFile',
+        //             type: 'post',
+        //             data: {
+        //                 zipId: zipId
+        //             },
+        //             offline: false,
+        //             success: function (msg) {
+        //                 alert(msg);
+        //             }
+        //         })
+        //     } else {
+        //         alert("请先上传文件");
+        //     }
 
-        }
+        // }
 
     </script>
 </body>

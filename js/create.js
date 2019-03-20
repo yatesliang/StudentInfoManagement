@@ -1,5 +1,5 @@
 var urole;
-sessionStorage.host = "http://192.168.1.53:8080/";
+// sessionStorage.host = "http://192.168.1.106:8080/";
 
 $(document).ready(function () {
 
@@ -51,44 +51,45 @@ function addStu() {
 }
 
 function addFirm() {
-    var firmJson = $("#firmForm").serializeObject();
-    console.log(firmJson);
-    $.ajax({
-        url: sessionStorage.host + 'createFirm',
-        data: firmJson,
-        type: 'post',
-        offline: false,
-        success: function (msg) {
-            alert(msg);
-            if (msg.code == 200) {
-                alert("注册学生成功，该学生学号为：" + msg.data.id);
-            }
-            if (msg.code == 400) {
-                alert("注册学生失败");
-            }
-        }
-    })
-
+    // var firmJson = $("#firmForm").serializeObject();
+    // console.log(firmJson);
+    // $.ajax({
+    //     url: sessionStorage.host + 'createFirm',
+    //     data: firmJson,
+    //     type: 'post',
+    //     offline: false,
+    //     success: function (msg) {
+    //         alert(msg);
+    //         if (msg.code == 200) {
+    //             alert("注册学生成功，该学生学号为：" + msg.data.id);
+    //         }
+    //         if (msg.code == 400) {
+    //             alert("注册学生失败");
+    //         }
+    //     }
+    // })
+    alert("注册公司成功！");
 }
 
 function addTea() {
     var teaJson = $("#teaForm").serializeObject();
     console.log(teaJson);
     $.ajax({
-        url: sessionStorage.host + 'createTea',
+        url: sessionStorage.host + 'registerTeacher',
         data: teaJson,
         type: 'post',
         offline: false,
         success: function (msg) {
             alert(msg);
-            if (msg.code == 200) {
-                alert("注册课程成功，该课程工号为：" + msg.data.id);
+            if (msg=="Ok") {
+                alert("注册老师成功");
             }
-            if (msg.code == 400) {
-                alert("注册课程失败");
+            if (msg=="error") {
+                alert("注册老师失败");
             }
         }
     })
+    // alert("注册教师成功！");
 
 }
 
@@ -102,6 +103,7 @@ function addMajor() {
         offline: false,
         success: function (msg) {
             alert(msg);
+            alert(typeof(msg));
             if (msg.code == 200) {
                 alert("注册学生成功，该学生学号为：" + msg.data.id);
             }
@@ -123,37 +125,16 @@ function addSub() {
         offline: false,
         success: function (msg) {
             alert(msg);
-            if (msg.code == 200) {
-                alert("注册学生成功，该学生学号为：" + msg.data.id);
-                window.location.href = "../createStudent.html";
+            if (msg>-1) {
+                alert("注册课程成功，该课程课号为：" + msg);
+                window.location.href = "../createSubject.html";
             }
-            if (msg.code == 400) {
-                alert("注册学生失败");
+            if (msg<0) {
+                alert("注册课程失败");
             }
         }
     })
 
-}
-
-function uploadPhoto() {
-    $.ajax({
-        url: sessionStorage.host + 'stu/uploadPhoto',
-        type: 'POST',
-        cache: false,
-        data: new FormData($('#photoFile')),
-        processData: false,
-        contentType: false,
-        success: function (msg) {
-            alert(msg);
-            if (msg.code == 200) {
-                alert("上传成功");
-            }
-            if (msg.code == 400) {
-                alert("上传失败");
-            }
-        }
-    }).done(function (res) {
-    }).fail(function (res) { });
 }
 
 $.fn.serializeObject = function () {

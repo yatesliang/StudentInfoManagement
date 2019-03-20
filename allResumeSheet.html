@@ -2,8 +2,9 @@
 <html lang="en">
 
 <head>
+
     <meta charset="utf-8">
-    <title>学生信息管理</title>
+    <title>基于区块链的学生管理系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -50,7 +51,8 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    
+   
+
 
 </head>
 
@@ -66,6 +68,7 @@
                 <span class="icon-bar"></span>
             </button>
             <span class="iname">基于区块链的学生管理系统</span>
+
             <!-- user dropdown starts -->
             <div class="btn-group pull-right">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -87,10 +90,10 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 成绩表</a></li>
-                    <li class="divider"></li>
+                    <li><a href="/applicants"><i class="glyphicon glyphicon-print"></i> 成绩表</a></li>
                     <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-print"></i> 部分简历</a></li>
-                    <li><a href="allResumeSheet.html" target="_blank"><i class="glyphicon glyphicon-print"></i> 全部简历</a></li>
+                    <li><a href="allResumeSheet.html" target="_blank"><i class="glyphicon glyphicon-print"></i> 全部简历</a>
+                    </li>
 
 
 
@@ -99,6 +102,8 @@
                 </ul>
             </div>
             <!-- admission dropdown ends -->
+
+
 
             <!-- 证书 dropdown starts -->
             <div class="btn-group pull-right">
@@ -115,7 +120,7 @@
                     <li class="divider"></li>
                     <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 审查申请</a></li>
                     <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 从文件添加</a></li>
-                    <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> Reports</a></li>
+                    <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> 书籍报告</a></li>
                     <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> 月度罚款记录</a></li>
 
 
@@ -131,7 +136,7 @@
                 </button>
                 <ul class="dropdown-menu">
 
-                    <li><a href="/dormitory"><i class="glyphicon glyphicon-home"></i> 宿舍详情</a></li>
+                    <li><a href="/dormitory"><i class="glyphicon glyphicon-home"></i> 宿舍情况</a></li>
                     <li><a href="/dormitory/assignstd"><i class="glyphicon glyphicon-plus"></i> 添加学生</a></li>
                     <li><a href="/dormitory/assignstd/list"><i class="glyphicon glyphicon-user"></i> 学生列表</a></li>
                     <li class="divider"></li>
@@ -161,7 +166,7 @@
 
                 </ul>
             </div>
-            <!-- fees dropdown ends -->
+
 
         </div>
     </div>
@@ -261,219 +266,130 @@
             <!--/span-->
             <!-- left menu ends -->
 
+            <noscript>
+                <div class="alert alert-block col-md-12">
+                    <h4 class="alert-heading">Warning!</h4>
+
+                    <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
+                        enabled to use this site.</p>
+                </div>
+            </noscript>
+
             <div id="content" class="col-lg-10 col-sm-10">
                 <!-- content starts -->
+
 
 
                 <div class="row">
                     <div class="box col-md-12">
                         <div class="box-inner">
                             <div data-original-title="" class="box-header well">
-                                <h2><i class="glyphicon glyphicon-user"></i> 证明上传 </h2>
+                                <h2><i class="glyphicon glyphicon-book"></i> 全部简历</h2>
 
                             </div>
                             <div class="box-content">
-                                <form id="recordForm" role="form" action="/attendance/create-file" method="post"
-                                    enctype="multipart/form-data">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label class="control-label" for="class">选择证明类型</label>
 
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon"><i
-                                                                class="glyphicon glyphicon-home blue"></i></span>
-                                                        <select id="type" name="type" class="form-control">
-                                                            <option value="">--选择证明类型--</option>
-                                                            <option value="实践证明">实践证明</option>
-                                                            <option value="科技竞赛证明">科技竞赛证明</option>
-                                                            <option value="课程证明">课程证明</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="name">证明名称</label>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><i
-                                                            class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                    <input type="text" class="form-control" autofocus="" required=""
-                                                        id="name" name="name" placeholder="名称">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="name">证明描述</label>
-                                                <div class="input-group">
-                                                    <span class="input-group-addon"><i
-                                                            class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                    <input type="text" class="form-control" autofocus="" required=""
-                                                        id="description" name="description" placeholder="描述">
-                                                </div>
-                                            </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="row">
+                                <div class="row">
+                                    <div class="col-md-12">
 
-                            <div class="col-md-12">
 
-                                <div class="alert alert-warning">
-                                    
-                                    <h5 class="text-danger"> <i class="glyphicon glyphicon-hand-right"></i>
-                                        文件大小上限为8MB!</h5>
-                                    <h5 class="text-danger"> <i class="glyphicon glyphicon-hand-right"></i>
-                                        需要注意文件的命名以及文件内容的清晰度</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-10">
+                                        <div class="alert alert-warning">
+                                            <h5 class="text-danger"><i class="glyphicon glyphicon-hand-right"></i>
+                                                您的全部简历证明文件[PDF]已生成成功!
+                                            </h5>
 
-                                <div class="form-group ">
-                                    <label for="file">PDF/Image File</label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-file"></i>
-                                        </span>
-                                        <input type="file" required="true" class="form-control"
-                                            id="recordFileUpload" name="recordFileUpload">
+                                        </div>
+
+
+
+
                                     </div>
                                 </div>
 
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button class="btn btn-primary pull-right" onclick="getAllResumeSheet();"><i
+                                                class="glyphicon glyphicon-th"></i>下载简历</button>
+
+                                    </div>
+                                </div>
+
+
                             </div>
-
                         </div>
-
-                        <!--button save -->
-                        <div class="row" style="margin-top:108px">
-                            <div class="col-md-12">
-                                <button class="btn btn-primary pull-right" id="applyRecordBtn" onclick="uploadRecordFile();">
-                                    <i class="glyphicon glyphicon-arrow-up" ></i>
-                                    申请提交</button>
-                            </div>
-
-                        </div>
-
-
-                        <div class="row">
-
-                        </div>
-
                     </div>
                 </div>
+
+
+
+
+                <!-- content ends -->
+            </div>
+            <!--/#content.col-md-0-->
+        </div>
+        <!--/fluid-row-->
+        <div class="row">
+            <div class="col-md-9 col-lg-9 col-xs-9 hidden-xs">
+
+
+
             </div>
 
-
-
-
-            <!-- content ends -->
-        </div>
-        <!--/#content.col-md-0-->
-    </div>
-    <!--/fluid-row-->
-    <div class="row">
-        <div class="col-md-9 col-lg-9 col-xs-9 hidden-xs">
-
-
-
         </div>
 
-    </div>
 
 
-    </div>
-    </div>
-    </div>
-    <!--/.fluid-container-->
+        <!-- external javascript -->
 
-    <!-- external javascript -->
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- library for cookie management -->
+        <script src="js/jquery.cookie.js"></script>
+        <!-- calender plugin -->
+        <script src='bower_components/moment/min/moment.min.js'></script>
+        <script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+        <!-- data table plugin -->
+        <script src='bower_components/datatables/media/js/jquery.dataTables.js'></script>
 
-    <!-- library for cookie management -->
-    <script src="js/jquery.cookie.js"></script>
-    <!-- calender plugin -->
-    <script src='bower_components/moment/min/moment.min.js'></script>
-    <script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
-    <!-- data table plugin -->
-    <script src='bower_components/datatables/media/js/jquery.dataTables.js'></script>
+        <!-- select or dropdown enhancer -->
+        <script src="bower_components/chosen/chosen.jquery.min.js"></script>
+        <!-- plugin for gallery image view -->
+        <script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
+        <!-- notification plugin -->
+        <script src="js/jquery.noty.js"></script>
+        <!-- library for making tables responsive -->
+        <script src="bower_components/responsive-tables/responsive-tables.js"></script>
 
-    <!-- select or dropdown enhancer -->
-    <script src="bower_components/chosen/chosen.jquery.min.js"></script>
-    <!-- plugin for gallery image view -->
-    <script src="bower_components/colorbox/jquery.colorbox-min.js"></script>
-    <!-- notification plugin -->
-    <script src="js/jquery.noty.js"></script>
-    <!-- library for making tables responsive -->
-    <script src="bower_components/responsive-tables/responsive-tables.js"></script>
+        <!-- star rating plugin -->
+        <script src="js/jquery.raty.min.js"></script>
+        <!-- for iOS style toggle switch -->
+        <script src="js/jquery.iphone.toggle.js"></script>
+        <!-- autogrowing textarea plugin -->
+        <script src="js/jquery.autogrow-textarea.js"></script>
+        <!-- multiple file upload plugin -->
 
-    <!-- star rating plugin -->
-    <script src="js/jquery.raty.min.js"></script>
-    <!-- for iOS style toggle switch -->
-    <script src="js/jquery.iphone.toggle.js"></script>
-    <!-- autogrowing textarea plugin -->
-    <script src="js/jquery.autogrow-textarea.js"></script>
-    <!-- multiple file upload plugin -->
+        <script src="js/jquery.history.js"></script>
+        <!-- application script for Charisma demo -->
+        <script src="js/basic.js"></script>
 
-    <script src="js/jquery.history.js"></script>
-    <!-- application script for Charisma demo -->
-    <script src="js/basic.js"></script>
+        <script src="js/dashboard.js"></script>
 
-    <script src="js/dashboard.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                // $(".datepicker2").datepicker({
+                //     format: " yyyy", // Notice the Extra space at the beginning
+                //     viewMode: "years",
+                //     minViewMode: "years",
+                //     autoclose: true
 
-    <script type="text/javascript">
-        var uploadedFile = false;
-        var fileId = "";
-        $(document).ready(function () {
-        });
-
-        function uploadRecordFile() {
-            var formData = new FormData();
-            formData.append("files", $("#recordFileUpload")[0].files[0]);
-            formData.append("description",$("#description").val());
-            formData.append("name",$("#name").val());
-            formData.append("type",$("#type").val());
-            // alert("not?hi?ng?!!");
-            $.ajax({
-                url: sessionStorage.host + 'recordFileUpload',
-                type: 'POST',
-                cache: false,
-                data: formData,
-                processData: false,
-                contentType: false,
-                
-                success: function (msg) {
-                    // alert(msg);
-                    if (msg=='OK') {
-                        alert("申请成功！");
-                    }
-                    if (msg=="error") {
-                        alert("申请失败！");
-                    }
-                }
-            }).done(function (res) {
-            }).fail(function (res) { });
-        }
-
-        
-
-        $.fn.serializeObject = function () {
-            var o = {};
-            var a = this.serializeArray();
-            $.each(a, function () {
-                if (o[this.name] !== undefined) {
-                    if (!o[this.name].push) {
-                        o[this.name] = [o[this.name]];
-                    }
-                    o[this.name].push(this.value || '');
-                } else {
-                    o[this.name] = this.value || '';
-                }
+                // });
+                // $('#markList').dataTable();
             });
-            return o;
-        };
-    </script>
-
+            function getAllResumeSheet() {                
+                window.location.href = sessionStorage.host + 'showCV';
+            }
+        </script>
 </body>
 
 </html>

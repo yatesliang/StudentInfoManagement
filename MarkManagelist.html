@@ -35,14 +35,14 @@
 
     <style media="screen">
         body {
-       color: #154d88;
-       background: rgba(233, 237, 241, 0.27);
-       font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-       font-size: 13px;
-       font-weight: 400;
-       line-height: 1.471;
-   }
-   </style>
+            color: #154d88;
+            background: rgba(233, 237, 241, 0.27);
+            font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.471;
+        }
+    </style>
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
 
@@ -51,11 +51,7 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- The fav icon -->
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    <script>
-        var hash = 'a291233';
-    </script>
+
 
 </head>
 
@@ -76,59 +72,22 @@
             <div class="btn-group pull-right">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> 管理员</span>
+                    <i class="glyphicon glyphicon-user"></i><span id="userType" class="hidden-sm hidden-xs"> 管理员</span>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
                     <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> 个人资料</a></li>
                     <li class="divider"></li>
-                    <li><a href="Setting_Users.html/logout"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
+                    <li><a href="./School_Manage.html"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
                 </ul>
             </div>
-            <!-- Addmission dropdown starts -->
-            <div class="btn-group pull-right">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                    <i class="glyphicon glyphicon-th-large"></i><span class=""> 通知</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 申请人名单</a></li>
-                    <li class="divider"></li>
-                    <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> 在线注册</a></li>
-                    <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> 打印许可证</a></li>
-
-
-
-
-
-                </ul>
-            </div>
+            
             <!-- admission dropdown ends -->
 
 
 
             <!-- 证书 dropdown starts -->
-            <div class="btn-group pull-right">
-                <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                    <i class="glyphicon glyphicon-book"></i><span class=""> 证书</span>
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-
-                    <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 书籍搜索</a></li>
-                    <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> 借书</a></li>
-                    <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> 已借出书单</a></li>
-                    <li class="divider"></li>
-                    <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 书籍列表</a></li>
-                    <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 图书记录</a></li>
-                    <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> Reports</a></li>
-                    <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> 月度罚款记录</a></li>
-
-
-                </ul>
-            </div>
+           
             <!-- 证书 dropdown ends -->
             <!-- Dormitory dropdown starts -->
             <div class="btn-group pull-right">
@@ -158,43 +117,17 @@
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 学费</a></li>
-                    <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 缴费情况</a></li>
+                    <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 查看我的成绩</a></li>
+                    <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 登记课程成绩</a></li>
 
                     <li class="divider"></li>
-                    <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 费用清单</a></li>
+                    <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 查看班级成绩</a></li>
                     <li><a href="/fees/setup"><i class="glyphicon glyphicon-cog"></i> 费用设置</a></li>
                     <li class="divider"></li>
                     <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> 收费情况报单</a></li>
 
                 </ul>
             </div>
-            <!-- fees dropdown ends -->
-            <!-- teacher dropdown starts-->
-            <!-- <div class="btn-group pull-right">
-            <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-
-                <i class="glyphicon glyphicon-user"></i><span class=""> Employee</span>
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="/teacher/create"><i class="glyphicon glyphicon-plus"></i> 新增</a></li>
-                <li><a href="/teacher/list"><i class="glyphicon glyphicon-list-alt"></i> List</a></li>
-                <li class="divider"></li>
-                <li><a href="/leaves/create"><i class="glyphicon glyphicon-plus"></i> 新增 Leave</a></li>
-                <li><a href="/leaves"><i class="glyphicon glyphicon-list-alt"></i> Leave List</a></li>
-                <li class="divider"></li>
-                <li><a href="/workoutside/create"><i class="glyphicon glyphicon-plus"></i> 新增 Work Outside</a></li>
-                <li><a href="/workoutside"><i class="glyphicon glyphicon-list-alt"></i> Work Outside List</a></li>
-                <li class="divider"></li>
-                                <li><a href="/teacher-attendance/list"><i class="glyphicon glyphicon-list-alt"></i> Attendance List</a></li>
-                <li><a href="/teacher-attendance/absenteeism-report"><i class="glyphicon glyphicon-print"></i> Absenteeism Report</a></li>
-                <li><a href="/teacher-attendance/monthly-report"><i class="glyphicon glyphicon-print"></i> 年度证书报告 Report</a></li>
-                <li><a href="/teacher-attendance/monthly-report-2"><i class="glyphicon glyphicon-print"></i> 年度证书报告 Report Two</a></li>
-
-            </ul>
-        </div> -->
-            <!-- teacher dropdown ends -->
 
         </div>
     </div>
@@ -204,102 +137,96 @@
 
             <!-- left menu starts -->
             <div class="col-sm-2 col-lg-2">
-                    <div class="sidebar-nav">
-                        <div class="nav-canvas">
-                            <div class="nav-sm nav nav-stacked">
-
-                            </div>
-                            <ul class="nav nav-pills nav-stacked main-menu">
-                                <li class="nav-header">主菜单</li>
-                                <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span>
-                                            主页</span></a>
-                                </li>
-
-                                <li class="accordion" id="index_class">
-                                    <a href="#"><i class="glyphicon glyphicon-home"></i><span> 专业</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="createMajor.html">新增专业</a></li>
-                                        <li><a href="majorList.html">专业列表</a></li>
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_subject">
-                                    <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="createSubject.html">新增</a></li>
-                                        <li><a href="subjectList.html">课程列表</a></li>
-                                        <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_stu">
-                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="createStudent.html">新增</a></li>
-                                        <li><a href="studentList.html">学生列表</a></li>
-
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_teacher">
-                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                            <li><a href="createTeacher.html">新增</a></li>
-                                            <li><a href="teacherList.html">教师列表</a></li>    
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_com">
-                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="createFirm.html">新增</a></li>
-                                        <li><a href="firmList.html">公司列表</a></li>
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_record">
-                                    <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="applyRecord.html">从文件添加</a></li>
-                                        <li><a href="recordList.html">查看我的证书</a></li>
-                                        <li><a href="checkRecord.html">审查申请</a></li>
-
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_grade">
-                                    <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
-                                        <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
-                                        <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_verify">
-                                    <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="resultsForVistor.html">快速验证</a></li>
-                                    </ul>
-                                </li>
-                                <li class="accordion" id="index_print">
-                                    <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
-                                    <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="gradesheet.html">成绩表</a></li>
-                                        <li><a href="Attendancereport.html">自选简历</a></li>
-                                        <li><a href="monthly-report.html">全部简历</a></li>
-                                    </ul>
-                                </li>
-                                
-                            </ul>
+                <div class="sidebar-nav">
+                    <div class="nav-canvas">
+                        <div class="nav-sm nav nav-stacked">
 
                         </div>
+                        <ul class="nav nav-pills nav-stacked main-menu">
+                            <li class="nav-header">主菜单</li>
+                            <li><a class="ajax-link" href="./dashboard.html"><i
+                                        class="glyphicon glyphicon-th-large"></i><span>
+                                        主页</span></a>
+                            </li>
+
+                            <li class="accordion" id="index_class">
+                                <a href="#"><i class="glyphicon glyphicon-home"></i><span> 专业</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="createMajor.html">新增专业</a></li>
+                                    <li><a href="majorList.html">专业列表</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_subject">
+                                <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li id="add_stu_child"><a href="createSubject.html">新增</a></li>
+                                    <li><a href="subjectList.html">课程列表</a></li>
+                                    <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_stu">
+                                <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="createStudent.html">新增</a></li>
+                                    <li><a href="studentList.html">学生列表</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_teacher">
+                                <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="createTeacher.html">新增</a></li>
+                                    <li><a href="teacherList.html">教师列表</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_com">
+                                <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="createFirm.html">新增</a></li>
+                                    <li><a href="firmList.html">公司列表</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_record">
+                                <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a id="add_from_file" href="applyRecord.html">从文件添加</a></li>
+
+                                    <li><a id="view_my_record" href="recordList.html">查看我的证书</a></li>
+                                    <li id="view_record"><a href="checkRecord.html">审查申请</a></li>
+
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_grade">
+                                <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
+                                    <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
+                                    <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_verify">
+                                <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="resultsForVistor.html">快速验证</a></li>
+                                </ul>
+                            </li>
+                            <li class="accordion" id="index_print">
+                                <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="gradesheet.html">成绩表</a></li>
+                                    <li><a href="partResumeSheet.html">自选简历</a></li>
+                                    <li><a href="allResumeSheet.html">全部简历</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+
                     </div>
                 </div>
+            </div>
             <!--/span-->
             <!-- left menu ends -->
 
-            <noscript>
-                <div class="alert alert-block col-md-12">
-                    <h4 class="alert-heading">Warning!</h4>
-
-                    <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a>
-                        enabled to use this site.</p>
-                </div>
-            </noscript>
 
             <div id="content" class="col-lg-10 col-sm-10">
                 <!-- content starts -->
@@ -315,151 +242,36 @@
                             <div class="box-content">
 
                                 <div class="row">
+
                                     <div class="col-md-12">
+                                        <div class="col-md-7">
+                                            <div class="form-group">
+                                                <label class="control-label" for="courseId">您所教授的课程</label>
 
-                                        <form id="searchGrade" role="form" method="post" enctype="multipart/form-data">
-                                            <div class="row">
-                                                <div class="col-md-12">
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="class">课程名称</label>
-
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home blue"></i></span>
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i
+                                                            class="glyphicon glyphicon-info-sign  blue"></i></span>
+                                                    <select id="courseId" name="courseId" class="form-control" required>
 
 
-                                                                <select id="class" id="class" name="class" required="true"
-                                                                    class="form-control">
-                                                                    <option value="">--选择课程--</option>
-                                                                    <option value="cl1">高等数学（上）</option>
-                                                                    <option value="cl1">高等数学（下）</option>
-                                                                    <option value="cl23">大学物理</option>
-                                                                    <option value="cl5">面向对象程序设计</option>
-                                                                    <option value="cl50">离散数学</option>
-
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label for="fname">课程编号</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                                <input type="text" class="form-control" required id="subjectId"
-                                                                    name="subjectId" placeholder="课程编号">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="type">课程类型</label>
-
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
-                                                                <select name="subjectType" class="form-control"
-                                                                    required>
-                                                                    <option value="Core">通识必修课程</option>
-                                                                    <option value="Electives">通识选修课程</option>
-                                                                    <option value="MajorCore">专业必修课程</option>
-                                                                    <option value="MajorElectives">专业选修课程</option>
-
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="class">课程所属院系</label>
-
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-home blue"></i></span>
-                                                                <select class="form-control" required="true" name="class">
-                                                                    <option value="0" selected="selected">全部</option>
-                                                                    <option value="cl50">软件学院</option>
-
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="section">课程所属专业</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
-                                                                <select name="majorId" class="form-control" required>
-                                                                    <option value="2163">软件工程</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="direction">课程所属方向</label>
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign  blue"></i></span>
-                                                                <select name="directId" class="form-control" required>
-                                                                    <option value="2163">软件工程</option>
-                                                                    <option value="4197">数字媒体</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <div class="form-group">
-                                                            <label class="control-label" for="shift">课程时间</label>
-
-                                                            <div class="input-group">
-                                                                <span class="input-group-addon">
-                                                                    <i class="glyphicon glyphicon-info-sign blue"></i>
-                                                                </span>
-                                                                <select class="form-control" required="true" name="shift">
-                                                                    <option value="">--选择上课时间--</option>
-                                                                    <option value="Morning">上午</option>
-                                                                    <option value="Afternoon">下午</option>
-                                                                    <option value="Night">晚上</option>
-                                                                </select>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-
-
-                                                    <div class="col-md-3">
-                                                        <div class="form-group ">
-                                                            <label for="session">选择学期</label>
-                                                            <div class="input-group">
-
-                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i>
-                                                                </span>
-                                                                <input type="text" id="session" required="true" class="form-control datepicker2"
-                                                                    name="session" value="" data-date-format="yyyy">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-
+                                                    </select>
                                                 </div>
                                             </div>
 
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <button class="btn btn-primary pull-right" type="submit"><i class="glyphicon glyphicon-th"></i>查询成绩</button>
 
+                                            <div class="col-md-12" align="right">
+                                                <div class="form-group">
+                                                    <label class="control-label" for="class">&nbsp;</label>
+                                                    <div class="input-group">
+                                                        <button class="btn btn-primary pull-left" 
+                                                            onclick="searchGrade();"><i
+                                                                class="glyphicon glyphicon-th"></i>
+                                                            查询</button>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <br>
-                                        </form>
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="row">
@@ -475,6 +287,7 @@
                                                     <th>课程类型</th>
                                                     <th>学分</th>
                                                     <th>是否合格</th>
+                                                    <th>绩点</th>
                                             </thead>
                                             <tbody>
                                             </tbody>
@@ -488,9 +301,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
 
                 <!-- content ends -->
             </div>
@@ -544,29 +354,44 @@
     <script src="js/basic.js"></script>
 
     <script src="js/bootstrap-datepicker.js"></script>
+
+    <script src="js/dashboard.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#gradeTable').dataTable();
-            $(".datepicker2").datepicker({
-                format: " yyyy", // Notice the Extra space at the beginning
-                viewMode: "years",
-                minViewMode: "years",
-                autoclose: true
-
-            });
+            getTeaCourse();
         });
 
-
-        function searchGrade(){
-            var searchjson = $("#searchGrade").serializeObject();
+        function getTeaCourse() {
             $.ajax({
-                url: 'searchGrade',
-                type: 'post',
-                data: searchjson,
+                url: sessionStorage.host + "getTeacherCourses",
+                type: 'get',
                 offline: false,
                 success: function (msg) {
+                    insertCourse(msg);
+                }
+            })
+        }
+        function insertCourse(courseList) {
+            var select = $("select");
+            for (var i = 0; i < courseList.length; i++) {
+                var opt = $("<option value=\"" + courseList[i]["id"] + "\">" + courseList[i]["name"] + "</option>")
+                select.append(opt);
+            }
+        }
+
+        function searchGrade() {
+            $.ajax({
+                url: sessionStorage.host + 'courses',
+                type: 'get',
+                offline: false,
+                success: function (msg) {
+                    var courseId = parseInt($("#courseId").val());
+
                     for (var i = 0; i < msg.length; i++) {
-                        insertGrade(msg[i]);
+                        if(msg[i]['id']==courseId){
+                            insertGrade(msg[i]);
+                        }
                     }
                 }
             })
@@ -590,22 +415,45 @@
 
         function insertGrade(msg) {
             var tbody = $("tbody");
-            var tr = $("<tr id=\"" + msg.id + "\"></tr>");
-            var td_stuid = $("<td>" + msg.stu.id + "</td>");
-            var td_stuname = $("<td>" + msg.stu.name + "</td>");
-            var td_subid = $("<td>" + msg.sub.id + "</td>");
-            var td_subname = $("<td>" + msg.sub.name + "</td>");
-            var td_subyear = $("<td>" + msg.sub.year + "</td>");
-            var td_subtype = $("<td>" + msg.sub.type + "</td>");
+            var tr = $("<tr id=\"" + "1" + "\"></tr>");
+            var td_stuid = $("<td>" + "1" + "</td>");
+            var td_stuname = $("<td>" + "阿圆" + "</td>");
+            var td_subid = $("<td>" + msg["id"] + "</td>");
+            var td_subname = $("<td>" + msg["name"] + "</td>");
+            var td_subyear = $("<td>" + "春季" + "</td>");
+            var td_subtype = $("<td>" + msg["courseType"] + "</td>");
 
-            var td_credit = $("<td>" + msg.credit + "</td>");
-            
-            var td_ispass = $("<td>" + msg.ispass + "</td>");
+            var td_credit = $("<td>" + msg["credits"] + "</td>");
 
-            
-
-            tr.append(td_stuid, td_stuname, td_subid,td_subname, td_subyear,td_subtype, td_credit,td_ispass);
+            var td_ispass = $("<td>" + "是" + "</td>");
+            var td_score = $("<td>" + msg["score"]/20+1 + "</td>");
+            tr.append(td_stuid, td_stuname, td_subid, td_subname, td_subyear, td_subtype, td_credit, td_ispass,td_score);
             tbody.append(tr);
+        }
+
+        function searchStuBySub() {
+            var courseId = parseInt($("#courseId").val());
+
+            var examDetailList = m.get(courseId).split("|");
+            insertTh("学号");
+            insertTh("姓名");
+            for (var i = 0; i < examDetailList.length; i++) {
+                insertTh(examDetailList[i]);
+            }
+            insertTh("总分");
+
+            var dataJson = { "courseId": courseId };
+            $.ajax({
+                url: sessionStorage.host + 'getStudentList',
+                type: 'post',
+                data: dataJson,
+                offline: false,
+                success: function (msg) {
+                    for (var i = 0; i < msg.length; i++) {
+                        insertStu(msg[i], examDetailList.length);
+                    }
+                }
+            })
         }
 
     </script>

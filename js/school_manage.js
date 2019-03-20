@@ -1,5 +1,7 @@
 var urole;
-sessionStorage.host="http://192.168.1.53:8080/";
+sessionStorage.host="http://192.168.1.106:8080/";
+// sessionStorage.host="http://localhost:8080/";
+
 $(document).ready(function () {
     
 });
@@ -9,7 +11,7 @@ function login(){
     var upwd = $("input[name='password']").val();
     var urole1 =urole;
         if(uname==undefined){
-            alert("请输入用户名")
+            alert("请输入学号/工号")
             return;
         }
         if(upwd==undefined){

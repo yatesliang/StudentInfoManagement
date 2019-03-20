@@ -48,11 +48,7 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <!-- The fav icon -->
-    <link rel="shortcut icon" href="/img/favicon.ico">
-    <script>
-        var hash = 'a291233';
-    </script>
+    
 
 </head>
 
@@ -73,20 +69,20 @@
             <div class="btn-group pull-right">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                    <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> Mr. Admin</span>
+                    <i class="glyphicon glyphicon-user"></i><span id="userType" class="hidden-sm hidden-xs"> 管理员</span>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
                     <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
                     <li class="divider"></li>
-                    <li><a href="Setting_Users.html/logout"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                    <li><a href="./School_Manage.html"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                 </ul>
             </div>
             <!-- Addmission dropdown starts -->
             <div class="btn-group pull-right">
                 <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                    <i class="glyphicon glyphicon-th-large"></i><span class=""> 通知</span>
+                    <i class="glyphicon glyphicon-th-large"></i><span class=""> 报单</span>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
@@ -94,7 +90,7 @@
                     <li class="divider"></li>
                     <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> Online
                             Registration</a></li>
-                    <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> Print Admitcard</a></li>
+                    <li><a href="allResumeSheet.html" target="_blank"><i class="glyphicon glyphicon-print"></i> Print Admitcard</a></li>
 
 
 
@@ -197,7 +193,7 @@
                                 <li class="accordion" id="index_subject">
                                     <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
                                     <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="createSubject.html">新增</a></li>
+                                        <li id="add_stu_child"><a href="createSubject.html">新增</a></li>
                                         <li><a href="subjectList.html">课程列表</a></li>
                                         <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
                                     </ul>
@@ -227,9 +223,10 @@
                                 <li class="accordion" id="index_record">
                                     <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
                                     <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="applyRecord.html">从文件添加</a></li>
-                                        <li><a href="recordList.html">查看我的证书</a></li>
-                                        <li><a href="checkRecord.html">审查申请</a></li>
+                                        <li><a id="add_from_file" href="applyRecord.html">从文件添加</a></li>
+
+                                        <li><a id="view_my_record" href="recordList.html">查看我的证书</a></li>
+                                        <li id="view_record"><a href="checkRecord.html">审查申请</a></li>
 
                                     </ul>
                                 </li>
@@ -251,8 +248,8 @@
                                     <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
                                     <ul class="nav nav-pills nav-stacked">
                                         <li><a href="gradesheet.html">成绩表</a></li>
-                                        <li><a href="Attendancereport.html">自选简历</a></li>
-                                        <li><a href="monthly-report.html">全部简历</a></li>
+                                        <li><a href="partResumeSheet.html">自选简历</a></li>
+                                        <li><a href="allResumeSheet.html">全部简历</a></li>
                                     </ul>
                                 </li>
                                 
@@ -446,6 +443,8 @@
     <script src="js/jquery.history.js"></script>
     <!-- application script for Charisma demo -->
     <script src="js/basic.js"></script>
+
+    <script src="js/dashboard.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {

@@ -35,35 +35,33 @@
     <link href='font-awesome/css/font-awesome.min.css' rel='stylesheet'>
 
     <style>
-        .fc-today{
-  background-color: #2AA2E6;
-  color:#fff;
+        .fc-today {
+            background-color: #2AA2E6;
+            color: #fff;
 
 
-}
-.fc-button-today
-{
-  display: none;
-}
-.green{
-  color: #1ABB9C;
-}
+        }
 
-</style>
+        .fc-button-today {
+            display: none;
+        }
+
+        .green {
+            color: #1ABB9C;
+        }
+    </style>
     <style media="screen">
         body {
-       color: #154d88;
-       background: rgba(233, 237, 241, 0.27);
-       font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-       font-size: 13px;
-       font-weight: 400;
-       line-height: 1.471;
-   }
-   </style>
+            color: #154d88;
+            background: rgba(233, 237, 241, 0.27);
+            font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.471;
+        }
+    </style>
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
-
-    <!-- The fav icon -->
 
 </head>
 
@@ -85,27 +83,29 @@
                 <div class="btn-group pull-right">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                        <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> 管理员</span>
+                        <i class="glyphicon glyphicon-user"></i><span id="userType" class="hidden-sm hidden-xs">
+                            管理员</span>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> 个人资料</a></li>
                         <li class="divider"></li>
-                        <li><a href="Setting_Users.html/logout"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
+                        <li><a href="./School_Manage.html"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
                     </ul>
                 </div>
                 <!-- Addmission dropdown starts -->
                 <div class="btn-group pull-right">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                        <i class="glyphicon glyphicon-th-large"></i><span class=""> 通知</span>
+                        <i class="glyphicon glyphicon-th-large"></i><span class=""> 报单</span>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 申请人名单</a></li>
+                        <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 成绩表</a></li>
                         <li class="divider"></li>
-                        <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> 在线注册</a></li>
-                        <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> 打印许可证</a></li>
+                        <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-print"></i> 部分简历</a></li>
+                        <li><a href="allResumeSheet.html" target="_blank"><i class="glyphicon glyphicon-print"></i>
+                                全部简历</a></li>
 
 
                     </ul>
@@ -115,7 +115,7 @@
 
 
                 <!-- 证书 dropdown starts -->
-                <div class="btn-group pull-right">
+                <div id="nav-records" class="btn-group pull-right">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
                         <i class="glyphicon glyphicon-book"></i><span class=""> 证书</span>
@@ -123,12 +123,12 @@
                     </button>
                     <ul class="dropdown-menu">
 
-                        <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 书籍搜索</a></li>
+                        <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 查看我的证书</a></li>
                         <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> 借书</a></li>
                         <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> 已借出书单</a></li>
                         <li class="divider"></li>
-                        <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 书籍列表</a></li>
-                        <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 图书记录</a></li>
+                        <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 审查申请</a></li>
+                        <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 从文件添加</a></li>
                         <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> 书籍报告</a></li>
                         <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> 月度罚款记录</a></li>
 
@@ -137,7 +137,7 @@
                 </div>
                 <!-- 证书 dropdown ends -->
                 <!-- Dormitory dropdown starts -->
-                <div class="btn-group pull-right">
+                <div id="nav-course" class="btn-group pull-right">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
                         <i class="glyphicon glyphicon-home"></i><span class=""> 课程</span>
@@ -157,18 +157,18 @@
                 </div>
                 <!-- Dormitory dropdown ends -->
                 <!-- fees dropdown starts-->
-                <div class="btn-group pull-right">
+                <div id="nav-grades" class="btn-group pull-right">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
                         <i class="glyphicon glyphicon-list-alt"></i><span class=""> 成绩</span>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 学费</a></li>
-                        <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 缴费情况</a></li>
+                        <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 查看我的成绩</a></li>
+                        <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 登记课程成绩</a></li>
 
                         <li class="divider"></li>
-                        <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 费用清单</a></li>
+                        <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 查看班级成绩</a></li>
                         <li><a href="/fees/setup"><i class="glyphicon glyphicon-cog"></i> 费用设置</a></li>
                         <li class="divider"></li>
                         <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> 收费情况报单</a></li>
@@ -192,7 +192,8 @@
                             </div>
                             <ul class="nav nav-pills nav-stacked main-menu">
                                 <li class="nav-header">主菜单</li>
-                                <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span>
+                                <li><a class="ajax-link" href="./dashboard.html"><i
+                                            class="glyphicon glyphicon-th-large"></i><span>
                                             主页</span></a>
                                 </li>
 
@@ -206,8 +207,8 @@
                                 <li class="accordion" id="index_subject">
                                     <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
                                     <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="createSubject.html">新增</a></li>
-                                        <li><a href="subjectList.html">课程列表</a></li>
+                                        <li id="add_stu_child"><a href="createSubject.html">新增</a></li>
+                                        <li id="course_list"><a href="subjectList.html">课程列表</a></li>
                                         <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
                                     </ul>
                                 </li>
@@ -236,9 +237,9 @@
                                 <li class="accordion" id="index_record">
                                     <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
                                     <ul class="nav nav-pills nav-stacked">
-                                        <li><a href="applyRecord.html">从文件添加</a></li>
-                                        <li><a href="recordList.html">查看我的证书</a></li>
-                                        <li><a href="checkRecord.html">审查申请</a></li>
+                                        <li><a id="add_from_file" href="applyRecord.html">从文件添加</a></li>
+                                        <li><a id="view_my_record" href="recordList.html">查看我的证书</a></li>
+                                        <li id="view_record"><a href="checkRecord.html">审查申请</a></li>
 
                                     </ul>
                                 </li>
@@ -251,7 +252,8 @@
                                     </ul>
                                 </li>
                                 <li class="accordion" id="index_verify">
-                                    <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
+                                    <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span>
+                                            链上验证</span></a>
                                     <ul class="nav nav-pills nav-stacked">
                                         <li><a href="resultsForVistor.html">快速验证</a></li>
                                     </ul>
@@ -260,8 +262,8 @@
                                     <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
                                     <ul class="nav nav-pills nav-stacked">
                                         <li><a href="gradesheet.html">成绩表</a></li>
-                                        <li><a href="Attendancereport.html">自选简历</a></li>
-                                        <li><a href="monthly-report.html">全部简历</a></li>
+                                        <li><a href="partResumeSheet.html">自选简历</a></li>
+                                        <li><a href="allResumeSheet.html">全部简历</a></li>
                                     </ul>
                                 </li>
 
@@ -282,33 +284,33 @@
                             <!-- /top tiles -->
                             <div class="row tile_count text-center">
                                 <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-                                    <span class="count_top"><i class="fa fa-2x fa-users green"></i> 学生</span>
-                                    <div class="count red">4</div>
+                                    <span id="stuNum" class="count_top"><i class="fa fa-2x fa-users green"></i> 学生</span>
+                                    <div class="count red">2</div>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
                                     <span class="count_top"><i class="fa fa-2x fa-users green"></i> 教师</span>
-                                    <div class="count blue">241</div>
+                                    <div class="count blue">1</div>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-                                    <span class="count_top"><i class="fa fa-2x fa-users green"></i> 合作机构</span>
-                                    <div class="count yellow">35</div>
+                                    <span id="comNum" class="count_top"><i class="fa fa-2x fa-users green"></i> 合作机构</span>
+                                    <div class="count yellow">1</div>
                                 </div>
                             </div>
                             <div class="row tile_count text-center">
                                 <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-                                    <span class="count_top"><i class="fa fa-2x fa-pencil green"></i>课程</span>
-                                    <div class="count blue">85</div>
+                                    <span id="subNum" class="count_top"><i class="fa fa-2x fa-pencil green"></i>课程</span>
+                                    <div class="count blue">7</div>
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-                                        <span class="count_top"><i class="fa fa-2x fa-book green"></i> 已认证证书</span>
-                                        <div class="count yellow">2</div>
-                                    </div>
+                                    <span id="cerNum" class="count_top"><i class="fa fa-2x fa-book green"></i> 已认证证书</span>
+                                    <div class="count yellow">8</div>
+                                </div>
                                 <div class="col-md-4 col-sm-4 col-xs-6 tile_stats_count">
-                                    <span class="count_top"><i class="fa fa-2x fa-edit green"></i> 链上验证次数</span>
-                                    <div class="count red">98</div>
+                                    <span id="verNum" class="count_top"><i class="fa fa-2x fa-edit green"></i> 链上验证次数</span>
+                                    <div class="count red">68</div>
                                 </div>
 
-                                
+
                             </div>
                             <!-- /top tiles -->
                             <!-- Graph start -->
@@ -316,14 +318,16 @@
                                 <div class="col-md-12 col-sm-12 col-xs-12">
                                     <div class="x_panel">
                                         <div class="x_title">
-                                            <h2>已上链条目<small>（月度）</small></h2>
-                                            <label class="total_bal">
-                                                总上链: 6056069条
+                                            <h2>累计已上链条目<small>（月度）</small></h2>
+                                            <label id="curChain" class="total_bal">
+                                                总上链: 49条
                                             </label>
                                             <div class="clearfix"></div>
                                         </div>
-                                        <div class="x_content"><iframe class="chartjs-hidden-iframe" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
-                                            <canvas height="136" id="lineChart" width="821" style="width: 821px; height: 136px;"></canvas>
+                                        <div class="x_content"><iframe class="chartjs-hidden-iframe"
+                                                style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+                                            <canvas height="136" id="lineChart" width="821"
+                                                style="width: 821px; height: 136px;"></canvas>
                                         </div>
                                     </div>
                                 </div>
@@ -376,7 +380,22 @@
     <script src="js/dashboard.js"></script>
     <script src="js/Chart.min.js"></script>
 
-    <script>
+    <script type="text/javascript">
+        var curChain = 49;
+        var stuNum = 2;
+        var teaNum = 1;
+        var comNum = 1;
+        var cerNum = 8;
+        var subNum = 7;
+        var verNum = 68;
+        var gradeNum = 26;
+        var recordNum=15;
+
+
+        $(document).ready(function () {
+            getCurData();
+            setNum();
+        });
         Chart.defaults.global.legend = {
             enabled: false
         };
@@ -386,9 +405,9 @@
         var lineChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["01,2018", "02,2018", "03,2018", "04,2018", "05,2018", "06,2018", "07,2018", "08,2018", "09,2018", "10,2018", "11,2018", "12,2018"],
+                labels: ["09,2018", "10,2018", "11,2018", "12,2018", "01,2019", "02,2018", "03,2018"],
                 datasets: [{
-                    label: "Income",
+                    label: "Grade",
                     backgroundColor: "rgba(38, 185, 154, 0.31)",
                     borderColor: "rgba(38, 185, 154, 0.7)",
                     pointBorderColor: "rgba(38, 185, 154, 0.7)",
@@ -396,9 +415,19 @@
                     pointHoverBackgroundColor: "#fff",
                     pointHoverBorderColor: "rgba(220,220,220,1)",
                     pointBorderWidth: 1,
-                    data: [52662545.31, 32271914.00, 20651857.91, 31068496.90, 26380827.16, 30801979.51, 21194321.49, 23102023.47, 30958587.33, 29130438.73, 23880016.56, 25513149.38]
+                    data: [0, 0, 3, 10, 15, 15,gradeNum]
                 }, {
-                    label: "Expence",
+                    label: "Record",
+                    backgroundColor: "rgba(3, 125, 75, 0.3)",
+                    borderColor: "rgba(3, 88, 106, 0.70)",
+                    pointBorderColor: "rgba(3, 75, 83, 0.70)",
+                    pointBackgroundColor: "rgba(3, 88, 106, 0.70)",
+                    pointHoverBackgroundColor: "#fff",
+                    pointHoverBorderColor: "rgba(151,187,205,1)",
+                    pointBorderWidth: 1,
+                    data: [0, 0, 0, 2, 8, 8, recordNum]
+                }, {
+                    label: "Certification",
                     backgroundColor: "rgba(3, 88, 106, 0.3)",
                     borderColor: "rgba(3, 88, 106, 0.70)",
                     pointBorderColor: "rgba(3, 88, 106, 0.70)",
@@ -406,12 +435,40 @@
                     pointHoverBackgroundColor: "#fff",
                     pointHoverBorderColor: "rgba(151,187,205,1)",
                     pointBorderWidth: 1,
-                    data: [56301010.42, 32220143.00, 20669087.91, 27231585.68, 25534450.16, 29856959.27, 29705459.44, 26657952.24, 31748953.35, 28979974.59, 20992977.15, 23773674.36]
+                    data: [0, 0, 0, 0, 3, 3, cerNum]
                 }]
             },
         });
 
+        function getCurData() {
+            $.ajax({
+                url: sessionStorage.host + 'indexData',
+                type: 'get',
+                offline: false,
+                success: function (msg) {
+                    console.log(msg);
+                    stuNum = msg["stuNum"];
+                    teaNum = msg["teaNum"];
+                    comNum = msg["comNum"];
+                    cerNum = msg["cerNum"];
+                    subNum = msg["subNum"];
+                    verNum = msg["verNum"];
+                    gradeNum=msg["gradeNum"];
+                    recordNum=msg["recordNum"];
+                    curChain = cerNum+gradeNum+recordNum;
+                }
+            })
+        }
 
+        function setNum(){
+            $("curChain").text(toString(curChain));
+            $("stuNum").text(toString(stuNum));
+            $("teaNum").text(toString(teaNum));
+            $("comNum").text(toString(comNum));
+            $("cerNum").text(toString(cerNum));
+            $("subNum").text(toString(subNum));
+            $("verNum").text(toString(verNum));
+        }
 
     </script>
 </body>

@@ -33,14 +33,14 @@
     <link href="css/bootstrap-datepicker.css" rel="stylesheet">
     <style media="screen">
         body {
-       color: #154d88;
-       background: rgba(233, 237, 241, 0.27);
-       font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
-       font-size: 13px;
-       font-weight: 400;
-       line-height: 1.471;
-   }
-   </style>
+            color: #154d88;
+            background: rgba(233, 237, 241, 0.27);
+            font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.471;
+        }
+    </style>
     <!-- jQuery -->
     <script src="bower_components/jquery/jquery.min.js"></script>
 
@@ -64,27 +64,29 @@
                 <div class="btn-group pull-right">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                        <i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs"> 管理员</span>
+                        <i class="glyphicon glyphicon-user"></i><span id="userType" class="hidden-sm hidden-xs">
+                            管理员</span>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
                         <li><a href="/settings"><i class="glyphicon glyphicon-user"></i> 个人资料</a></li>
                         <li class="divider"></li>
-                        <li><a href="Setting_Users.html/logout"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
+                        <li><a href="./School_Manage.html"><i class="glyphicon glyphicon-log-out"></i> 退出登录</a></li>
                     </ul>
                 </div>
                 <!-- Addmission dropdown starts -->
                 <div class="btn-group pull-right">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
-                        <i class="glyphicon glyphicon-th-large"></i><span class=""> 通知</span>
+                        <i class="glyphicon glyphicon-th-large"></i><span class=""> 报单</span>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 申请人名单</a></li>
+                        <li><a href="/applicants"><i class="glyphicon glyphicon-th-list"></i> 成绩表</a></li>
                         <li class="divider"></li>
-                        <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-list-alt"></i> 在线注册</a></li>
-                        <li><a href="/admitcard" target="_blank"><i class="glyphicon glyphicon-print"></i> 打印许可证</a></li>
+                        <li><a href="/regonline" target="_blank"><i class="glyphicon glyphicon-print"></i> 部分简历</a></li>
+                        <li><a href="allResumeSheet.html" target="_blank"><i class="glyphicon glyphicon-print"></i>
+                                全部简历</a></li>
 
 
 
@@ -97,7 +99,7 @@
 
 
                 <!-- 证书 dropdown starts -->
-                <div class="btn-group pull-right">
+                <div id="nav-records" class="btn-group pull-right">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
                         <i class="glyphicon glyphicon-book"></i><span class=""> 证书</span>
@@ -105,12 +107,12 @@
                     </button>
                     <ul class="dropdown-menu">
 
-                        <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 书籍搜索</a></li>
+                        <li><a href="/library/search"><i class="glyphicon glyphicon-search"></i> 查看我的证书</a></li>
                         <li><a href="/library/issuebook"><i class="glyphicon glyphicon-pencil"></i> 借书</a></li>
                         <li><a href="/library/issuebookview"><i class="glyphicon glyphicon-list"></i> 已借出书单</a></li>
                         <li class="divider"></li>
-                        <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 书籍列表</a></li>
-                        <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 图书记录</a></li>
+                        <li><a href="/library/view-show"><i class="glyphicon glyphicon-list"></i> 审查申请</a></li>
+                        <li><a href="/library/addbook"><i class="glyphicon glyphicon-pencil"></i> 从文件添加</a></li>
                         <li><a href="/library/reports"><i class="glyphicon glyphicon-print"></i> 书籍报告</a></li>
                         <li><a href="/library/reports/fine"><i class="glyphicon glyphicon-print"></i> 月度罚款记录</a></li>
 
@@ -119,7 +121,7 @@
                 </div>
                 <!-- 证书 dropdown ends -->
                 <!-- Dormitory dropdown starts -->
-                <div class="btn-group pull-right">
+                <div id="nav-course" class="btn-group pull-right">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
                         <i class="glyphicon glyphicon-home"></i><span class=""> 课程</span>
@@ -139,18 +141,18 @@
                 </div>
                 <!-- Dormitory dropdown ends -->
                 <!-- fees dropdown starts-->
-                <div class="btn-group pull-right">
+                <div id="nav-grades" class="btn-group pull-right">
                     <button class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 
                         <i class="glyphicon glyphicon-list-alt"></i><span class=""> 成绩</span>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu">
-                        <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 学费</a></li>
-                        <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 缴费情况</a></li>
+                        <li><a href="/fees/view"><i class="glyphicon glyphicon-search"></i> 查看我的成绩</a></li>
+                        <li><a href="/fee/collection"><i class="glyphicon glyphicon-pencil"></i> 登记课程成绩</a></li>
 
                         <li class="divider"></li>
-                        <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 费用清单</a></li>
+                        <li><a href="/fees/list"><i class="glyphicon glyphicon-list"></i> 查看班级成绩</a></li>
                         <li><a href="/fees/setup"><i class="glyphicon glyphicon-cog"></i> 费用设置</a></li>
                         <li class="divider"></li>
                         <li><a href="/fees/report"><i class="glyphicon glyphicon-print"></i> 收费情况报单</a></li>
@@ -167,91 +169,94 @@
 
                 <!-- left menu starts -->
                 <div class="col-sm-2 col-lg-2">
-                        <div class="sidebar-nav">
-                            <div class="nav-canvas">
-                                <div class="nav-sm nav nav-stacked">
-    
-                                </div>
-                                <ul class="nav nav-pills nav-stacked main-menu">
-                                    <li class="nav-header">主菜单</li>
-                                    <li><a class="ajax-link" href="./dashboard.html"><i class="glyphicon glyphicon-th-large"></i><span>
-                                                主页</span></a>
-                                    </li>
-    
-                                    <li class="accordion" id="index_class">
-                                        <a href="#"><i class="glyphicon glyphicon-home"></i><span> 专业</span></a>
-                                        <ul class="nav nav-pills nav-stacked">
-                                            <li><a href="createMajor.html">新增专业</a></li>
-                                            <li><a href="majorList.html">专业列表</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion" id="index_subject">
-                                        <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
-                                        <ul class="nav nav-pills nav-stacked">
-                                            <li><a href="createSubject.html">新增</a></li>
-                                            <li><a href="subjectList.html">课程列表</a></li>
-                                            <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion" id="index_stu">
-                                        <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
-                                        <ul class="nav nav-pills nav-stacked">
-                                            <li><a href="createStudent.html">新增</a></li>
-                                            <li><a href="studentList.html">学生列表</a></li>
-    
-                                        </ul>
-                                    </li>
-                                    <li class="accordion" id="index_teacher">
-                                        <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
-                                        <ul class="nav nav-pills nav-stacked">
-                                                <li><a href="createTeacher.html">新增</a></li>
-                                                <li><a href="teacherList.html">教师列表</a></li>    
-                                        </ul>
-                                    </li>
-                                    <li class="accordion" id="index_com">
-                                        <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
-                                        <ul class="nav nav-pills nav-stacked">
-                                            <li><a href="createFirm.html">新增</a></li>
-                                            <li><a href="firmList.html">公司列表</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion" id="index_record">
-                                        <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
-                                        <ul class="nav nav-pills nav-stacked">
-                                            <li><a href="applyRecord.html">从文件添加</a></li>
-                                            <li><a href="recordList.html">查看我的证书</a></li>
-                                            <li><a href="checkRecord.html">审查申请</a></li>
-    
-                                        </ul>
-                                    </li>
-                                    <li class="accordion" id="index_grade">
-                                        <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
-                                        <ul class="nav nav-pills nav-stacked">
-                                            <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
-                                            <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
-                                            <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion" id="index_verify">
-                                        <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span> 链上验证</span></a>
-                                        <ul class="nav nav-pills nav-stacked">
-                                            <li><a href="resultsForVistor.html">快速验证</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="accordion" id="index_print">
-                                        <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
-                                        <ul class="nav nav-pills nav-stacked">
-                                            <li><a href="gradesheet.html">成绩表</a></li>
-                                            <li><a href="Attendancereport.html">自选简历</a></li>
-                                            <li><a href="monthly-report.html">全部简历</a></li>
-                                        </ul>
-                                    </li>
-                                    
-                                </ul>
-    
+                    <div class="sidebar-nav">
+                        <div class="nav-canvas">
+                            <div class="nav-sm nav nav-stacked">
+
                             </div>
+                            <ul class="nav nav-pills nav-stacked main-menu">
+                                <li class="nav-header">主菜单</li>
+                                <li><a class="ajax-link" href="./dashboard.html"><i
+                                            class="glyphicon glyphicon-th-large"></i><span>
+                                            主页</span></a>
+                                </li>
+
+                                <li class="accordion" id="index_class">
+                                    <a href="#"><i class="glyphicon glyphicon-home"></i><span> 专业</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createMajor.html">新增专业</a></li>
+                                        <li><a href="majorList.html">专业列表</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_subject">
+                                    <a href="#"><i class="glyphicon glyphicon-book"></i><span> 课程</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li id="add_stu_child"><a href="createSubject.html">新增</a></li>
+                                        <li><a href="subjectList.html">课程列表</a></li>
+                                        <li id="stu_elect_sub"><a href="electSubject.html">选课</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_stu">
+                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 学生</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createStudent.html">新增</a></li>
+                                        <li><a href="studentList.html">学生列表</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_teacher">
+                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 教职员工</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createTeacher.html">新增</a></li>
+                                        <li><a href="teacherList.html">教师列表</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_com">
+                                    <a href="#"><i class="glyphicon glyphicon-user"></i><span> 合作公司</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="createFirm.html">新增</a></li>
+                                        <li><a href="firmList.html">公司列表</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_record">
+                                    <a href="#"><i class="glyphicon glyphicon-pencil"></i><span> 证书记录</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a id="add_from_file" href="applyRecord.html">从文件添加</a></li>
+
+                                        <li><a id="view_my_record" href="recordList.html">查看我的证书</a></li>
+                                        <li id="view_record"><a href="checkRecord.html">审查申请</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_grade">
+                                    <a href="#"><i class="glyphicon glyphicon-list-alt"></i><span> 成绩管理</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a id="create_grade" href="createMarkManage.html">登记课程成绩</a></li>
+                                        <li><a id="stu_grade" href="myMarks.html">查看我的成绩</a></li>
+                                        <li><a id="tea_grade" href="MarkManagelist.html">查看班级成绩</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_verify">
+                                    <a href="#"><i class="glyphicon  glyphicon glyphicon-list"></i><span>
+                                            链上验证</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="resultsForVistor.html">快速验证</a></li>
+                                    </ul>
+                                </li>
+                                <li class="accordion" id="index_print">
+                                    <a href="#"><i class="glyphicon glyphicon-print"></i><span> 报单中心</span></a>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li><a href="gradesheet.html">成绩表</a></li>
+                                        <li><a href="partResumeSheet.html">自选简历</a></li>
+                                        <li><a href="allResumeSheet.html">全部简历</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+
                         </div>
                     </div>
+                </div>
                 <!--/span-->
                 <!-- left menu ends -->
 
@@ -268,26 +273,27 @@
                                 </div>
 
 
-                                <form id="teaForm" role="form" action="" method="post">
-                                    <div class="box-content">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <h3 class="text-info"> 照片</h3>
-                                                <hr>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <!-- <div id="uploadPhotoForm" class="form-group"> -->
-                                                <form enctype="multipart/form-data">
 
-                                                    <input id="photoFile" name="photo" type="file">
-                                                    <button class="btn btn-primary pull-right" onclick="uploadPhoto();"
-                                                        type="button"><i class="glyphicon glyphicon-plus"></i>上传</button>
-                                                    <!-- </div> -->
-                                                </form>
-                                            </div>
+                                <div class="box-content">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3 class="text-info"> 照片</h3>
+                                            <hr>
                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <!-- <div id="uploadPhotoForm" class="form-group"> -->
+                                            <form enctype="multipart/form-data">
+
+                                                <input id="photoFile" name="photo" type="file">
+                                                <button class="btn btn-primary pull-right" onclick="uploadPhoto();"
+                                                    type="button"><i class="glyphicon glyphicon-plus"></i>上传</button>
+                                                <!-- </div> -->
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <form id="teaForm" role="form">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <h3 class="text-info"> 个人资料</h3>
@@ -300,9 +306,10 @@
                                                     <div class="form-group">
                                                         <label for="fname">姓名</label>
                                                         <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                            <input type="text" class="form-control" required id="stuName"
-                                                                name="stuName" placeholder="姓名">
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <input type="text" class="form-control" required
+                                                                id="stuName" name="name" placeholder="姓名">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -311,12 +318,13 @@
                                                         <label class="control-label" for="gender">性别</label>
 
                                                         <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                            <select id="stuGender" name="stuGender" class="form-control"
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <select id="stuGender" name="gender" class="form-control"
                                                                 required>
 
-                                                                <option value="Male">男</option>
-                                                                <option value="Female">女</option>
+                                                                <option value="0">男</option>
+                                                                <option value="1">女</option>
 
                                                             </select>
                                                         </div>
@@ -326,9 +334,10 @@
                                                     <div class="form-group">
                                                         <label for="identityID">身份证号</label>
                                                         <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
                                                             <input type="text" id="identityID" class="form-control"
-                                                                required name="identityID" placeholder="身份证ID">
+                                                                required name="ID" placeholder="身份证ID">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -342,8 +351,9 @@
                                                     <div class="form-group">
                                                         <label for="teaType">教师职位</label>
                                                         <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                            <select name="teaType" class="form-control" required>
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <select name="title" class="form-control" required>
                                                                 <option value="lecture">讲师</option>
                                                                 <option value="AssistantProfessor">教授助理</option>
                                                                 <option value="AssociateProfessor">副教授</option>
@@ -356,7 +366,8 @@
                                                     <div class="form-group">
                                                         <label for="nationality">国籍</label>
                                                         <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
                                                             <select name="nationality" class="form-control" required>
                                                                 <option value="China">中国</option>
                                                                 <option value="Other">...</option>
@@ -368,7 +379,8 @@
                                                     <div class="form-group">
                                                         <label for="phone">联系方式</label>
                                                         <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
                                                             <input type="text" id="phone" class="form-control" required
                                                                 name="phone" placeholder="+86xxxxxxxxxxx">
                                                         </div>
@@ -396,19 +408,15 @@
                                                         <label class="control-label" for="section">院系</label>
 
                                                         <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
-                                                            <select id="section" name="section" required="true" class="form-control">
-                                                                <option value="A">软件学院</option>
-                                                                <option value="B">建筑</option>
-                                                                <option value="C">C</option>
-                                                                <option value="D">D</option>
-                                                                <option value="E">E</option>
-                                                                <option value="F">F</option>
-                                                                <option value="G">G</option>
-                                                                <option value="H">H</option>
-                                                                <option value="I">I</option>
-                                                                <option value="J">J</option>
-
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <select id="section" name="collegeId" required="true"
+                                                                class="form-control">
+                                                                <option value="1">软件学院</option>
+                                                                <option value="2">建筑</option>
+                                                                <option value="3">C</option>
+                                                                <option value="4">D</option>
+                                                                <option value="5">E</option>
                                                             </select>
 
 
@@ -421,9 +429,11 @@
                                                     <div class="form-group">
                                                         <label for="direction">专业方向</label>
                                                         <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-info-sign blue"></i></span>
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-info-sign blue"></i></span>
                                                             <input type="text" id="direction" class="form-control"
-                                                                required name="direction" placeholder="如：机器学习 机器人 （空格隔开）">
+                                                                required name="majorId"
+                                                                placeholder="如：机器学习 机器人 （空格隔开）">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -441,9 +451,11 @@
                                                     <div class="form-group">
                                                         <label for="presentAddress">当前地址</label>
                                                         <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker blue"></i></span>
-                                                            <textarea type="text" class="form-control" required id="cAddress"
-                                                                name="cAddress" placeholder="当前地址"></textarea>
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-map-marker blue"></i></span>
+                                                            <textarea type="text" class="form-control" required
+                                                                id="currentAddress" name="currentAddress"
+                                                                placeholder="当前地址"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -451,23 +463,27 @@
                                                     <div class="form-group">
                                                         <label for="parmanentAddress">永久地址</label>
                                                         <div class="input-group">
-                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker blue"></i></span>
-                                                            <textarea type="text" class="form-control" required name="pAddress"
-                                                                id="pAddress" placeholder="永久地址"></textarea>
+                                                            <span class="input-group-addon"><i
+                                                                    class="glyphicon glyphicon-map-marker blue"></i></span>
+                                                            <textarea type="text" class="form-control" required
+                                                                name="permanentAddress" id="permanentAddress"
+                                                                placeholder="永久地址"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </form>
+                                </div>
 
-                                    <div class="clearfix"></div>
+                                <div class="clearfix"></div>
 
-                                    <div class="form-group">
-                                        <button class="btn btn-primary pull-right" onclick="addTea();"><i class="glyphicon glyphicon-plus"></i>添加</button>
-                                        <br>
-                                    </div>
-                                </form>
+                                <div class="form-group">
+                                    <button class="btn btn-primary pull-right" onclick="addTea();"><i
+                                            class="glyphicon glyphicon-plus"></i>添加</button>
+                                    <br>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -521,6 +537,13 @@
     <script src="js/bootstrap-datepicker.js"></script>
 
     <script src="js/create.js"></script>
+
+    <script src="js/dashboard.js"></script>
+    <script type="text/javascript">
+        function uploadPhoto() {
+            alert("上传成功！");
+        }
+    </script>
 </body>
 
 </html>
